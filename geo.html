@@ -9,10 +9,24 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
   <script>
   var map;
+  var localStoreNearby = false;
 
   $(document).ready(function() {
     $('#request-geo').click(requestGeo);
-  })
+    $('#local-store').change(function(e) {
+      localStoreNearby = $(this).is(':checked');
+      loadContextualContent();
+    });
+  });
+
+  function loadContextualContent() {
+    if (localStoreNearby) {
+      $('.content--contextual').show();
+    } else {
+      $('.content--contextual').hide();
+    }
+  }
+
   function onLocationSuccess(p) {
     console.log('onLocationSuccess', p);
     $('#result').html('Found you at latitude ' + p.coords.latitude + ', longitude ' + p.coords.longitude + ', accurate to ' + p.coords.accuracy + 'm.');
@@ -20,7 +34,7 @@
     var infowindow = new google.maps.InfoWindow({
       map: map,
       position: new google.maps.LatLng(p.coords.latitude, p.coords.longitude),
-      content: 'There you are'
+      content: 'Your Location'
     });
 
     map.setZoom(16);
@@ -33,6 +47,7 @@
     $('.location--error').hide();
 
     $('#request-geo').removeAttr('disabled');
+    loadContextualContent();
   }
   function onLocationError(err) {
     console.error('onLocationError', err);
@@ -108,19 +123,30 @@
 </head>
 <body>
   <div class="body-wrap">
-    <section>
+    <header>
       <h1>Geolocation Demo</h1>
+      <div class="demo-settings">
+        <label for="local-store">Is there a local store nearby?</label>
+        <input type="checkbox" id="local-store" value="1">
+        
+      </div>
+    </header>
+    <section>
+      
       <div class="location--guidance">
         <p>We need you to allow the request to access your current location when your browser asks. You should see a popup when you click the button, you just need to click 'Allow'</p>
       </div>
       <div class="location--requesting">
-        <p>Please click 'Allow' so we can access your location.</p>
+        <p>Please click 'Allow' so we can access your location...</p>
       </div>
       <div class="location--error">
         <p>You denied the request to access your location. If this was a mistake, please clear your browser cache and refresh the page.</p>
       </div>
-      <button id="request-geo" class="btn">Request Location</button>
+      <button id="request-geo" class="btn">Find Me</button>
       <div id="map-canvas"></div>
+      <div class="content--store-nearby content--contextual">
+        <h2>Available nearby at John Lewis</h2>
+      </div>
       <p id="result"></p>
     </section>
     

@@ -104,7 +104,15 @@ section {
 
 .location--requesting {
   display: none;
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  color: black;
+  border-bottom: 2px solid black;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
 }
 .location--guidance {}
 .location--error {
@@ -130,4 +138,34 @@ section {
   cursor: pointer;
   border: 0;
   outline: 1;
+}
+
+
+header {
+
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 50px;
+
+  > h1 {
+    display: inline-block;
+    margin: 0;
+  }
+  
+}
+
+.demo-settings {
+
+}
+
+.content--store-nearby {
+  display: none;
+  background: darkGreen;
+  height: 120px;
+  padding: 40px;
+  color: white;
+}
+
+#result {
+  padding: 50px 0 0;
 }
