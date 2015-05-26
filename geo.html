@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Geolocation Prototype</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+  <script>
+  var map;
+
+  $(document).ready(function() {
+    $('#request-geo').click(requestGeo);
+  })
+  function onLocationSuccess(p) {
+    console.log('onLocationSuccess', p);
+    $('#result').html('Found you at latitude ' + p.coords.latitude + ', longitude ' + p.coords.longitude + ' with accuracy ' + p.coords.accuracy + 'm');
+
+    var infowindow = new google.maps.InfoWindow({
+      map: map,
+      position: new google.maps.LatLng(p.coords.latitude, p.coords.longitude),
+      content: 'There you are'
+    });
+
+    map.setZoom(16);
+    map.setCenter(infowindow.position);
+
+    $('#map-canvas').css('opacity', 1);
+  }
+  function onLocationError(err) {
+    console.error('onLocationError', err);
+
+    var options = {
+      map: map,
+      position: new google.maps.LatLng(60, 105),
+      content: 'Failed'
+    };
+
+    var infowindow = new google.maps.InfoWindow(options);
+    map.setCenter(options.position);
+  }
+  function requestGeo() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        onLocationSuccess,
+        onLocationError,
+        { enableHighAccuracy: true, maximumAge: Infinity }
+      );
+    } else {
+      $('#request-geo').html('Unsupported');
+    }
+  }
+  function initialize() {
+    var mapOptions = {
+      zoom: 6
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+    var infowindow = new google.maps.InfoWindow({
+      map: map,
+      position: new google.maps.LatLng(60, 105),
+      content: 'Please set your location'
+    });
+
+    map.setCenter(infowindow.position);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+</head>
+<body>
+  <div class="body-wrap">
+    <section>
+      <h1>Requesting Geolocation</h1>
+      <button id="request-geo">Request Location</button>
+      <div id="map-canvas"></div>
+      <p id="result"></p>
+    </section>
+    
+  </div>
+  
+</body>
+</html>
