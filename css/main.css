@@ -112,3 +112,22 @@ section {
   display: none;
   
 }
+
+.btn {
+  height: 30px;
+  color: white;
+  background: black;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-block;
+  padding: 9px 33px;
+  cursor: pointer;
+  border: 0;
+  outline: 1;
+}
