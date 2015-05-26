@@ -99,7 +99,7 @@ section {
   height: 300px;
   margin: 20px 0;
   padding: 0px;
-  opacity: 0;
+  opacity: .1;
 }
 
 .location--requesting {
