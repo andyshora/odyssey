@@ -86,7 +86,7 @@ p {
 
 .body-wrap {
   max-width: 1000px;
-  margin: 100px auto;
+  margin: 0 auto;
   text-align: left;
   background: white;
 }
