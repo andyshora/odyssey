@@ -15,7 +15,7 @@
   })
   function onLocationSuccess(p) {
     console.log('onLocationSuccess', p);
-    $('#result').html('Found you at latitude ' + p.coords.latitude + ', longitude ' + p.coords.longitude + ' with accuracy ' + p.coords.accuracy + 'm');
+    $('#result').html('Found you at latitude ' + p.coords.latitude + ', longitude ' + p.coords.longitude + ', accurate to ' + p.coords.accuracy + 'm.');
 
     var infowindow = new google.maps.InfoWindow({
       map: map,
@@ -27,6 +27,12 @@
     map.setCenter(infowindow.position);
 
     $('#map-canvas').css('opacity', 1);
+
+    $('.location--requesting').hide();
+    $('.location--guidance').hide();
+    $('.location--error').hide();
+
+    $('#request-geo').removeAttr('disabled');
   }
   function onLocationError(err) {
     console.error('onLocationError', err);
@@ -39,13 +45,43 @@
 
     var infowindow = new google.maps.InfoWindow(options);
     map.setCenter(options.position);
+
+    switch(error.code){
+      case 0:
+        updateLocationError('There was an error while retrieving your location: ' +
+                                     error.message);
+      break;
+      case 1:
+        updateLocationError('You denied the request to access your location. If this was a mistake, please clear your browser cache and refresh the page.');
+      break;
+      case 2:
+        updateLocationError('The browser was unable to determine your location: ' +
+                                   error.message);
+      break;
+      case 3:
+        updateLocationError('The browser timed out before retrieving the location.');
+      break;
+    }
+
+    $('.location--requesting').hide();
+    $('.location--guidance').hide();
+    $('.location--error').show();
+    $('#request-geo').removeAttr('disabled');
+  }
+  function updateLocationError() {
+
   }
   function requestGeo() {
     if (navigator.geolocation) {
+
+      $('.location--guidance').hide();
+      $('.location--requesting').show();
+      $('#request-geo').attr('disabled', 'disabled');
+
       navigator.geolocation.getCurrentPosition(
         onLocationSuccess,
         onLocationError,
-        { enableHighAccuracy: true, maximumAge: Infinity }
+        { enableHighAccuracy: true, maximumAge: 1 }
       );
     } else {
       $('#request-geo').html('Unsupported');
@@ -73,7 +109,16 @@
 <body>
   <div class="body-wrap">
     <section>
-      <h1>Requesting Geolocation</h1>
+      <h1>Geolocation Demo</h1>
+      <div class="location--guidance">
+        <p>We need you to allow the request to access your current location when your browser asks. You should see a popup when you click the button, you just need to click 'Allow'</p>
+      </div>
+      <div class="location--requesting">
+        <p>Please click 'Allow' so we can access your location.</p>
+      </div>
+      <div class="location--error">
+        <p>You denied the request to access your location. If this was a mistake, please clear your browser cache and refresh the page.</p>
+      </div>
       <button id="request-geo">Request Location</button>
       <div id="map-canvas"></div>
       <p id="result"></p>

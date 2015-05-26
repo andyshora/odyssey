@@ -101,3 +101,14 @@ section {
   padding: 0px;
   opacity: 0;
 }
+
+.location--requesting {
+  display: none;
+  
+}
+.location--guidance {}
+.location--error {
+  color: red;
+  display: none;
+  
+}
