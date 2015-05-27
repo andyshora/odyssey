@@ -154,14 +154,6 @@ p {
   border: 0;
   outline: 1; }
 
-header {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 50px; }
-  header > h1 {
-    display: inline-block;
-    margin: 0; }
-
 .content--store-nearby {
   display: none;
   background: darkGreen;
@@ -184,32 +176,25 @@ body {
   background: pink;
   margin-bottom: 4.34783%; }
 
+section.gutter {
+  width: 92%;
+  margin: 0 auto;
+  font-size: 6px; }
+  @media screen and (min-width: 768px) {
+    section.gutter {
+      width: 84%; } }
+  @media screen and (min-width: 1024px) {
+    section.gutter {
+      width: 84%; } }
+
 .grid-container {
-  max-width: 86.4%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto; }
   .grid-container::after {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (min-width: 768px) {
-    .grid-container {
-      max-width: 91.8%;
-      margin-left: auto;
-      margin-right: auto; }
-      .grid-container::after {
-        clear: both;
-        content: "";
-        display: table; } }
-  @media screen and (min-width: 1024px) {
-    .grid-container {
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto; }
-      .grid-container::after {
-        clear: both;
-        content: "";
-        display: table; } }
 
 .grid-item {
   float: left;
@@ -223,17 +208,14 @@ body {
   opacity: .8; }
   .grid-item:last-child {
     margin-right: 0; }
-  .grid-item:nth-child(4n) {
-    margin-right: 0; }
-  .grid-item:nth-child(4n+1) {
-    clear: left; }
   @media screen and (min-width: 768px) {
     .grid-item {
       float: left;
       display: block;
       margin-right: 4.34783%;
       width: 47.82609%;
-      padding-bottom: 50%; }
+      padding-bottom: 50%;
+      background: red; }
       .grid-item:last-child {
         margin-right: 0; }
       .grid-item:nth-child(4n) {

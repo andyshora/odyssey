@@ -4,10 +4,10 @@ $visual-grid: true;
 $visual-grid-color: lightBlue;
 
 // // Change the grid settings
-// $column: 32 / 750%;
-// $gutter: 24 / 750%;
-$column: modular-scale(1, 1em, $golden);
-$gutter: modular-scale(1, 1em, $golden);
+$column: 4%;
+$gutter: 4%;
+// $column: modular-scale(1, 1em, $golden);
+// $gutter: modular-scale(1, 1em, $golden);
 $grid-columns: 12;
 $max-width: 100%;
 

@@ -6,6 +6,8 @@
 
 $global-gutter-width: 5100% / 750;
 
+// #{modular-scale(1, 4, 1.5)}px; = 6px
+
 body {
   margin: 0;
   min-width: 320px;
@@ -22,24 +24,35 @@ section.full-width {
 }
 
 section.gutter {
-  
-}
 
-.grid-container {
-  @include outer-container(86.4%); // max width inside
+  width: 92%;
+  margin: 0 auto;
+  font-size: #{modular-scale(1, 4, 1.5)}em;
 
   @include media($tablet) {
-    @include outer-container(91.8%);
+    width: 84%;
   }
 
   @include media($desktop) {
-    @include outer-container(100%);
+    width: 84%;
+  }
+}
+
+.grid-container {
+  @include outer-container(100%);
+
+  @include media($tablet) {
+    // @include outer-container(91.8%);
+  }
+
+  @include media($desktop) {
+    // @include outer-container(100%);
   }
 }
 
 .grid-item {
   @include span-columns(12);
-  @include omega(4n);
+  // @include omega(4n);
   height: 0;
   padding-bottom: 100%;
   background: pink;
@@ -51,6 +64,7 @@ section.gutter {
     @include omega-reset(4n);
     @include omega(2n);
     padding-bottom: 50%;
+    background: red;
   }
 
   @include media($desktop) {
