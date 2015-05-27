@@ -1,10 +1,15 @@
 @import "neat/neat-helpers";
 
+$visual-grid: true;
+$visual-grid-color: lightBlue;
+
 // // Change the grid settings
-// $column: 90px;
-// $gutter: 30px;
+// $column: 32 / 750%;
+// $gutter: 24 / 750%;
+$column: modular-scale(1, 1em, $golden);
+$gutter: modular-scale(1, 1em, $golden);
 $grid-columns: 12;
-$max-width: 1200px;
+$max-width: 100%;
 
 // // Define your breakpoints
 $tablet: new-breakpoint(min-width 768px);

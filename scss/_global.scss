@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Futura-Md-BT', Futura, Trebuchet MS, Arial, sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  background: #f8f8f8;
+  min-width: 320px;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'FuturaBT-Book';
+  src: url('/css/fonts/futura_book.eot');
+  src: url('/css/fonts/futura_book.eot?#iefix') format('embedded-opentype'), url('/css/fonts/futura_book.svg#FuturaBT-Book') format('svg'), url('/css/fonts/futura_book.woff') format('woff'), url('/css/fonts/futura_book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura-Lt-BT';
+  src: url('/css/fonts/FuturaBTW01Light.eot');
+  src: url('/css/fonts/FuturaBTW01Light.eot?#iefix') format('embedded-opentype'), url('/css/fonts/FuturaBTW01Light.svg#FuturaBT-Book-Light') format('svg'), url('/css/fonts/FuturaBTW01Light.woff') format('woff'), url('/css/fonts/FuturaBTW01Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaBT-Book-Heavy';
+  src: url('/css/fonts/FuturaBTW01Heavy.eot');
+  src: url('/css/fonts/FuturaBTW01Heavy.eot?#iefix') format('embedded-opentype'), url('/css/fonts/FuturaBTW01Heavy.svg#FuturaBT-Book-Heavy') format('svg'), url('/css/fonts/FuturaBTW01Heavy.woff') format('woff'), url('/css/fonts/FuturaBTW01Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura-Md-BT';
+  src: url('/css/fonts/FuturaBTW01Medium.eot');
+  src: url('/css/fonts/FuturaBTW01Medium.eot?#iefix') format('embedded-opentype'), url('/css/fonts/FuturaBTW01Medium.svg#FuturaBT-Book-Medium') format('svg'), url('/css/fonts/FuturaBTW01Medium.woff') format('woff'), url('/css/fonts/FuturaBTW01Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.025em;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: normal;
+  margin: 10px 0 15px;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: 'FuturaBT-Book';
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  font-family: 'FuturaBT-Book';
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.3em;
+  font-family: 'FuturaBT-Book';
+}
+
+.body-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  background: white;
+}
+
+#map-canvas {
+  height: 400px;
+  margin: 20px 0;
+  padding: 0px;
+  opacity: .1;
+}
+
+.location--requesting {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  color: black;
+  border-bottom: 2px solid black;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+.location--guidance {}
+.location--error {
+  color: red;
+  display: none;
+  
+}
+
+.btn {
+  height: 30px;
+  color: white;
+  background: black;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-block;
+  padding: 9px 33px;
+  cursor: pointer;
+  border: 0;
+  outline: 1;
+}
+
+
+header {
+
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 50px;
+
+  > h1 {
+    display: inline-block;
+    margin: 0;
+  }
+  
+}
+
+.demo-settings {
+
+}
+
+.content--store-nearby {
+  display: none;
+  background: darkGreen;
+  height: 120px;
+  padding: 40px;
+  color: white;
+}
+
+#result {
+  padding: 50px 0 0;
+}
+
+.img--full {
+  width: 100%;
+}

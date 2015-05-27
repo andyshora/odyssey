@@ -1,0 +1,62 @@
+@import "bourbon/bourbon";
+@import "mixins";
+@import "grid-settings";
+@import "neat/neat";
+@import "global";
+
+$global-gutter-width: 5100% / 750;
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+section.full-width {
+
+}
+
+.header {
+  min-height: 200px;
+  background: pink;
+  margin-bottom: flex-gutter();
+}
+
+section.gutter {
+  
+}
+
+.grid-container {
+  @include outer-container(86.4%); // max width inside
+
+  @include media($tablet) {
+    @include outer-container(91.8%);
+  }
+
+  @include media($desktop) {
+    @include outer-container(100%);
+  }
+}
+
+.grid-item {
+  @include span-columns(12);
+  @include omega(4n);
+  height: 0;
+  padding-bottom: 100%;
+  background: pink;
+  margin: 0 0 flex-gutter() 0;
+  opacity: .8;
+
+  @include media($tablet) {
+    @include span-columns(6);
+    @include omega-reset(4n);
+    @include omega(2n);
+    padding-bottom: 50%;
+  }
+
+  @include media($desktop) {
+    @include span-columns(3);
+    @include omega-reset(2n);
+    @include omega(4n);
+    padding-bottom: 25%;
+  }
+}

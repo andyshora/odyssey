@@ -11,7 +11,7 @@
     "url": "https://github.com/andyshora/odyssey.git"
   },
   "scripts": {
-    "styles": "sass scss/grid.scss css/grid.css"
+    "styles": "sass scss/main.scss css/main.css"
   },
   "author": "andyshora",
   "license": "ISC",
