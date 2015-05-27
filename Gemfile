@@ -3,5 +3,11 @@
 # accellerating your downloads.
 source 'http://rubygems.org'
 
-gem 'bourbon'
-gem 'neat'
+# gem 'bourbon'
+# gem 'neat'
+
+gem 'sass-rails', '~> 5.0.0.beta1'
+gem 'susy'
+
+# If you want Compass:
+gem 'compass-rails', '~> 2.0.0'
