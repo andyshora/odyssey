@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/andyshora/odyssey.git"
   },
+  "scripts": {
+    "styles": "sass scss/grid.scss css/grid.css"
+  },
   "author": "andyshora",
   "license": "ISC",
   "bugs": {

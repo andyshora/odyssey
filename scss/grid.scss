@@ -1,0 +1,27 @@
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+
+section {
+  @include outer-container;
+  aside {
+    background: lightBlue;
+
+    @include span-columns(12);
+
+    @include media($tablet) {
+      @include span-columns(3);
+      background: blue;
+    }
+  }
+  article {
+    
+    background: lightGreen;
+    @include span-columns(12);
+
+    @include media($tablet) {
+      background: green;
+      @include span-columns(9);
+    }
+  }
+}
