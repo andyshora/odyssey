@@ -10,6 +10,7 @@
   <script>
   var map;
   var localStoreNearby = false;
+  var infowindow = null;
 
   $(document).ready(function() {
     $('#request-geo').click(requestGeo);
@@ -31,7 +32,10 @@
     console.log('onLocationSuccess', p);
     $('#result').html('Found you at latitude ' + p.coords.latitude + ', longitude ' + p.coords.longitude + ', accurate to ' + p.coords.accuracy + 'm.');
 
-    var infowindow = new google.maps.InfoWindow({
+    if (infowindow) {
+      infowindow.close();
+    }
+    infowindow = new google.maps.InfoWindow({
       map: map,
       position: new google.maps.LatLng(p.coords.latitude, p.coords.longitude),
       content: 'Your Location'
@@ -49,6 +53,7 @@
     $('#request-geo').removeAttr('disabled');
     loadContextualContent();
   }
+
   function onLocationError(err) {
     console.error('onLocationError', err);
 
@@ -109,7 +114,7 @@
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-    var infowindow = new google.maps.InfoWindow({
+    infowindow = new google.maps.InfoWindow({
       map: map,
       position: new google.maps.LatLng(60, 105),
       content: 'Please set your location'
@@ -128,7 +133,6 @@
       <div class="demo-settings">
         <label for="local-store">Is there a local store nearby?</label>
         <input type="checkbox" id="local-store" value="1">
-        
       </div>
     </header>
     <section>
@@ -145,7 +149,7 @@
       <button id="request-geo" class="btn">Find Me</button>
       <div id="map-canvas"></div>
       <div class="content--store-nearby content--contextual">
-        <h2>Available nearby at John Lewis</h2>
+        <h2>Available nearby at John Lewis, just 2 minutes away from you.</h2>
       </div>
       <p id="result"></p>
     </section>
