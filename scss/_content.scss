@@ -1,0 +1,35 @@
+.grid-content--title {
+  &:after {
+    content: 'Narrow (< 768px)';
+
+    @include at-breakpoint($bp-medium) {
+      content: 'Medium (>= 768px)';
+    }
+
+    @include at-breakpoint($bp-large) {
+      content: 'Large (>= 1024px)';
+    }
+
+    @include at-breakpoint($bp-wide) {
+      content: 'Wide (>= 1440px)';
+    }
+  }
+}
+
+.grid-content--devices {
+  &:after {
+    content: 'Mobile';
+
+    @include at-breakpoint($bp-medium) {
+      content: 'Tablet Portrait';
+    }
+
+    @include at-breakpoint($bp-large) {
+      content: 'Tablet Landscape, Small Desktop';
+    }
+
+    @include at-breakpoint($bp-wide) {
+      content: 'Desktop';
+    }
+  }
+}

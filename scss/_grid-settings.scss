@@ -7,21 +7,21 @@
 // Defining breakpoints
 $bp-small: 480px;
 $bp-medium: 768px;
-$bp-wide: 960px;
-$bp-huge: 1200px;
+$bp-large: 1024px;
+$bp-wide: 1440px;
 
 // Defining container widths
 $container-small: 480px;
 $container-medium: 768px;
-$container-wide: 1024px;
-$container-huge: 1440px;
+$container-large: 1024px;
+$container-wide: 1440px;
 
 
 // Defining grid columns
 $g-small: 12;
 $g-medium: 12;
+$g-large: 12;
 $g-wide: 12;
-$g-huge: 12;
 
 // Defining spacing/gutter size
 $spacing: 1rem;
@@ -29,20 +29,20 @@ $spacing: 1rem;
 // Susy settings
 // http://susydocs.oddbird.net/en/latest/settings/
 $susy: (
-    columns: 12,
-    gutter-position: split,
-    gutters: 1,
-    global-box-sizing: border-box,
-    debug: (
-      image: hide,
-      color: rgba(blue, .10)
-    )
+  columns: 12,
+  gutter-position: after,
+  gutters: 1,
+  global-box-sizing: border-box,
+  debug: (
+    image: hide,
+    color: rgba(blue, .10)
+  )
 );
 
-$susy-small: $container-small $g-small 1 split;
-$susy-medium: $container-medium $g-medium 1 split;
-$susy-wide: $container-wide $g-wide (.3) split;
-$susy-huge: $container-huge $g-huge 1 split;
+$susy-small: $container-small $g-small 1 after;
+$susy-medium: $container-medium $g-medium 1 after;
+$susy-large: $container-large $g-large (.3) after;
+$susy-wide: $container-wide $g-wide (.3) after;
 
 
 // Breakpoint-sass option
@@ -83,6 +83,14 @@ $no-flex: no-flex !default;
   @include susy-breakpoint($bp-medium ($bp-wide - 1), $susy-medium) { @content };
 }
 
+@mixin large {
+  @include susy-breakpoint($bp-large, $susy-large) { @content };
+}
+
+@mixin to-large {
+  @include susy-breakpoint(0 ($bp-large - 1), $susy-large) { @content };
+}
+
 
 @mixin wide {
   @include susy-breakpoint($bp-wide, $susy-wide) { @content };
@@ -91,9 +99,3 @@ $no-flex: no-flex !default;
 @mixin to-wide {
   @include susy-breakpoint(0 ($bp-wide - 1), $susy-wide) { @content };
 }
-
-
-@mixin huge {
-  @include susy-breakpoint($bp-huge, $susy-huge) { @content };
-}
-

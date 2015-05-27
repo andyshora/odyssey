@@ -2,6 +2,7 @@
 @import "mixins";
 @import "_grid-settings";
 @import "global";
+@import "content";
 
 * {
   box-sizing: border-box;
@@ -18,12 +19,12 @@ section.full-width {
 }
 
 .header {
-  min-height: 200px;
   background: pink;
   margin-bottom: 50px;
+  padding: 50px 0;
 }
 
-section.gutter {
+.gutter {
 
   width: 92%;
   margin: 0 auto;
@@ -47,20 +48,25 @@ section.gutter {
 
   background: lightGrey;
 
+
   .module--debug-grid & {
+    @include span(1);
+
+    &:last-child {
+      @include span(1 of 12 last);
+    }
+
+    @include medium {
       @include span(1);
+    }
 
-      @include medium {
-        @include span(1);
-      }
-
-      @include wide {
-        @include span(1);
-      }
-      
-      background: pink;
-      height: 20px;
-      margin-bottom: 50px;
+    @include wide {
+      @include span(1);
+    }
+    
+    background: pink;
+    height: 20px;
+    margin-bottom: 50px;
     
   }
 
@@ -83,4 +89,24 @@ section.gutter {
     margin-bottom: 50px;
   }
 
+  .module--headline & {
+    padding: 50px 0;
+    margin-bottom: 50px;
+    
+
+    > h1, > h2 {
+      // @include span(isolate 10 at 2);
+      
+      
+    }
+  }
+
 }
+
+.module--headline {
+  text-align: left;
+  background: lightBlue;
+}
+
+
+
