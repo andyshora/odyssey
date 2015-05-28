@@ -330,7 +330,7 @@ body {
   clear: both; }
 
 hr.clear {
-  margin: 0 0 100px 0;
+  margin: 50px 0 50px 0;
   padding: 0;
   height: 0;
   border: none;
@@ -344,6 +344,13 @@ hr.clear {
   @media (min-width: 1440px) {
     hr.clear {
       margin: 0 0 100px 0; } }
+hr.module-divide {
+  margin: 50px 0 50px 0;
+  padding: 0;
+  height: 1px;
+  background: #dddddd;
+  border: none;
+  clear: both; }
 
 .module--mb {
   margin: 0 0 100px 0; }
