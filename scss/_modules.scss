@@ -25,23 +25,50 @@
   &.module--padd {
     padding: 100px 0;
   }
+
   &.module--padd-btm {
     padding: 0 0 50px 0;
   }
+
   &.module--padd-top {
     padding: 50px 0 0 0;
   }
 }
 
 .header-module {
-  padding: 20px 0;
+  padding: 6px 0;
   text-align: left;
+  height: 50px;
+  overflow: hidden;
+
+  @include at-breakpoint($bp-large) {
+    height: 100px;
+    padding: 14px 0;
+  }
+
+  .grid-item {
+    @include span(9 no-gutters);
+  }
+
+  .grid-item__search {
+    @include span(3 no-gutters);
+    display: none;
+
+    @include at-breakpoint($bp-large) {
+      display: inline-block;
+    }
+  }
 
   .logo {
     height: 24px;
     fill: white;
     position: relative;
     top: 2px;
+
+    @include at-breakpoint($bp-large) {
+      height: 48px;
+      top: 4px;
+    }
   }
 
   .nav-trigger {
@@ -68,7 +95,17 @@
       height: 2px;
       top: -8px;
     }
+
   }
+
+  .search-bar {
+    
+    width: 100%;
+    background: $c-module-bg;
+    height: 60px;
+    border-radius: 30px;
+  }
+
 }
 
 .cta-banner-module {
