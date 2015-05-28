@@ -1,3 +1,26 @@
+
+.module {
+  
+  h1, h2, h3, h4 {
+    font-family: 'BLOKKRegular';
+    letter-spacing: 0;
+    line-height: 1em;
+    color: $c-text;
+  }
+
+  p, button {
+    font-family: 'BLOKKNeue-Regular';
+    letter-spacing: -1px;
+    line-height: 1em;
+    color: $c-text;
+  }
+
+  .btn {
+    color: $c-text;
+    background: $c-text;
+  }
+}
+
 .cta-banner-module {
 
   text-align: center;
@@ -64,33 +87,87 @@
 .products-module {
 
   .grid-item {
-    @include span(1 no-gutter);
-    background: $c-module-bg;
+    @include span(8 no-gutter);
+    margin-left: isolate(3 of 12 after);
+    padding-bottom: 50px;
 
     @include medium {
-      @include span(1 no-gutters);
+      @include span(4 no-gutters);
+      margin-left: 0;
+      padding-bottom: 0;
     }
   }
+}
+
+.product {
+
+}
+
+
+.product__thumb {
+  background: $c-module-bg;
+  border-radius: 50%;
+  margin: 0 auto 40px;
+  height: 0;
+  padding-bottom: 72%;
+  width: 72%;
 }
 .graphics-module {
 
-  .grid-item {
-    @include span(1 no-gutter);
-    background: $c-module-bg;
+  text-align: left;
+
+  .grid-item__left {
+    @include span(3 no-gutter);
+
+    margin-bottom: 50px;
 
     @include medium {
-      @include span(1 no-gutters);
+      margin-bottom: 0;
     }
   }
+
+  .grid-item__right {
+    @include span(8 no-gutter);
+
+  }
 }
+
+.graphic {
+
+  @include medium {
+    @include span(4 no-gutter);
+  }
+}
+
+.graphic__thumb {
+  
+  > div {
+    height: 0;
+    padding-bottom: 100%;
+    background: $c-module-bg;
+    border-radius: 50%;
+  }
+}
+.graphic__text {
+
+}
+
 .links-module {
 
+  background: $c-module-bg;
+  text-align: left;
+
   .grid-item {
-    @include span(1 no-gutter);
-    background: $c-module-bg;
+    @include span(5 no-gutter);
+    padding-bottom: 50px;
+
+    &:nth-child(even) {
+      @include push(1); 
+    }
 
     @include medium {
-      @include span(1 no-gutters);
+      @include span(3 no-gutters);
+      padding-bottom: 0;
     }
   }
 }
@@ -98,7 +175,6 @@
 
   .grid-item {
     @include span(1 no-gutter);
-    background: $c-module-bg;
 
     @include medium {
       @include span(1 no-gutters);

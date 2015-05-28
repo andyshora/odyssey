@@ -4,7 +4,9 @@ $c-dark-2: rgb(11, 11, 11);
 $c-light-1: rgb(255, 255, 255);
 $c-light-2: rgb(233, 233, 233);
 
-$c-highlight: rgba(125, 223, 255, .8);
+$c-highlight: rgba(125, 223, 255, .4);
+$c-module-bg: rgb(221, 221, 221);
+$c-text: rgb(110, 110, 110);
 
 .theme--dark {
   background: $c-dark-1;
@@ -14,4 +16,8 @@ $c-highlight: rgba(125, 223, 255, .8);
 .theme--light {
   background: $c-light-1;
   color: $c-dark-1;
+}
+
+.theme--bg {
+  background: $c-module-bg;
 }
