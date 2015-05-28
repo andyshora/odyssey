@@ -194,15 +194,15 @@ p {
     .header-module {
       height: 100px;
       padding: 14px 0; } }
-  .header-module .grid-item {
+  .header-module .grid-item--logo {
     width: 75%;
     float: left; }
-  .header-module .grid-item__search {
+  .header-module .grid-item--search {
     width: 25%;
     float: left;
     display: none; }
     @media (min-width: 1280px) {
-      .header-module .grid-item__search {
+      .header-module .grid-item--search {
         display: inline-block; } }
   .header-module .logo {
     height: 24px;
@@ -333,6 +333,8 @@ p {
       float: left;
       margin-left: 0;
       padding-bottom: 0; } }
+  .products-module .grid-item:last-child {
+    padding-bottom: 0; }
 
 .product__thumb {
   background: #dddddd;
@@ -354,6 +356,10 @@ p {
   .graphics-module .grid-item__right {
     width: 66.66667%;
     float: left; }
+    @media (min-width: 1280px) {
+      .graphics-module .grid-item__right {
+        width: 75%;
+        float: left; } }
 
 .graphic {
   clear: both; }
@@ -386,13 +392,19 @@ p {
         .links-module .grid-item:nth-child(even) {
           margin-left: 0%; } }
 
+.footer-module h1 {
+  color: black; }
 .footer-module .grid-item {
-  width: 8.33333%;
-  float: left; }
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
   @media (min-width: 1280px) {
     .footer-module .grid-item {
-      width: 8.33333%;
-      float: left; } }
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; } }
 
 .grid-content--title:after {
   content: 'Small';
@@ -512,6 +524,9 @@ hr.module-divide {
     background: rgba(122, 255, 255, 0.5);
     height: 10000px;
     margin-top: 0; }
+.grid-item.grid-item--single {
+  width: 8.33333%;
+  float: left; }
 
 .grid-item__content {
   margin: 6px 6px;
@@ -528,5 +543,16 @@ hr.module-divide {
   @media (min-width: 1280px) {
     .grid-item__content {
       margin: 6px 16px; } }
+
+.dot {
+  width: 16px;
+  height: 16px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: white; }
+  @media (min-width: 1280px) {
+    .dot {
+      width: 32px;
+      height: 32px; } }
 
 /*# sourceMappingURL=main.css.map */

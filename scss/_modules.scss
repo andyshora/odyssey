@@ -46,11 +46,11 @@
     padding: 14px 0;
   }
 
-  .grid-item {
+  .grid-item--logo {
     @include span(9 no-gutters);
   }
 
-  .grid-item__search {
+  .grid-item--search {
     @include span(3 no-gutters);
     display: none;
 
@@ -156,10 +156,9 @@
           height: 0;
           padding-bottom: 95.4%;
           background: $c-module-bg;
-          margin-bottom: 24px; // todo
+          margin-bottom: 24px;
         }
       }
-
       
     }
   }
@@ -220,6 +219,10 @@
       margin-left: 0;
       padding-bottom: 0;
     }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -252,6 +255,10 @@
 
   .grid-item__right {
     @include span(8 no-gutter);
+
+    @include large {
+      @include span(9 no-gutter);
+    }
 
   }
 
@@ -306,11 +313,17 @@
 
 .footer-module {
 
+  h1 {
+    color: $c-dark-1;
+    
+  }
+
   .grid-item {
-    @include span(1 no-gutter);
+    @include span(12 no-gutter);
 
     @include large {
-      @include span(1 no-gutters);
+      @include span(12 no-gutters);
     }
   }
+
 }
