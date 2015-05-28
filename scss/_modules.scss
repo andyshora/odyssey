@@ -15,6 +15,7 @@
     letter-spacing: -1px;
     line-height: 1em;
     color: $c-text;
+    line-height: 1.5em;
   }
 
   .btn {
@@ -24,6 +25,14 @@
 
   &.module--padd {
     padding: 100px 0;
+  }
+
+  &.module--padd-dbl {
+    padding: 100px 0;
+
+    @include at-breakpoint($bp-large) {
+      padding: 200px 0;
+    }
   }
 
   &.module--padd-btm {
@@ -154,9 +163,15 @@
       @include large {
         .grid-item__content {
           height: 0;
-          padding-bottom: 95.4%;
+          padding-bottom: 92%;
           background: $c-module-bg;
           margin-bottom: 24px;
+        }
+      }
+
+      @include at-breakpoint(1024px) {
+        .grid-item__content {
+          padding-bottom: 95.4%;
         }
       }
       
@@ -313,9 +328,14 @@
 
 .footer-module {
 
+  height: 50px;
+
+  @include at-breakpoint($bp-large) {
+    height: 100px;
+  }
+
   h1 {
     color: $c-dark-1;
-    
   }
 
   .grid-item {

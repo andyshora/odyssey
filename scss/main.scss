@@ -70,7 +70,6 @@ hr {
   pointer-events: none;
   display: block;
   min-width: 336px;
-  opacity: .5;
 
   .app--hide-grid & {
     display: none;
@@ -162,7 +161,7 @@ hr {
   margin: $g-small $g-small;
 
   .module & {
-    border: 1px solid $c-border-highlight;
+    border: 1px solid rgba(40, 204, 204, 0.35);
 
     .app--hide-grid & {
       border: none;
