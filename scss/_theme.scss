@@ -1,0 +1,17 @@
+$c-dark-1: rgb(0, 0, 0);
+$c-dark-2: rgb(11, 11, 11);
+
+$c-light-1: rgb(255, 255, 255);
+$c-light-2: rgb(233, 233, 233);
+
+$c-highlight: rgba(125, 223, 255, .8);
+
+.theme--dark {
+  background: $c-dark-1;
+  color: $c-light-1;
+}
+
+.theme--light {
+  background: $c-light-1;
+  color: $c-dark-1;
+}

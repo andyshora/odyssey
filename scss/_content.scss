@@ -1,6 +1,6 @@
 .grid-content--title {
   &:after {
-    content: 'Narrow (< 768px)';
+    content: 'Small (< 768px)';
 
     @include at-breakpoint($bp-medium) {
       content: 'Medium (>= 768px)';
