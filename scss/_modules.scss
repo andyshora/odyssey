@@ -1,5 +1,7 @@
 
 .module {
+
+  overflow: auto;
   
   h1, h2, h3, h4 {
     font-family: 'BLOKKRegular';
@@ -18,6 +20,13 @@
   .btn {
     color: $c-text;
     background: $c-text;
+  }
+
+  &.module--padd {
+    padding: 100px 0;
+  }
+  &.module--padd-btm {
+    padding: 0 0 50px 0;
   }
 }
 
@@ -53,27 +62,64 @@
 }
 .gallery-module {
 
-  .grid-item {
+  .grid-container {
+    @include span(12 no-gutter);
+    clear: none;
 
-    @include span(6 no-gutter);
-
-    @include medium {
-      @include span(3 no-gutters);
+    @include large {
+      @include span(6 no-gutters);
     }
 
-    > .grid-item__content {
-      height: 0;
-      padding-bottom: 100%;
-      background: $c-module-bg;
+    .grid-item {
+      @include span(6 no-gutter);
+
+      @include large {
+        .grid-item__content {
+          height: 0;
+          padding-bottom: 95.4%;
+          background: $c-module-bg;
+          margin-bottom: 24px; // todo
+        }
+      }
+
+      
     }
   }
+
+  .grid-container--large {
+    @include span(12 no-gutter);
+    clear: none;
+
+    @include large {
+      @include span(6 no-gutters);
+    }
+
+    .grid-item {
+      @include span(12 no-gutter);
+
+      @include large {
+        .grid-item__content {
+          height: 0;
+          padding-bottom: 100%;
+          background: $c-module-bg;
+        }
+      }
+    }
+  }
+
+  .grid-item__content {
+    height: 0;
+    padding-bottom: 100%;
+    background: $c-module-bg;
+  }
+  
 
   .grid-item--large {
 
 
     @include span(12 no-gutter);
 
-    @include medium {
+    @include large {
       @include span(6 no-gutters);
     }
 
@@ -91,7 +137,7 @@
     margin-left: isolate(3 of 12 after);
     padding-bottom: 50px;
 
-    @include medium {
+    @include large {
       @include span(4 no-gutters);
       margin-left: 0;
       padding-bottom: 0;
@@ -121,7 +167,7 @@
 
     margin-bottom: 50px;
 
-    @include medium {
+    @include large {
       margin-bottom: 0;
     }
   }
@@ -130,12 +176,16 @@
     @include span(8 no-gutter);
 
   }
+
 }
 
 .graphic {
 
-  @include medium {
+  clear: both;
+
+  @include large {
     @include span(4 no-gutter);
+    clear: none;
   }
 }
 
@@ -165,9 +215,13 @@
       @include push(1); 
     }
 
-    @include medium {
+    @include large {
       @include span(3 no-gutters);
       padding-bottom: 0;
+
+      &:nth-child(even) {
+        @include push(0); 
+      }
     }
   }
 }
@@ -176,7 +230,7 @@
   .grid-item {
     @include span(1 no-gutter);
 
-    @include medium {
+    @include large {
       @include span(1 no-gutters);
     }
   }

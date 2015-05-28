@@ -7,33 +7,33 @@
 // Defining breakpoints
 $bp-small: 320px;
 $bp-medium: 768px;
-$bp-large: 1024px;
-$bp-wide: 1440px;
+$bp-large: 1280px;
+$bp-wide: 2000px;
 
 // Global gutters
-// Used for the margin - todo - remember to minus gutter from edge amrgin dims on design
+// Used for the margin - todo - remember to minus gutter from edge margin dims on design
 $gg-small: 5.2%;
 $gg-medium: 8%;
-$gg-large: 10%;
+$gg-large: 5%;
 $gg-wide: 10%;
 
 // including outer gutter - for creating full width modules which snap to the grid
 $gg-trimmed-small: 6.8%;
 $gg-trimmed-medium: 10%;
-$gg-trimmed-large: 12%;
+$gg-trimmed-large: 6.115%;
 $gg-trimmed-wide: 12%;
 
 // Defining container widths
 $container-small: 320px;
 $container-medium: 768px;
-$container-large: 1024px;
-$container-wide: 1440px;
+$container-large: 1280px;
+$container-wide: 2000px;
 
-// gridd item content margin
+// grid item content margin
 $g-small: 6px;
 $g-medium: 10px;
-$g-large: 10px;
-$g-wide: 10px;
+$g-large: 16px;
+$g-wide: 16px;
 
 // module seperation
 $module-spacing-small: 100px;

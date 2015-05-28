@@ -22,27 +22,28 @@ body {
 
 .full-width {
   clear: both;
+  overflow: auto;
 }
 
 hr {
   &.clear {
-    margin: 50px 0 50px 0;
+    margin: 100px 0 100px 0;
     padding: 0;
     height: 0;
     border: none;
     clear: both;
 
-    @include at-breakpoint($bp-medium) {
+    /* @include at-breakpoint($bp-medium) {
       margin: 0 0 $module-spacing-medium 0;
-    }
+    } */
 
     @include at-breakpoint($bp-large) {
       margin: 0 0 $module-spacing-large 0;
     }
 
-    @include at-breakpoint($bp-wide) {
+    /* @include at-breakpoint($bp-wide) {
       margin: 0 0 $module-spacing-wide 0;
-    }
+    } */
 
   }
 
@@ -58,26 +59,7 @@ hr {
   }
 }
 
-.module--mb {
-
-  margin: 0 0 $module-spacing-small 0;
-
-  @include at-breakpoint($bp-medium) {
-    margin: 0 0 $module-spacing-medium 0;
-  }
-
-  @include at-breakpoint($bp-large) {
-    margin: 0 0 $module-spacing-large 0;
-  }
-
-  @include at-breakpoint($bp-wide) {
-    margin: 0 0 $module-spacing-wide 0;
-  }
-}
-
 .header {
-  background: pink;
-  margin-bottom: 50px;
   padding: 50px 0;
 }
 
@@ -97,17 +79,17 @@ hr {
 
   left: $gg-small;
 
-  @include at-breakpoint($bp-medium) {
+  /* @include at-breakpoint($bp-medium) {
     left: $gg-medium;
-  }
+  } */
 
   @include at-breakpoint($bp-large) {
     left: $gg-large;
   }
 
-  @include at-breakpoint($bp-wide) {
+  /* @include at-breakpoint($bp-wide) {
     left: $gg-wide;
-  }
+  } */
   
 }
 
@@ -117,39 +99,40 @@ hr {
   width: 100% - ($gg-small * 2);
   margin: 0 auto;
 
-  @include at-breakpoint($bp-medium) {
+  /* @include at-breakpoint($bp-medium) {
     width: 100% - ($gg-medium * 2);
-  }
+  } */
 
   @include at-breakpoint($bp-large) {
     width: 100% - ($gg-large * 2);
   }
 
-  @include at-breakpoint($bp-wide) {
+  /* @include at-breakpoint($bp-wide) {
     width: 100% - ($gg-wide * 2);
-  }
+  } */
 }
 
 .gutter {
   width: 100% - ($gg-small * 2);
   margin: 0 auto;
   clear: both;
+  overflow: auto;
 
-  @include at-breakpoint($bp-medium) {
+  /* @include at-breakpoint($bp-medium) {
     width: 100% - ($gg-medium * 2);
-  }
+  } */
 
   @include at-breakpoint($bp-large) {
     width: 100% - ($gg-large * 2);
   }
 
-  @include at-breakpoint($bp-wide) {
+  /* @include at-breakpoint($bp-wide) {
     width: 100% - ($gg-wide * 2);
-  }
+  } */
 }
 
 .grid-container {
-  clear: both;
+
 }
 
 
@@ -159,14 +142,6 @@ hr {
 
   .module--debug-grid & {
     @include span(1 no-gutters);
-
-    @include medium {
-      @include span(1 no-gutters);
-    }
-
-    @include wide {
-      @include span(1 no-gutters);
-    }
 
     > .grid-item__content {
       background: $c-highlight;
@@ -182,17 +157,25 @@ hr {
 
   margin: $g-small $g-small;
 
-  @include at-breakpoint($bp-medium) {
-    margin: $g-small $g-medium;
+  .module & {
+    border: 1px solid $c-border-highlight;
+
+    .app--hide-grid & {
+      border: none;
+    }
   }
+
+  /* @include at-breakpoint($bp-medium) {
+    margin: $g-small $g-medium;
+  } */
 
   @include at-breakpoint($bp-large) {
     margin: $g-small $g-large;
   }
 
-  @include at-breakpoint($bp-wide) {
+  /* @include at-breakpoint($bp-wide) {
     margin: $g-small $g-wide;
-  }
+  } */
 }
 
 .module--headline {
