@@ -18,13 +18,32 @@
     }
 
     window.addEventListener('shake', onShake, false);
+
+    $(document).ready(function() {
+      if (!('ontouchstart' in window)) {
+        $('body').removeClass('app--hide-grid');
+
+        $('body').dblclick(function() {
+          $('body').toggleClass('app--hide-grid');
+        });
+      }
+    });
+    
   </script>
 </head>
-<body>
+<body class="app--hide-grid">
   <section class="full-width">
-    <header class="header">
-      <h1 class="grid-content--title"></h1>
-      <p class="grid-content--devices"></p>
+    <header class="header-module theme--dark">
+      <div class="gutter">
+        <div class="grid-container">
+          <div class="grid-item">
+            <div class="grid-item__content">
+              <a class="nav-trigger"></a>
+              <img class="logo" src="img/logo.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   </section>
 
@@ -61,11 +80,9 @@
     </div>
   </section>
 
-  <hr class="module-divide">
-
   <!-- Text Banner Module -->
   <section class="gutter">
-    <div class="grid-container module text-banner-module">
+    <div class="grid-container module module--padd-top text-banner-module">
       <div class="grid-item">
         <div class="grid-item__content">
           <h1>---</h1>

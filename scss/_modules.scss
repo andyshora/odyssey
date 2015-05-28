@@ -28,6 +28,47 @@
   &.module--padd-btm {
     padding: 0 0 50px 0;
   }
+  &.module--padd-top {
+    padding: 50px 0 0 0;
+  }
+}
+
+.header-module {
+  padding: 20px 0;
+  text-align: left;
+
+  .logo {
+    height: 24px;
+    fill: white;
+    position: relative;
+    top: 2px;
+  }
+
+  .nav-trigger {
+    height: 8px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    margin: 0 10px 0 0;
+    padding: 0;
+    width: 16px;
+    display: inline-block;
+    position: relative;
+    top: -4px;
+
+    @include large {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      display: block;
+      background: white;
+      height: 2px;
+      top: -8px;
+    }
+  }
 }
 
 .cta-banner-module {
@@ -40,7 +81,7 @@
     margin-left: isolate(2 of 12 after);
     
 
-    @include medium {
+    @include large {
       @include span(6 no-gutters);
       margin-left: isolate(4 of 12 after);
     }
@@ -54,7 +95,7 @@
     @include span(10 no-gutter);
     margin-left: isolate(2 of 12 after);
 
-    @include medium {
+    @include large {
       @include span(6 no-gutters);
       margin-left: isolate(4 of 12 after);
     }
@@ -225,6 +266,7 @@
     }
   }
 }
+
 .footer-module {
 
   .grid-item {
