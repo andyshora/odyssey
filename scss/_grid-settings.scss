@@ -10,12 +10,18 @@ $bp-medium: 768px;
 $bp-large: 1024px;
 $bp-wide: 1440px;
 
+// Global gutters
+// Used for the margin - todo - remember to minus gutter from edge amrgin dims on design
+$gg-small: 4%;
+$gg-medium: 8%;
+$gg-large: 10%;
+$gg-wide: 10%;
+
 // Defining container widths
 $container-small: 480px;
 $container-medium: 768px;
 $container-large: 1024px;
 $container-wide: 1440px;
-
 
 // Defining grid columns
 $g-small: 50%;

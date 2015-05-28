@@ -164,13 +164,37 @@ body {
   min-width: 320px; }
 
 .header {
-  background: pink;
+  background: #dcebf0;
   margin-bottom: 50px;
   padding: 50px 0; }
+
+.debug-grid-overlay {
+  position: fixed;
+  top: 0;
+  opacity: .05;
+  left: 4%; }
+  @media (min-width: 768px) {
+    .debug-grid-overlay {
+      left: 8%; } }
+  @media (min-width: 1024px) {
+    .debug-grid-overlay {
+      left: 10%; } }
+  @media (min-width: 1440px) {
+    .debug-grid-overlay {
+      left: 10%; } }
 
 .gutter {
   width: 92%;
   margin: 0 auto; }
+  @media (min-width: 768px) {
+    .gutter {
+      width: 84%; } }
+  @media (min-width: 1024px) {
+    .gutter {
+      width: 80%; } }
+  @media (min-width: 1440px) {
+    .gutter {
+      width: 80%; } }
 
 .module--debug-grid .grid-item {
   width: 8.33333%;
@@ -187,8 +211,9 @@ body {
       width: -333.33333%;
       float: left; } }
   .module--debug-grid .grid-item > .grid-item__content {
-    background: pink;
-    height: 20px; }
+    background: black;
+    height: 10000px;
+    margin-top: 0; }
 .module--gallery .grid-item {
   width: 100%;
   float: left;
@@ -196,7 +221,7 @@ body {
   margin-right: 0;
   height: 0;
   padding-bottom: 90%;
-  background: lightGrey;
+  background: #dcebf0;
   height: 100px;
   margin-bottom: 50px; }
   @media (min-width: 768px) {
@@ -241,6 +266,6 @@ body {
 
 .module--headline {
   text-align: left;
-  background: lightBlue; }
+  background: #dcebf0; }
 
 /*# sourceMappingURL=main.css.map */

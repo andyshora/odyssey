@@ -4,6 +4,8 @@
 @import "global";
 @import "content";
 
+$c-module-bg: rgb(220, 235, 240);
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -19,23 +21,48 @@ section.full-width {
 }
 
 .header {
-  background: pink;
+  background: $c-module-bg;
   margin-bottom: 50px;
   padding: 50px 0;
 }
 
+.debug-grid-overlay {
+  position: fixed;
+  top: 0;
+  opacity: .05;
+
+  left: $gg-small;
+
+  @include at-breakpoint($bp-medium) {
+    left: $gg-medium;
+  }
+
+  @include at-breakpoint($bp-large) {
+    left: $gg-large;
+  }
+
+  @include at-breakpoint($bp-wide) {
+    left: $gg-wide;
+  }
+  
+}
+
 .gutter {
 
-  width: 92%;
+  width: 100% - ($gg-small * 2);
   margin: 0 auto;
 
-  // @include media($tablet) {
-  //   width: 84%;
-  // }
+  @include at-breakpoint($bp-medium) {
+    width: 100% - ($gg-medium * 2);
+  }
 
-  // @include media($desktop) {
-  //   width: 84%;
-  // }
+  @include at-breakpoint($bp-large) {
+    width: 100% - ($gg-large * 2);
+  }
+
+  @include at-breakpoint($bp-wide) {
+    width: 100% - ($gg-wide * 2);
+  }
 }
 
 .grid-container {
@@ -63,8 +90,9 @@ section.full-width {
     }
 
     > .grid-item__content {
-      background: pink;
-      height: 20px;
+      background: black;
+      height: 10000px;
+      margin-top: 0;
     }
     
   }
@@ -73,7 +101,7 @@ section.full-width {
     @include span(12 no-gutters);
     height: 0;
     padding-bottom: 100% - 10%;
-    background: lightGrey;
+    background: $c-module-bg;
 
     @include medium {
       @include span(4 no-gutters);
@@ -134,7 +162,7 @@ section.full-width {
 
 .module--headline {
   text-align: left;
-  background: lightBlue;
+  background: $c-module-bg;
 }
 
 
