@@ -1,0 +1,10 @@
+{
+  "name": "odyssey-pocs",
+  "root": "./",
+  "clean_urls": true,
+  "error_page": "error.html",
+  "exclude": [
+  	"files",
+  	"scss"
+  ]
+}

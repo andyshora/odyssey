@@ -31,6 +31,13 @@ section.full-width {
   top: 0;
   opacity: .05;
 
+  display: block;
+
+  .app--hide-grid & {
+    display: none;
+    
+  }
+
   left: $gg-small;
 
   @include at-breakpoint($bp-medium) {

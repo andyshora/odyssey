@@ -6,3 +6,4 @@ scss/susy
 files/
 *.old.*
 *.map
+.divshot-cache

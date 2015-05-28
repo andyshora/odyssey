@@ -172,7 +172,10 @@ body {
   position: fixed;
   top: 0;
   opacity: .05;
+  display: block;
   left: 4%; }
+  .app--hide-grid .debug-grid-overlay {
+    display: none; }
   @media (min-width: 768px) {
     .debug-grid-overlay {
       left: 8%; } }

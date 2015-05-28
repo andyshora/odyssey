@@ -2,8 +2,23 @@
 <html>
 <head>
   <title>Grid Prototype</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/jquery-2.1.4.min.js"></script> 
+  <script src="js/shake.js"></script>
+  <script>
+    var shakeEvent = new Shake({
+      threshold: 10, // optional shake strength threshold
+      timeout: 1000 // optional, determines the frequency of event generation
+    });
+    shakeEvent.start();
+
+    function onShake() {
+      $('body').toggleClass('app--hide-grid');
+    }
+
+    window.addEventListener('shake', onShake, false);
+  </script>
 </head>
 <body>
   <section class="full-width">
