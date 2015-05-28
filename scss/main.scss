@@ -1,11 +1,14 @@
-@import "susy";
-@import "mixins";
-@import "_grid-settings";
-@import "global";
-@import "theme";
-@import "content";
 
 $c-module-bg: rgb(220, 235, 240);
+
+@import "susy";
+@import "mixins";
+@import "grid-settings";
+@import "global";
+@import "theme";
+@import "modules";
+@import "content";
+
 
 * {
   box-sizing: border-box;
@@ -62,7 +65,7 @@ hr {
 }
 
 .header {
-  background: $c-module-bg;
+  background: pink;
   margin-bottom: 50px;
   padding: 50px 0;
 }
@@ -133,13 +136,12 @@ hr {
 }
 
 .grid-container {
-
-  
 }
 
 
-.grid-item {
 
+
+.grid-item {
 
   .module--debug-grid & {
     @include span(1 no-gutters);
@@ -253,7 +255,6 @@ hr {
 .grid-item__content {
 
   margin: $g-small $g-small;
-  text-align: left;
 
   @include at-breakpoint($bp-medium) {
     margin: $g-small $g-medium;

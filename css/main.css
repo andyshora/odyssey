@@ -148,6 +148,92 @@ p {
   background: white;
   color: black; }
 
+.cta-banner-module {
+  text-align: center;
+  background: #dcebf0; }
+  .cta-banner-module .grid-item {
+    width: 83.33333%;
+    float: left;
+    margin-left: 8.33333%; }
+    @media (min-width: 768px) {
+      .cta-banner-module .grid-item {
+        width: 50%;
+        float: left;
+        margin-left: 25%; } }
+
+.text-banner-module {
+  text-align: center; }
+  .text-banner-module .grid-item {
+    width: 83.33333%;
+    float: left;
+    margin-left: 8.33333%; }
+    @media (min-width: 768px) {
+      .text-banner-module .grid-item {
+        width: 50%;
+        float: left;
+        margin-left: 25%; } }
+
+.gallery-module .grid-item {
+  width: 50%;
+  float: left; }
+  @media (min-width: 768px) {
+    .gallery-module .grid-item {
+      width: 25%;
+      float: left; } }
+  .gallery-module .grid-item > .grid-item__content {
+    height: 0;
+    padding-bottom: 100%;
+    background: #dcebf0; }
+.gallery-module .grid-item--large {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+  @media (min-width: 768px) {
+    .gallery-module .grid-item--large {
+      width: 50%;
+      float: left; } }
+  .gallery-module .grid-item--large > .grid-item__content {
+    height: 0;
+    padding-bottom: 100%;
+    background: #dcebf0; }
+
+.products-module .grid-item {
+  width: 8.33333%;
+  float: left;
+  background: #dcebf0; }
+  @media (min-width: 768px) {
+    .products-module .grid-item {
+      width: 8.33333%;
+      float: left; } }
+
+.graphics-module .grid-item {
+  width: 8.33333%;
+  float: left;
+  background: #dcebf0; }
+  @media (min-width: 768px) {
+    .graphics-module .grid-item {
+      width: 8.33333%;
+      float: left; } }
+
+.links-module .grid-item {
+  width: 8.33333%;
+  float: left;
+  background: #dcebf0; }
+  @media (min-width: 768px) {
+    .links-module .grid-item {
+      width: 8.33333%;
+      float: left; } }
+
+.footer-module .grid-item {
+  width: 8.33333%;
+  float: left;
+  background: #dcebf0; }
+  @media (min-width: 768px) {
+    .footer-module .grid-item {
+      width: 8.33333%;
+      float: left; } }
+
 .grid-content--title:after {
   content: 'Small (< 768px)'; }
   @media (min-width: 768px) {
@@ -212,7 +298,7 @@ hr.clear {
       margin: 0 0 100px 0; } }
 
 .header {
-  background: #dcebf0;
+  background: pink;
   margin-bottom: 50px;
   padding: 50px 0; }
 
@@ -343,8 +429,7 @@ hr.clear {
   z-index: 1; }
 
 .grid-item__content {
-  margin: 6px 6px;
-  text-align: left; }
+  margin: 6px 6px; }
   @media (min-width: 768px) {
     .grid-item__content {
       margin: 6px 10px; } }
