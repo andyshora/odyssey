@@ -173,7 +173,7 @@ body {
   top: 0;
   opacity: .05;
   display: block;
-  left: 4%; }
+  left: 5.2%; }
   .app--hide-grid .debug-grid-overlay {
     display: none; }
   @media (min-width: 768px) {
@@ -186,18 +186,31 @@ body {
     .debug-grid-overlay {
       left: 10%; } }
 
+.global-gutter {
+  width: 89.6%;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .global-gutter {
+      width: 84%; } }
+  @media (min-width: 1024px) {
+    .global-gutter {
+      width: 80%; } }
+  @media (min-width: 1440px) {
+    .global-gutter {
+      width: 80%; } }
+
 .gutter {
-  width: 92%;
+  width: 86.4%;
   margin: 0 auto; }
   @media (min-width: 768px) {
     .gutter {
-      width: 84%; } }
+      width: 80%; } }
   @media (min-width: 1024px) {
     .gutter {
-      width: 80%; } }
+      width: 76%; } }
   @media (min-width: 1440px) {
     .gutter {
-      width: 80%; } }
+      width: 76%; } }
 
 .module--debug-grid .grid-item {
   width: 8.33333%;
@@ -256,16 +269,16 @@ body {
   margin-bottom: 50px; }
 
 .grid-item__content {
-  margin: 25% 25%; }
+  margin: 18.75% 18.75%; }
   @media (min-width: 768px) {
     .grid-item__content {
-      margin: 25% 12.5%; } }
+      margin: 18.75% 12.5%; } }
   @media (min-width: 1024px) {
     .grid-item__content {
-      margin: 25% 8.333%; } }
+      margin: 18.75% 8.333%; } }
   @media (min-width: 1440px) {
     .grid-item__content {
-      margin: 25% 8.333%; } }
+      margin: 18.75% 8.333%; } }
 
 .module--headline {
   text-align: left;

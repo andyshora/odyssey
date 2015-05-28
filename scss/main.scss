@@ -54,7 +54,8 @@ section.full-width {
   
 }
 
-.gutter {
+// for base grid
+.global-gutter {
 
   width: 100% - ($gg-small * 2);
   margin: 0 auto;
@@ -69,6 +70,23 @@ section.full-width {
 
   @include at-breakpoint($bp-wide) {
     width: 100% - ($gg-wide * 2);
+  }
+}
+
+.gutter {
+  width: 100% - ($gg-trimmed-small * 2);
+  margin: 0 auto;
+
+  @include at-breakpoint($bp-medium) {
+    width: 100% - ($gg-trimmed-medium * 2);
+  }
+
+  @include at-breakpoint($bp-large) {
+    width: 100% - ($gg-trimmed-large * 2);
+  }
+
+  @include at-breakpoint($bp-wide) {
+    width: 100% - ($gg-trimmed-wide * 2);
   }
 }
 
