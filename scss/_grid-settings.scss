@@ -18,10 +18,10 @@ $container-wide: 1440px;
 
 
 // Defining grid columns
-$g-small: 12;
-$g-medium: 12;
-$g-large: 12;
-$g-wide: 12;
+$g-small: 50%;
+$g-medium: 25%;
+$g-large: 16.666%;
+$g-wide: 16.666%;
 
 // Defining spacing/gutter size
 $spacing: 1rem;
@@ -31,7 +31,7 @@ $spacing: 1rem;
 $susy: (
   columns: 12,
   gutter-position: after,
-  gutters: 1,
+  gutters: (0),
   global-box-sizing: border-box,
   debug: (
     image: hide,
@@ -39,10 +39,10 @@ $susy: (
   )
 );
 
-$susy-small: $container-small $g-small 1 after;
-$susy-medium: $container-medium $g-medium 1 after;
-$susy-large: $container-large $g-large (.3) after;
-$susy-wide: $container-wide $g-wide (.3) after;
+$susy-small: $container-small (0) 1 after;
+$susy-medium: $container-medium (0) 1 after;
+$susy-large: $container-large (0) (.3) after;
+$susy-wide: $container-wide (0) (.3) after;
 
 
 // Breakpoint-sass option
