@@ -29,11 +29,11 @@ $container-medium: 768px;
 $container-large: 1024px;
 $container-wide: 1440px;
 
-// Defining grid columns
-$g-small: 37.5%;
-$g-medium: 25%;
-$g-large: 16.666%;
-$g-wide: 16.666%;
+// gridd item content margin
+$g-small: 6px;
+$g-medium: 10px;
+$g-large: 10px;
+$g-wide: 10px;
 
 // Defining spacing/gutter size
 $spacing: 1rem;
@@ -51,10 +51,10 @@ $susy: (
   )
 );
 
-$susy-small: $container-small (0) 1 after;
-$susy-medium: $container-medium (0) 1 after;
-$susy-large: $container-large (0) (.3) after;
-$susy-wide: $container-wide (0) (.3) after;
+$susy-small: $container-small 12 0 after;
+$susy-medium: $container-medium 12 0 after;
+$susy-large: $container-large 12 0 after;
+$susy-wide: $container-wide 12 0 after;
 
 
 // Breakpoint-sass option

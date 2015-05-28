@@ -30,7 +30,7 @@ section.full-width {
   position: fixed;
   top: 0;
   opacity: .05;
-
+  z-index: -1;
   display: block;
 
   .app--hide-grid & {
@@ -74,19 +74,19 @@ section.full-width {
 }
 
 .gutter {
-  width: 100% - ($gg-trimmed-small * 2);
+  width: 100% - ($gg-small * 2);
   margin: 0 auto;
 
   @include at-breakpoint($bp-medium) {
-    width: 100% - ($gg-trimmed-medium * 2);
+    width: 100% - ($gg-medium * 2);
   }
 
   @include at-breakpoint($bp-large) {
-    width: 100% - ($gg-trimmed-large * 2);
+    width: 100% - ($gg-large * 2);
   }
 
   @include at-breakpoint($bp-wide) {
-    width: 100% - ($gg-trimmed-wide * 2);
+    width: 100% - ($gg-wide * 2);
   }
 }
 
@@ -101,10 +101,6 @@ section.full-width {
 
   .module--debug-grid & {
     @include span(1 no-gutters);
-
-    /* &:nth-child(12n+12) {
-      @include span(1 last);
-    } */
 
     @include medium {
       @include span(1 no-gutters);
@@ -123,65 +119,72 @@ section.full-width {
   }
 
   .module--gallery & {
+
     @include span(12 no-gutters);
-    height: 0;
-    padding-bottom: 100% - 10%;
-    background: $c-module-bg;
 
     @include medium {
       @include span(4 no-gutters);
       padding-bottom: 33% - 10%;
-
-      /* &:nth-child(2n+2) {
-        @include span(4 last); // TODO - this is being inherited below!
-      } */
     }
 
     @include wide {
       @include span(3 no-gutters);
       padding-bottom: 25% - 10%;
-
-      /* &:nth-child(12n+12) {
-        @include span(3);
-      }
-
-      &:nth-child(2n+2) {
-        @include span(3); // todo - not working
-      }
-
-      &:nth-child(3n+3) {
-        @include span(3 last);
-      } */
     }
     
-    height: 100px;
-    margin-bottom: 50px;
+    
+    > .grid-item__content {
+      height: 0;
+      padding-bottom: 100% - 10%;
+      background: $c-module-bg;
+      margin-bottom: 50px;
+    }
+
   }
 
   .module--headline & {
     padding: 50px 0;
     margin-bottom: 50px;
-    
+  }
 
-    
+  .module--products & {
+    padding-bottom: 50% - 10%;
+    @include span(6 no-gutters);
+
+    @include medium {
+      @include span(4 no-gutters);
+      padding-bottom: 33% - 10%;
+    }
+
+    @include wide {
+      @include span(3 no-gutters);
+      padding-bottom: 25% - 10%;
+    }
   }
 
 }
 
+.product-module__thumb {
+  background: $c-module-bg;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
+
 .grid-item__content {
 
-  margin: $g-small / 2 $g-small / 2;
+  margin: $g-small $g-small;
 
   @include at-breakpoint($bp-medium) {
-    margin: $g-small / 2 $g-medium / 2;
+    margin: $g-small $g-medium;
   }
 
   @include at-breakpoint($bp-large) {
-    margin: $g-small / 2 $g-large / 2;
+    margin: $g-small $g-large;
   }
 
   @include at-breakpoint($bp-wide) {
-    margin: $g-small / 2 $g-wide / 2;
+    margin: $g-small $g-wide;
   }
 }
 

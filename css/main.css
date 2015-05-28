@@ -172,6 +172,7 @@ body {
   position: fixed;
   top: 0;
   opacity: .05;
+  z-index: -1;
   display: block;
   left: 5.2%; }
   .app--hide-grid .debug-grid-overlay {
@@ -200,31 +201,28 @@ body {
       width: 80%; } }
 
 .gutter {
-  width: 86.4%;
+  width: 89.6%;
   margin: 0 auto; }
   @media (min-width: 768px) {
     .gutter {
-      width: 80%; } }
+      width: 84%; } }
   @media (min-width: 1024px) {
     .gutter {
-      width: 76%; } }
+      width: 80%; } }
   @media (min-width: 1440px) {
     .gutter {
-      width: 76%; } }
+      width: 80%; } }
 
 .module--debug-grid .grid-item {
   width: 8.33333%;
-  float: left;
-  /* &:nth-child(12n+12) {
-    @include span(1 last);
-  } */ }
+  float: left; }
   @media (min-width: 768px) {
     .module--debug-grid .grid-item {
-      width: -100%;
+      width: 8.33333%;
       float: left; } }
   @media (min-width: 1440px) {
     .module--debug-grid .grid-item {
-      width: -333.33333%;
+      width: 8.33333%;
       float: left; } }
   .module--debug-grid .grid-item > .grid-item__content {
     background: black;
@@ -234,51 +232,57 @@ body {
   width: 100%;
   float: left;
   margin-left: 0;
-  margin-right: 0;
-  height: 0;
-  padding-bottom: 90%;
-  background: #dcebf0;
-  height: 100px;
-  margin-bottom: 50px; }
+  margin-right: 0; }
   @media (min-width: 768px) {
     .module--gallery .grid-item {
-      width: -700%;
+      width: 33.33333%;
       float: left;
-      padding-bottom: 23%;
-      /* &:nth-child(2n+2) {
-        @include span(4 last); // TODO - this is being inherited below!
-      } */ } }
+      padding-bottom: 23%; } }
   @media (min-width: 1440px) {
     .module--gallery .grid-item {
-      width: -1200%;
+      width: 25%;
       float: left;
-      padding-bottom: 15%;
-      /* &:nth-child(12n+12) {
-        @include span(3);
-      }
-
-      &:nth-child(2n+2) {
-        @include span(3); // todo - not working
-      }
-
-      &:nth-child(3n+3) {
-        @include span(3 last);
-      } */ } }
+      padding-bottom: 15%; } }
+  .module--gallery .grid-item > .grid-item__content {
+    height: 0;
+    padding-bottom: 90%;
+    background: #dcebf0;
+    margin-bottom: 50px; }
 .module--headline .grid-item {
   padding: 50px 0;
   margin-bottom: 50px; }
+.module--products .grid-item {
+  padding-bottom: 40%;
+  width: 50%;
+  float: left; }
+  @media (min-width: 768px) {
+    .module--products .grid-item {
+      width: 33.33333%;
+      float: left;
+      padding-bottom: 23%; } }
+  @media (min-width: 1440px) {
+    .module--products .grid-item {
+      width: 25%;
+      float: left;
+      padding-bottom: 15%; } }
+
+.product-module__thumb {
+  background: #dcebf0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; }
 
 .grid-item__content {
-  margin: 18.75% 18.75%; }
+  margin: 6px 6px; }
   @media (min-width: 768px) {
     .grid-item__content {
-      margin: 18.75% 12.5%; } }
+      margin: 6px 10px; } }
   @media (min-width: 1024px) {
     .grid-item__content {
-      margin: 18.75% 8.333%; } }
+      margin: 6px 10px; } }
   @media (min-width: 1440px) {
     .grid-item__content {
-      margin: 18.75% 8.333%; } }
+      margin: 6px 10px; } }
 
 .module--headline {
   text-align: left;
