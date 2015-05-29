@@ -50,18 +50,32 @@
   height: 50px;
   overflow: hidden;
 
-  @include at-breakpoint($bp-large) {
+  /* @include at-breakpoint($bp-large) {
     height: 100px;
     padding: 14px 0;
+  } */
+
+  .grid-item--nav-trigger {
+    @include span(1 no-gutters);
+
+    @include at-breakpoint($bp-large) {
+      display: none;
+    }
   }
 
   .grid-item--logo {
-    @include span(9 no-gutters);
+    @include span(8 no-gutters);
+
+    @include large {
+      @include span(9 no-gutters);
+    }
   }
 
   .grid-item--search {
     @include span(3 no-gutters);
     display: none;
+    position: relative;
+    top: -2px;
 
     @include at-breakpoint($bp-large) {
       display: inline-block;
@@ -73,27 +87,45 @@
     fill: white;
     position: relative;
     top: 2px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .nav-links {
+
+    margin: 11px 0 0 16px;
+    padding: 0;
+    display: none;
+    vertical-align: top;
+    width: 340px;
 
     @include at-breakpoint($bp-large) {
-      height: 48px;
-      top: 4px;
+      display: inline-block;
     }
+
+    > li {
+      display: inline-block;
+      width: 52px;
+      margin: 0 16px 0 0;
+      padding: 0;
+      height: 4px;
+      background: white;
+      vertical-align: top;
+    }
+    
   }
 
   .nav-trigger {
     height: 8px;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
-    margin: 0 10px 0 0;
+    margin: 0 0 0 0;
     padding: 0;
-    width: 16px;
+    width: 100%;
+    max-width: 16px;
     display: inline-block;
     position: relative;
-    top: -4px;
-
-    @include large {
-      display: none;
-    }
+    top: 7px;
 
     &:before {
       content: '';
@@ -108,11 +140,10 @@
   }
 
   .search-bar {
-    
     width: 100%;
     background: $c-module-bg;
-    height: 60px;
-    border-radius: 30px;
+    height: 30px;
+    border-radius: 15px;
   }
 
 }
@@ -330,9 +361,9 @@
 
   height: 50px;
 
-  @include at-breakpoint($bp-large) {
+ /*  @include at-breakpoint($bp-large) {
     height: 100px;
-  }
+  } */
 
   h1 {
     color: $c-dark-1;

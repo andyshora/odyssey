@@ -21,7 +21,6 @@
 
     $(document).ready(function() {
       if (!('ontouchstart' in window)) {
-        $('body').removeClass('app--hide-grid');
 
         $('body').dblclick(function() {
           $('body').toggleClass('app--hide-grid');
@@ -55,10 +54,20 @@
     <header class="header-module theme--dark">
       <div class="gutter">
         <div class="grid-container">
-          <div class="grid-item grid-item--logo">
+          <div class="grid-item grid-item--nav-trigger">
             <div class="grid-item__content">
               <a class="nav-trigger"></a>
+            </div>
+          </div>
+          <div class="grid-item grid-item--logo">
+            <div class="grid-item__content">
               <img class="logo" src="img/logo.svg" alt="">
+              <ul class="nav-links">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
             </div>
           </div>
           <div class="grid-item grid-item--search">
