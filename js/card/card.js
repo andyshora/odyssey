@@ -24,6 +24,19 @@ var Module = klass(function(id, containerNode, options) {
       }
     }
   },
+  removeClass: function(className) {
+    if (document.documentElement.classList) {
+      this.layout.container.classList.remove(className);
+    } else {
+      var regex = new RegExp('(?:\\s|^)' + className + '(?:\\s|$)');
+      this.layout.container.className = this.layout.container.className.replace(regex, ' ');
+    }
+  },
+  toggleClass: function(className) {
+    this.hasClass(this.layout.container, className) ?
+      this.removeClass(this.layout.container, className) :
+      this.addClass(this.layout.container, className);
+  },
   hasClass: function (className) {
     var regex = new RegExp('(?:\\s|^)' + className + '(?:\\s|$)');
     return !!this.layout.container.className.match(regex);
@@ -38,6 +51,16 @@ var Card = Module.extend(function(id, containerNode, options) {
   // parse options
   for (var key in options) {
     this[key] = options[key];
+  }
+
+  if (this.expandable) {
+    console.log('expandable');
+
+    var self = this;
+
+    this.layout.container.addEventListener('click', function(e) {
+      self.onCardClicked(self);
+    });
   }
 });
 
@@ -55,12 +78,27 @@ Card.statics({
 
 // instance methods
 Card.methods({
+  onCardClicked: function(self) {
+    
+    // todo, need to access scope
+    if (self.expanded) {
+      self.contract();
+    } else {
+      self.expand();
+      
+    }
+  },
   expand: function() {
     console.log('Card.expand');
     this.expanded = true;
     console.log('Card ' + this.id + ' expanded');
 
     this.addClass('card--expanded');
+  },
+  contract: function() {
+    console.log('Card.contract');
+    this.expanded = false;
+    this.removeClass('card--expanded');
   },
   debug: function() {
     console.log(this);

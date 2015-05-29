@@ -14,10 +14,9 @@
 </head>
 <body>
 
-  <div class="card" id="test-card"></div>
+  <div class="card" id="test-card--abc123"></div>
   <script>
-  var testProductCard = new ProductCard('abc123', document.getElementById('test-card'), {});
-  testProductCard.expand();
+  var testProductCard = new ProductCard('abc123', document.getElementById('test-card--abc123'), { expandable: true });
   </script>
 </body>
 </html>
