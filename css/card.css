@@ -1,0 +1,9 @@
+.card {
+  width: 300px;
+  height: 400px;
+  border: 1px solid lightGrey;
+  margin: 50px;
+}
+.card--expanded {
+  height: 700px;
+}
