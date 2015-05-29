@@ -1,8 +1,17 @@
 .card {
-  width: 300px;
+  width: 200px;
   height: 400px;
-  border: 1px solid lightGrey;
-  margin: 50px;
+  border: 1px solid black;
+  margin: 50px 10px;
+  background: lightBlue;
+  display: inline-block;
+  vertical-align: top;
+}
+.card__expand-trigger {
+  display: none;
+}
+.card--expandable > .card__expand-trigger {
+  display: inline-block;
 }
 .card--expanded {
   height: 700px;

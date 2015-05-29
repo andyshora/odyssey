@@ -14,9 +14,10 @@ body {
   font-family: 'Futura-Md-BT', Futura, Trebuchet MS, Arial, sans-serif;
   letter-spacing: 0.02em;
   line-height: 1;
-  // background: #f8f8f8;
+  background: $c-body-light;
   min-width: 320px;
   text-align: center;
+
 }
 
 @font-face {
@@ -145,10 +146,7 @@ p {
   color: white;
   background: black;
   text-align: center;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  border-radius: 15px;
+  @include prefix(border-radius, 15px);
   font-size: 12px;
   line-height: 1;
   text-decoration: none;
@@ -157,6 +155,20 @@ p {
   cursor: pointer;
   border: 0;
   outline: none;
+
+  &.btn--white {
+    background: $c-light-1;
+    color: $c-dark-1;
+  }
+
+  &.btn--square {
+    width: 30px;
+    padding: 9px;
+  }
+
+  &.btn--toggle {
+    @include prefix(border-radius, 0)
+  }
 
   &.btn--full-width {
     -webkit-border-radius: 0;

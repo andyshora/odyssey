@@ -3,6 +3,17 @@
 * Settings
 *
 **/
+.theme--dark {
+  background: black;
+  color: white; }
+
+.theme--light {
+  background: white;
+  color: black; }
+
+.theme--bg {
+  background: #dddddd; }
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -18,6 +29,7 @@ body {
   font-family: 'Futura-Md-BT', Futura, Trebuchet MS, Arial, sans-serif;
   letter-spacing: 0.02em;
   line-height: 1;
+  background: #f3f3f3;
   min-width: 320px;
   text-align: center; }
 
@@ -131,6 +143,17 @@ p {
   cursor: pointer;
   border: 0;
   outline: none; }
+  .btn.btn--white {
+    background: white;
+    color: black; }
+  .btn.btn--square {
+    width: 30px;
+    padding: 9px; }
+  .btn.btn--toggle {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0; }
   .btn.btn--full-width {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -154,16 +177,39 @@ p {
 .img--full {
   width: 100%; }
 
-.theme--dark {
-  background: black;
-  color: white; }
-
-.theme--light {
+.card {
+  width: 100%;
+  height: 300px;
+  margin: 50px 10px;
+  background: lightBlue;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
   background: white;
-  color: black; }
+  -webkit-box-shadow: 1px 1px #eaeaea;
+  -moz-box-shadow: 1px 1px #eaeaea;
+  -ms-box-shadow: 1px 1px #eaeaea;
+  box-shadow: 1px 1px #eaeaea; }
+  .card.card__expand-trigger {
+    display: none; }
+  .card.card--expandable {
+    -webkit-transition: height 0.4s ease;
+    -moz-transition: height 0.4s ease;
+    -ms-transition: height 0.4s ease;
+    transition: height 0.4s ease; }
+  .card.card--expanded {
+    height: 500px; }
 
-.theme--bg {
-  background: #dddddd; }
+.card__expand-trigger {
+  position: absolute;
+  right: 0;
+  top: 0; }
+  .card--expandable .card__expand-trigger {
+    display: inline-block; }
+  .card__expand-trigger:before {
+    content: '+'; }
+    .card--expanded .card__expand-trigger:before {
+      content: '-'; }
 
 .module {
   overflow: auto; }
@@ -172,13 +218,13 @@ p {
     letter-spacing: 0;
     line-height: 1em;
     color: #6e6e6e; }
-  .module p, .module button {
+  .module p, .module .btn--placeholder {
     font-family: 'BLOKKNeue-Regular';
     letter-spacing: -1px;
     line-height: 1em;
     color: #6e6e6e;
     line-height: 1.5em; }
-  .module .btn {
+  .module .btn--placeholder {
     color: #6e6e6e;
     background: #6e6e6e; }
   .module.module--padd {

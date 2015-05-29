@@ -4,19 +4,45 @@
   <title>Grid Prototype</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/card.css">
   <script src="js/vendor/klass.js"></script>
-  <script src="js/card/card.js"></script>
-  <script>
-    
-    
-  </script>
+  <script src="js/vendor/q.js"></script>
+  <script src="js/app/module.js"></script>
+  <script src="js/app/card.js"></script>
+  <script src="js/app/product-card.js"></script>
 </head>
 <body>
 
-  <div class="card" id="test-card--abc123"></div>
+  <div class="card" id="card--111">
+  </div>
+  <div class="card" id="card--222">
+    <button class="btn btn--toggle btn--white card__expand-trigger"></button>
+  </div>
   <script>
-  var testProductCard = new ProductCard('abc123', document.getElementById('test-card--abc123'), { expandable: true });
+    var data = [
+      {
+        id: '111',
+        options: {
+          expandable: false
+        }
+      },
+      {
+        id: '222',
+        options: {
+          expandable: true
+        }
+      }
+    ];
+
+    var cards = [];
+
+    for (var i = 0; i < data.length; i++) {
+      cards.push(new ProductCard(
+        data[i].id,
+        document.getElementById('card--' + data[i].id),
+        data[i].options
+      ));
+    }
+  
   </script>
 </body>
 </html>

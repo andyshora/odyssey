@@ -1,3 +1,4 @@
+@import "modules/card";
 
 .module {
 
@@ -10,7 +11,7 @@
     color: $c-text;
   }
 
-  p, button {
+  p, .btn--placeholder {
     font-family: 'BLOKKNeue-Regular';
     letter-spacing: -1px;
     line-height: 1em;
@@ -18,7 +19,7 @@
     line-height: 1.5em;
   }
 
-  .btn {
+  .btn--placeholder {
     color: $c-text;
     background: $c-text;
   }
