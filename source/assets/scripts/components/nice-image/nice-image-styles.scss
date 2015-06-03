@@ -1,0 +1,7 @@
+.nice-image {
+  opacity: 0;
+  @include prefixr(transition, opacity .5s);
+}
+.nice-image--loaded {
+  opacity: 1;
+}

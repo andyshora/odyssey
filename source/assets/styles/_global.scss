@@ -1,0 +1,387 @@
+/**
+*
+* Global Styles
+*
+* RGA London
+*
+* R/GA 2015
+* @author Andy Shora
+*
+**/
+
+* {
+  @include bb();
+  @include prefixr(user-select, none);
+}
+
+html {
+  background: white;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Futura-Md-BT',Futura,Trebuchet MS,Arial,sans-serif;
+  letter-spacing: .02em;
+  line-height: 1;
+  background: white;// $colorLightBg;
+  min-width: 320px;
+
+
+  &.app--nav-open {
+    background: black;
+  }
+}
+
+// @include customScroll();
+
+.wrap {
+  opacity: 0;
+  @include prefixr(transition, opacity 1s);
+}
+.wrap--show {
+  opacity: 1;
+}
+
+.page-wrap {
+
+  margin-top: $barHeight;
+
+  .app--hide-tabs & {
+    margin-top: $barHeight;
+  }
+
+  > div {
+    opacity: 1;
+    // @include prefixr(transition, opacity 1s);
+    .app--transitioning &,
+    .app--nav-open & {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+}
+
+.temp-page-image {
+  width: 100%;
+  min-width: 320px;
+
+  .app--nav-open & {
+    display: none;
+  }
+}
+
+.category-link {
+  height: $barHeight;
+  width: 100%;
+  background: white;
+  border-top: 1px solid $colorCatLinkBorder;
+  border-bottom: 1px solid $colorCatLinkBorder;
+  font-size: $fontSizeBase;
+  background: white;
+  padding: (($barHeight - 20px) / 2) 14px;
+  position: relative;
+  cursor: pointer;
+
+  > span:nth-child(1) {
+    font-size: 18px;
+  }
+
+  > span:nth-child(2) {
+    font-size: 15px;
+    font-family: 'FuturaBT-Book';
+    position: absolute;
+    right: 42px;
+    padding-top: 3px;
+  }
+
+  > .icon--bevel-right {
+    position: absolute;
+    right: 14px;
+    top: 20px;
+  }
+
+}
+
+#preload-img-container {
+  height: 0;
+  overflow: hidden;
+
+  > img {
+    opacity: 0;
+  }
+}
+
+.btn {
+  height: 30px;
+  color: white;
+  background: black;
+  text-align: center;
+  @include prefixr(border-radius, 15px);
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 9px 33px;
+  cursor: pointer;
+  border: 0;
+
+  &.btn--grey {
+    background: #f3f3f3;
+    color: black;
+    height: 36px;
+    padding: 12px 33px;
+    @include prefixr(border-radius, 18px);
+
+  }
+}
+
+.curpointer {
+  cursor: pointer;
+}
+
+.title-section {
+  text-align: center;
+  padding: 35px 10%;
+  background: white;
+  border-bottom: 1px solid $colorCatLinkBorder;
+  font-size: $fontSizeBase;
+
+  &.title-section--no-border {
+    border: none !important;
+  }
+
+  > p {
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+.bar {
+  font-size: 18px;
+  line-height: 1;
+  padding: ($barHeight - 18px)/2 15px;
+  background: white;
+  border-bottom: 1px solid $colorCatLinkBorder;
+  position: relative;
+
+  &.bar--small-text {
+    font-size: 15px;
+  }
+
+  &.bar--dark {
+    background: black;
+    color: white;
+    border: none;
+  }
+
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 24px;
+  }
+
+}
+
+.img--bb {
+  border-bottom: 1px solid $colorCatLinkBorder;
+}
+
+.img--bt {
+  border-top: 1px solid $colorCatLinkBorder;
+}
+
+.img--bt-dark {
+  border-top: 1px solid #333333;
+}
+
+.icons-section {
+  font-size: 0;
+
+  &.icons-section--border-top {
+    border-top: 1px solid $colorCatLinkBorder;
+  }
+}
+.icon-grid {
+  height: 142px;
+  width: 50%;
+  display: inline-block;
+  font-size: $fontSizeBase;
+  border-bottom: 1px solid $colorCatLinkBorder;
+  text-align: center;
+  vertical-align: top;
+
+  &:nth-child(odd) {
+    border-right: 1px solid $colorCatLinkBorder;
+  }
+
+  > h4 {
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+    padding: 0 12%;
+    letter-spacing: 0;
+  }
+}
+.icon-grid__icon {
+  background: $colorIconInactive;
+  width: 60px;
+  height: 60px;
+  @include prefixr(border-radius, 40px);
+  margin: 24px auto 15px;
+
+  > i {
+    margin: 10px auto;
+  }
+}
+.split-section {
+  height: 49px;
+  display: block;
+  font-size: 0;
+  background: white;
+  padding: 12px 16px;
+  border-bottom: 1px solid $colorCatLinkBorder;
+
+  > div {
+    display: inline-block;
+    width: 50%;
+    font-size: 12px;
+    position: relative;
+
+    > .split__icon {
+      height: 32px;
+      width: 32px;
+      position: absolute;
+      left: 0;
+      top: -4px;
+      text-align: center;
+      background: black;
+      @include prefixr(border-radius, 16px);
+
+      > .icon {
+        margin: 4px auto;
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    > span {
+      display: block;
+      margin-left: 40px;
+    }
+  }
+}
+.title-divider {
+  display: block;
+  width: 100%;
+  background: #f0f0f0;
+  border-bottom: 1px solid #d6d6d6;
+  color: black;
+  font-family: 'FuturaBT-Book';
+  font-size: 15px;
+  padding: 15px 12px;
+  text-align: left;
+}
+.collapsed-section {
+  overflow: hidden;
+  position: relative;
+  height: 557px;
+  max-height: 59px;
+  background: black;
+  @include prefixr(transform, translateZ(0));
+  @include prefixr(transition, max-height .6s);
+
+  > img {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    @include prefixr(transition, opacity .6s);
+  }
+
+  > .bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .icon--minus {
+    display: none;
+  }
+
+  &.collapsed-section--expanded {
+    max-height: 557px;
+
+    .icon--minus {
+      display: inline-block;
+    }
+    .icon--plus {
+      display: none;
+    }
+
+    > img {
+      opacity: 1;
+    }
+  }
+}
+.social {
+  background: url(/assets/images/social.png) 90% 15px no-repeat;
+  background-size: 216px 38px;
+}
+.fan-pulse {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 154px;
+    height: 60px;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(29, 163, 227, 0.1), rgba(255,255,255,.1), rgba(29, 163, 227, 0.1));
+    background-size: 14px 60px;
+    @include prefixr(animation, pulseFanBlue 1s linear infinite);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 156px;
+    height: 40px;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(227, 29, 29, 0.1), rgba(255, 255, 255, 0.1), rgba(227, 29, 29, 0.1));
+    background-size: 24px 60px;
+    @include prefixr(animation, pulseFanRed 2s linear infinite);
+    @include prefixr(border-radius, 0 20px 20px 0);
+  }
+}
+
+@include keyframes(pulseFanBlue) {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 28px 0;
+  }
+}
+
+@include keyframes(pulseFanRed) {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -48px 0;
+  }
+}
+

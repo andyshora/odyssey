@@ -1,11 +1,7 @@
 {
   "name": "odyssey-pocs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Prototypes",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/andyshora/odyssey.git"
@@ -14,9 +10,24 @@
     "styles": "sass scss/main.scss css/main.css"
   },
   "author": "andyshora",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/andyshora/odyssey/issues"
   },
-  "homepage": "https://github.com/andyshora/odyssey"
+  "homepage": "https://github.com/andyshora/odyssey",
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-sass": "~1.2.4",
+    "gulp-concat": "~2.4.3",
+    "gulp-clean": "~0.3.1",
+    "gulp-rename": "~1.2.0",
+    "gulp-jshint": "~1.9.0",
+    "gulp-watch": "~3.0.0",
+    "gulp-livereload": "~3.2.0",
+    "gulp-express": "~0.1.4",
+    "express": "~4.10.7",
+    "connect-livereload": "~0.5.2",
+    "gulp-iconfont": "~1.0.1",
+    "gulp-consolidate": "~0.1.2",
+    "lodash": "~3.9.3"
+  }
 }

@@ -1,0 +1,105 @@
+/**
+*
+* Typography
+*
+* RGA London
+*
+* R/GA 2015
+* @author Andy Shora
+*
+**/
+
+@font-face {
+    font-family: 'FuturaBT-Book';
+    src: url('/assets/styles/fonts/futura_book.eot');
+    src: url('/assets/styles/fonts/futura_book.eot?#iefix') format('embedded-opentype'),
+     url('/assets/styles/fonts/futura_book.svg#FuturaBT-Book') format('svg'),
+     url('/assets/styles/fonts/futura_book.woff') format('woff'),
+     url('/assets/styles/fonts/futura_book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura-Lt-BT';
+    src: url('/assets/styles/fonts/FuturaBTW01Light.eot');
+    src: url('/assets/styles/fonts/FuturaBTW01Light.eot?#iefix') format('embedded-opentype'),
+     url('/assets/styles/fonts/FuturaBTW01Light.svg#FuturaBT-Book-Light') format('svg'),
+     url('/assets/styles/fonts/FuturaBTW01Light.woff') format('woff'),
+     url('/assets/styles/fonts/FuturaBTW01Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FuturaBT-Book-Heavy';
+    src: url('/assets/styles/fonts/FuturaBTW01Heavy.eot');
+    src: url('/assets/styles/fonts/FuturaBTW01Heavy.eot?#iefix') format('embedded-opentype'),
+     url('/assets/styles/fonts/FuturaBTW01Heavy.svg#FuturaBT-Book-Heavy') format('svg'),
+     url('/assets/styles/fonts/FuturaBTW01Heavy.woff') format('woff'),
+     url('/assets/styles/fonts/FuturaBTW01Heavy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura-Md-BT';
+    src: url('/assets/styles/fonts/FuturaBTW01Medium.eot');
+    src: url('/assets/styles/fonts/FuturaBTW01Medium.eot?#iefix') format('embedded-opentype'),
+     url('/assets/styles/fonts/FuturaBTW01Medium.svg#FuturaBT-Book-Medium') format('svg'),
+     url('/assets/styles/fonts/FuturaBTW01Medium.woff') format('woff'),
+     url('/assets/styles/fonts/FuturaBTW01Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BLOKKNeue-Regular';
+  src: url('/assets/styles/fonts/BLOKKNeue-Regular.eot');
+  src: url('/assets/styles/fonts/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/assets/styles/fonts/BLOKKNeue-Regular.woff') format('woff'),
+       url('/assets/styles/fonts/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BLOKKRegular';
+  src: url('/assets/styles/fonts/BLOKKRegular.eot');
+  src: url('/assets/styles/fonts/BLOKKRegular.eot?#iefix') format('embedded-opentype'),
+       url('/assets/styles/fonts/BLOKKRegular.woff') format('woff'),
+       url('/assets/styles/fonts/BLOKKRegular.svg#BLOKKRegular') format('svg');
+  font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: -.025em;
+    font-weight: normal;
+}
+h1 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: normal;
+    margin: 10px 0 15px;
+}
+h2 {
+    font-size: 18px;
+    font-family: 'FuturaBT-Book';
+    letter-spacing: 0;
+    line-height: 20px;
+}
+h3 {
+    font-size: 18px;
+    font-family: 'FuturaBT-Book';
+    letter-spacing: 0;
+    line-height: 20px;
+}
+h4 {
+    font-size: 18px;
+}
+p {
+    line-height: 1.3em;
+    font-family: 'FuturaBT-Book';
+}

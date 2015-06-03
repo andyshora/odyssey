@@ -1,0 +1,12 @@
+.section-item {
+  
+  height: $barHeight;
+  padding: $barPadding;
+
+  > i {
+    display: inline-block;
+  }
+}
+.section-item__title {
+  display: inline-block;
+}

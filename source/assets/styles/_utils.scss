@@ -1,0 +1,241 @@
+/**
+*
+* Utils
+*
+* RGA London
+*
+* R/GA 2015
+* @author Andy Shora
+*
+**/
+
+/*==========  MIXINS  ==========*/
+
+  @mixin fadeInDelay() {
+    opacity: 0;
+    @include prefixr(transition, opacity .5s);
+
+    .app--fade-in & {
+      opacity: 1;
+    }
+  }
+
+  @mixin rtl() {
+    .locale--ar_ALL &,
+    .locale--iw_ALL &,
+    .locale--fa_ALL & {
+      text-align: right;
+      @content;
+    }
+  }
+
+  @mixin rtl-body() {
+    &.locale--ar_ALL,
+    &.locale--iw_ALL,
+    &.locale--fa_ALL {
+      direction: rtl;
+      unicode-bidi: embed;
+    }
+  }
+
+  @mixin media-query($media-query) {
+    @if $media-query == small {
+      @media only screen and (max-width:$medium - 1) {
+        @content;
+      }
+    }
+
+    @if $media-query == medium {
+      @media only screen and (min-width:$medium) {
+        @content;
+      }
+    }
+
+    @if $media-query == medium-only {
+      @media only screen and (min-width:$medium) and (max-width: $wide - 1) {
+        @content;
+      }
+    }
+
+    @if $media-query == wide {
+      @media only screen and (min-width:$wide) {
+        @content;
+      }
+    }
+
+    @if $media-query == huge {
+      @media only screen and (min-width:$huge) {
+        @content;
+      }
+    }
+  }
+
+
+@mixin keyframes($animation-name){
+  @-webkit-keyframes $animation-name{
+    @content;
+  }
+
+  @-moz-keyframes $animation-name{
+    @content;
+  }
+
+  @-ms-keyframes $animation-name{
+    @content;
+  }
+
+  @keyframes $animation-name{
+    @content;
+  }
+}
+
+/*
+  Effects & Animations
+-----------------------------------------------------------------------*/
+@mixin keyframes($animation-name){
+  @-webkit-keyframes $animation-name{
+    @content;
+  }
+
+  @-moz-keyframes $animation-name{
+    @content;
+  }
+
+  @-ms-keyframes $animation-name{
+    @content;
+  }
+
+  @keyframes $animation-name{
+    @content;
+  }
+}
+
+
+
+
+
+/*
+  Breakpoint management
+-----------------------------------------------------------------------*/
+@mixin from-height($min-height) {
+
+  @media (min-height: $min-height) {
+    @content;
+  }
+}
+
+@mixin from-width($min-width) {
+
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin up-to-width($max-width) {
+
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin between-width($min-width, $max-width) {
+
+  @media (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+
+}
+
+@mixin iphone6() {
+
+  @media only screen
+    and (min-device-width : 375px)
+    and (max-device-width : 667px)
+    and (orientation : portrait)
+    and (-webkit-min-device-pixel-ratio : 2) {
+      @content;
+    }
+  /*@content; // todo, temp, remove*/
+}
+
+@mixin customScroll() {
+  &::-webkit-scrollbar {
+      width: 6px;
+      background: none;
+  }
+
+  &::-webkit-scrollbar:horizontal  {
+      height: 4px;
+      width: 188px;
+      max-width: 50%;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background: #666666;
+      border: none;
+
+      max-height: 102px;
+      max-width: 102px;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+      max-width: 102px;
+      height: 4px;
+      background: #666666;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+  }
+
+}
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+
+@mixin bb(){
+  @include prefixr(box-sizing, border-box);
+}
+
+
+// ------------------------------------------------------------
+// Omega Reset
+// ------------------------------------------------------------
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+@mixin at-breakpoint($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin prefix($property, $value...) {
+  -webkit-#{$property}: $value;
+     -moz-#{$property}: $value;
+      -ms-#{$property}: $value;
+          #{$property}: $value;
+}
+
+@mixin prefixWithProp($property, $value...) {
+  -webkit-#{$property}: -webkit-#{$value};
+     -moz-#{$property}: -moz-#{$value};
+      -ms-#{$property}: -ms-#{$value};
+          #{$property}: #{$value};
+}

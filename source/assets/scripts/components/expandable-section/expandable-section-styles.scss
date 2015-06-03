@@ -1,0 +1,49 @@
+$barHeight: 53px;
+$sectionShort: 160px;
+$sectionMedium: 200px;
+$sectionTall: 240px;
+
+.expandable-section {
+  display: block;
+  max-height: $barHeight;
+  overflow-y: hidden;
+  /*background: black;*/
+  position: relative;
+  cursor: default;
+  @include prefixr(transition, max-height .3s $animationEasing);
+  @include prefixr(transform, translateZ(0));
+
+  &.ng-click-active {
+    background: rgba(16, 16, 16, 1);
+  }
+
+  &.expandable-section--open {
+    
+    &.expandable-section--short {
+      max-height: $sectionShort + $barHeight;
+    }
+    &.expandable-section--medium {
+      max-height: $sectionMedium + $barHeight;
+    }
+    &.expandable-section--tall {
+      max-height: $sectionTall + $barHeight;
+    }
+  }
+
+}
+.expandable-section__content {
+  display: block;
+  height: $sectionShort;
+  background: white;
+  padding: 0;
+
+  &.expandable-section--short {
+    height: $sectionShort;
+  }
+  &.expandable-section--medium {
+    height: $sectionMedium;
+  }
+  &.expandable-section--tall {
+    height: $sectionTall;
+  }
+}

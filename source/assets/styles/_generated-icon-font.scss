@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "dyson-icons";
+  src: url('/assets/styles/fonts/dyson-icons.eot');
+  src: url('/assets/styles/fonts/dyson-icons.eot?#iefix') format('eot'),
+    url('/assets/styles/fonts/dyson-icons.woff') format('woff'),
+    url('/assets/styles/fonts/dyson-icons.ttf') format('truetype'),
+    url('/assets/styles/fonts/dyson-icons.svg#dyson-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dyson-icon:before {
+  display: inline-block;
+  font-family: "dyson-icons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dyson-icon-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.dyson-icon-2x { font-size: 2em; }
+.dyson-icon-3x { font-size: 3em; }
+.dyson-icon-4x { font-size: 4em; }
+.dyson-icon-5x { font-size: 5em; }
+.dyson-icon-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.dyson-icon-Dyson_Basket:before { content: "\E001" }
+.dyson-icon-Dyson_Chevron:before { content: "\E002" }
+.dyson-icon-Dyson_Chevron_Down:before { content: "\E003" }
+.dyson-icon-Dyson_Chevron_Up:before { content: "\E004" }
+.dyson-icon-Dyson_Hamburger:before { content: "\E005" }
+.dyson-icon-Dyson_Minus:before { content: "\E006" }
+.dyson-icon-Dyson_Plus:before { content: "\E007" }
+.dyson-icon-Dyson_Search:before { content: "\E008" }
+.dyson-icon-Dyson_store_Finder:before { content: "\E009" }

@@ -1,0 +1,394 @@
+@import "../scripts/modules/header/header-styles";
+@import "../scripts/modules/nav/nav-styles";
+@import "../scripts/modules/nav-2/nav-2-styles";
+@import "../scripts/modules/tabs/tabs-styles";
+@import "../scripts/modules/module/module-styles";
+@import "../scripts/modules/footer/footer-styles";
+@import "../scripts/modules/double-module/double-module-styles";
+
+// inherited from new prototype
+@import "modules/card";
+@import "modules/card-group";
+@import "modules/slider";
+
+
+.module {
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  h1, h2, h3, h4 {
+    font-family: 'BLOKKRegular';
+    letter-spacing: 0;
+    line-height: 1em;
+    color: $c-text;
+  }
+
+  p, .btn--placeholder {
+    font-family: 'BLOKKNeue-Regular';
+    letter-spacing: -1px;
+    line-height: 1em;
+    color: $c-text;
+    line-height: 1.5em;
+  }
+
+  .btn--placeholder {
+    color: $c-text;
+    background: $c-text;
+  }
+
+  &.module--padd {
+    padding: 100px 0;
+  }
+
+  &.module--padd-dbl {
+    padding: 100px 0;
+
+    @include at-breakpoint($bp-large) {
+      padding: 200px 0;
+    }
+  }
+
+  &.module--padd-btm {
+    padding: 0 0 50px 0;
+  }
+
+  &.module--padd-top {
+    padding: 50px 0 0 0;
+  }
+}
+
+.header-module {
+  padding: 6px 0;
+  text-align: left;
+  height: 50px;
+  overflow: hidden;
+
+  /* @include at-breakpoint($bp-large) {
+    height: 100px;
+    padding: 14px 0;
+  } */
+
+  .grid-item--nav-trigger {
+    @include span(1 no-gutters);
+
+    @include at-breakpoint($bp-large) {
+      display: none;
+    }
+  }
+
+  .grid-item--logo {
+    @include span(8 no-gutters);
+
+    @include large {
+      @include span(9 no-gutters);
+    }
+  }
+
+  .grid-item--search {
+    @include span(3 no-gutters);
+    display: none;
+    position: relative;
+    top: -2px;
+
+    @include at-breakpoint($bp-large) {
+      display: inline-block;
+    }
+  }
+
+  .logo {
+    height: 24px;
+    fill: white;
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .nav-links {
+
+    margin: 11px 0 0 16px;
+    padding: 0;
+    display: none;
+    vertical-align: top;
+    width: 340px;
+
+    @include at-breakpoint($bp-large) {
+      display: inline-block;
+    }
+
+    > li {
+      display: inline-block;
+      width: 52px;
+      margin: 0 16px 0 0;
+      padding: 0;
+      height: 4px;
+      background: white;
+      vertical-align: top;
+    }
+    
+  }
+
+  .nav-trigger {
+    height: 8px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    margin: 0 0 0 0;
+    padding: 0;
+    width: 100%;
+    max-width: 16px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      display: block;
+      background: white;
+      height: 2px;
+      top: -8px;
+    }
+
+  }
+
+  .search-bar {
+    width: 100%;
+    background: $c-module-bg;
+    height: 30px;
+    border-radius: 15px;
+  }
+
+}
+
+.cta-banner-module {
+
+  text-align: center;
+  background: $c-module-bg;
+
+  .grid-item {
+    @include span(10 no-gutter);
+    margin-left: isolate(2 of 12 after);
+    
+
+    @include large {
+      @include span(6 no-gutters);
+      margin-left: isolate(4 of 12 after);
+    }
+  }
+}
+.text-banner-module {
+
+  text-align: center;
+
+  .grid-item {
+    @include span(10 no-gutter);
+    margin-left: isolate(2 of 12 after);
+
+    @include large {
+      @include span(6 no-gutters);
+      margin-left: isolate(4 of 12 after);
+    }
+  }
+}
+.gallery-module {
+
+  .grid-container {
+    @include span(12 no-gutter);
+    clear: none;
+
+    @include large {
+      @include span(6 no-gutters);
+    }
+
+    .grid-item {
+      @include span(6 no-gutter);
+
+      @include large {
+        .grid-item__content {
+          height: 0;
+          padding-bottom: 92%;
+          background: $c-module-bg;
+          margin-bottom: 24px;
+        }
+      }
+
+      @include at-breakpoint(1024px) {
+        .grid-item__content {
+          padding-bottom: 95.4%;
+        }
+      }
+      
+    }
+  }
+
+  .grid-container--large {
+    @include span(12 no-gutter);
+    clear: none;
+
+    @include large {
+      @include span(6 no-gutters);
+    }
+
+    .grid-item {
+      @include span(12 no-gutter);
+
+      @include large {
+        .grid-item__content {
+          height: 0;
+          padding-bottom: 100%;
+          background: $c-module-bg;
+        }
+      }
+    }
+  }
+
+  .grid-item__content {
+    height: 0;
+    padding-bottom: 100%;
+    background: $c-module-bg;
+  }
+  
+
+  .grid-item--large {
+
+
+    @include span(12 no-gutter);
+
+    @include large {
+      @include span(6 no-gutters);
+    }
+
+    > .grid-item__content {
+      height: 0;
+      padding-bottom: 100%;
+      background: $c-module-bg;
+    }
+  }
+}
+.products-module {
+
+  .grid-item {
+    @include span(8 no-gutter);
+    margin-left: isolate(3 of 12 after);
+    padding-bottom: 50px;
+
+    @include large {
+      @include span(4 no-gutters);
+      margin-left: 0;
+      padding-bottom: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.product {
+
+}
+
+
+.product__thumb {
+  background: $c-module-bg;
+  border-radius: 50%;
+  margin: 0 auto 40px;
+  height: 0;
+  padding-bottom: 72%;
+  width: 72%;
+}
+.graphics-module {
+
+  text-align: left;
+
+  .grid-item__left {
+    @include span(3 no-gutter);
+
+    margin-bottom: 50px;
+
+    @include large {
+      margin-bottom: 0;
+    }
+  }
+
+  .grid-item__right {
+    @include span(8 no-gutter);
+
+    @include large {
+      @include span(9 no-gutter);
+    }
+
+  }
+
+}
+
+.graphic {
+
+  clear: both;
+
+  @include large {
+    @include span(4 no-gutter);
+    clear: none;
+  }
+}
+
+.graphic__thumb {
+  
+  > div {
+    height: 0;
+    padding-bottom: 100%;
+    background: $c-module-bg;
+    border-radius: 50%;
+  }
+}
+.graphic__text {
+
+}
+
+.links-module {
+
+  background: $c-module-bg;
+  text-align: left;
+
+  .grid-item {
+    @include span(5 no-gutter);
+    padding-bottom: 50px;
+
+    &:nth-child(even) {
+      @include push(1); 
+    }
+
+    @include large {
+      @include span(3 no-gutters);
+      padding-bottom: 0;
+
+      &:nth-child(even) {
+        @include push(0); 
+      }
+    }
+  }
+}
+
+.footer-module {
+
+  height: 50px;
+
+ /*  @include at-breakpoint($bp-large) {
+    height: 100px;
+  } */
+
+  h1 {
+    color: $c-dark-1;
+  }
+
+  .grid-item {
+    @include span(12 no-gutter);
+
+    @include large {
+      @include span(12 no-gutters);
+    }
+  }
+
+}

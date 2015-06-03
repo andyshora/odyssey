@@ -1,0 +1,21 @@
+<header class="header" sticky data-sticky-modifier="app--header-sticky" data-stick-at="-200" data-hide-at="58">
+  <nav nav-2 data-open="navOpen" data-nav-items="navItems" data-search-open="searchOpen" data-active-header-item="openPanel"></nav>
+  <div class="header__search-panel" ng-tap="onPanelTriggerClicked('search')" ng-class="{'header__search-panel--open':(openPanel=='search')}">
+    <div class="search-bar">
+      <input type="text" placeholder="Search">
+    </div>
+    <i class="dyson-icon dyson-icon dyson-icon-Dyson_Search"></i>
+  </div>
+  <div class="header__finder-panel" ng-tap="onPanelTriggerClicked('finder')" ng-class="{'header__finder-panel--open':(openPanel=='finder')}">
+    <div>
+      <button class="btn btn--grey">Find a retailer</button>
+      <button class="btn btn--grey">All retailers</button>
+    </div>
+    <div>
+      <div class="search-bar">
+        <input type="text" placeholder="Enter your postcode" spellcheck="false">
+      </div>
+      <i class="dyson-icon dyson-icon dyson-icon-Dyson_Search"></i>
+    </div>
+  </div>
+</header>

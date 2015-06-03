@@ -1,0 +1,126 @@
+.header {
+  width: 100%;
+  height: $barHeight;
+  display: block;
+  background: black;
+  z-index: 10;
+  // position: fixed;
+  top: 0;
+  @include prefixr(transform, translateY(-$barHeight));
+  /*@include prefixr(transition, top .4s);*/
+  -webkit-transition: top .4s, -webkit-transform .4s;;
+  -moz-transition: top .4s, -moz-transform .4s;;
+  -ms-transition: top .4s, -ms-transform .4s;;
+  transition: top .4s, transform .4s;
+
+  .app--header-sticky & {
+    @include prefixr(transform, translateY(0));
+  }
+
+  .app--nav-open & {
+    z-index: 15;
+  }
+}
+  .header__top {
+    height: $barHeight;
+    border-bottom: 1px solid $colorDividerGrey;
+    display: none;
+  }
+  .header__search-panel,
+  .header__finder-panel {
+    opacity: 0;
+    background: black;
+    color: white;
+    border-top: 1px solid #333333;
+    height: $barHeight;
+
+    @include prefixr(transition, all .4s $animationEasing);
+    @include prefixr(transform, translateY(-$barHeight));
+  }
+  .header__search-panel {
+
+    padding: ($barHeight - 36px) / 2 20px;
+    position: relative;
+
+    > .dyson-icon {
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 16px;
+    }
+
+    &.header__search-panel--open {
+      opacity: 1;
+      @include prefixr(transform, translateY(0));
+    }
+  }
+  .header__finder-panel {
+
+    height: $barHeight * 2;
+    margin-top: -$barHeight;
+    white-space: nowrap;
+    @include prefixr(transform, translateY(-$barHeight * 2));
+
+    .dyson-icon {
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 16px;
+    }
+
+    > div {
+      height: $barHeight;
+      text-align: center;
+      padding: ($barHeight - 36px) / 2 20px;
+
+      .btn {
+        margin: 1px 0 0;
+        width: 48%;
+
+        &:nth-child(2) {
+          margin-left: 12px;
+        }
+      }
+
+      &:nth-child(2) {
+        border-top: 1px solid #333333;
+        padding: ($barHeight - 36px) / 2 20px;
+        position: relative;
+        text-align: left;
+
+      }
+    }
+
+    &.header__finder-panel--open {
+      opacity: 1;
+      @include prefixr(transform, translateY(0));
+    }
+  }
+
+
+.search-bar {
+  display: inline-block;
+  width: 289px;
+
+  > input {
+    background: black;
+    width: 100%;
+    padding: 8px 0;
+    margin: 0;
+    border: none;
+    height: 35px;
+    color: white;
+    font-size: 20px;
+    line-height: 1;
+    border-bottom: 1px solid white;
+    outline: none;
+    @include prefixr(border-radius, 0);
+
+    &::-webkit-input-placeholder,
+    &:-moz-input-placeholder,
+    &::-moz-input-placeholder,
+    &:-ms-input-placeholder {
+      color: #666666;
+    }
+  }
+}

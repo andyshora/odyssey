@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+  <title>Dyson.com | Customer Journey 1</title>
+  <link rel="stylesheet" href="assets/styles/styles.min.css">
+</head>
+<body ng-app="dyson" ng-controller="MainCtrl" ng-style="bodyStyles" class="app--header-sticky" ng-class="{'app--nav-open':navOpen, 'app--expanded-section':expanded, 'body--loading':preloading2,'app--nav-retailer':(navState=='retailer'),'app--nav-basket':(navState=='basket')}">
+  <div class="preloading-wrap" ng-class="{'preloading-wrap--hide':!preloading}">
+    <div class="rga-logo"></div>
+    <h1>Loading Customer Journey 1...</h1>
+    <div class="preloader-bar"><div id="preloader-bar__bar"></div></div>
+    <div id="preload-img-container"></div>
+  </div>
+  <div ng-cloak class="wrap" ng-class="{'wrap--show':!preloading2}">
+    <div class="main" ng-class="{'app--transitioning':transitioningState,'app--nav-open':navOpen}">
+
+      <header header data-nav-items="navItems" data-nav-open="navOpen" data-search-open="searchOpen"></header>
+      
+      <div class="page-wrap" ui-view="main"></div>
+    </div>
+  </div>
+  <script src="assets/scripts/vendor/angular.js"></script>
+  <script src="assets/scripts/vendor/angular-ui-router.min.js"></script>
+  <script src="assets/scripts/vendor/angular-touch.min.js"></script>
+  <script src="assets/scripts/app.js"></script>
+  <script src="assets/scripts/pages/main/main-controller.js"></script>
+  <script src="assets/scripts/pages/product/product-controller.js"></script>
+  <script src="assets/scripts/pages/my-dyson/my-dyson-controller.js"></script>
+  <script src="assets/scripts/pages/shop/shop-controller.js"></script>
+  <script src="assets/scripts/pages/finder/finder-controller.js"></script>
+  <script src="assets/scripts/pages/login/login-controller.js"></script>
+  <script src="assets/scripts/pages/finder-intro/finder-intro-controller.js"></script>
+  <script src="assets/scripts/pages/finder-results/finder-results-controller.js"></script>
+  <script src="assets/scripts/pages/category/category-controller.js"></script>
+  <script src="assets/scripts/pages/retailer/retailer-controller.js"></script>
+  <script src="assets/scripts/pages/retailer-filters/retailer-filters-controller.js"></script>
+  <script src="assets/scripts/pages/retailer-detail/retailer-detail-controller.js"></script>
+  <script src="assets/scripts/pages/tools/tools-controller.js"></script>
+  <script src="assets/scripts/pages/basket/basket-controller.js"></script>
+  <script src="assets/scripts/pages/accessories/accessories-controller.js"></script>
+  <script src="assets/scripts/pages/welcome/welcome-controller.js"></script>
+  <script src="assets/scripts/pages/compare/compare-controller.js"></script>
+  <script src="assets/scripts/pages/compare-results/compare-results-controller.js"></script>
+  <script src="assets/scripts/pages/sales/sales-controller.js"></script>
+  <script src="assets/scripts/pages/new-cust-1/new-cust-1-controller.js"></script>
+  <!--<script src="assets/scripts/pages/new-cust-1/new-cust-1-controller.js"></script>
+  <script src="assets/scripts/pages/new-cust-1/new-cust-1-controller.js"></script>-->
+  <script src="assets/scripts/modules/header/header-directive.js"></script>
+  <script src="assets/scripts/modules/nav/nav-directive.js"></script>
+  <script src="assets/scripts/modules/nav-2/nav-2-directive.js"></script>
+  <script src="assets/scripts/modules/tabs/tabs-directive.js"></script>
+  <script src="assets/scripts/modules/footer/footer-directive.js"></script>
+  <script src="assets/scripts/modules/module/module-directive.js"></script>
+  <script src="assets/scripts/modules/double-module/double-module-directive.js"></script>
+  <script src="assets/scripts/components/sticky/sticky-directive.js"></script>
+  <script src="assets/scripts/components/focus/focus-directive.js"></script>
+  <script src="assets/scripts/components/nice-image/nice-image-directive.js"></script>
+  <script src="assets/scripts/components/search/search-directive.js"></script>
+  <script src="assets/scripts/components/question/question-directive.js"></script>
+  <script src="assets/scripts/components/expandable-item/expandable-item-directive.js"></script>
+  <script src="assets/scripts/components/expandable-section/expandable-section-directive.js"></script>
+  <script src="assets/scripts/components/section-item/section-item-directive.js"></script>
+</body>
+</html>
+
