@@ -1,8 +1,12 @@
 @import "modules/card";
+@import "modules/card-group";
+@import "modules/slider";
+
 
 .module {
 
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   
   h1, h2, h3, h4 {
     font-family: 'BLOKKRegular';

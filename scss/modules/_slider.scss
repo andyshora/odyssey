@@ -1,0 +1,29 @@
+$slider-item-height: 130px;
+$slider-item-margin: 6px;
+
+.slider {
+  font-size: 0;
+}
+/* to hide scrollbar */
+.slider__inner {
+  height: $slider-item-height;
+  overflow-y: hidden;
+}
+.slider__items {
+  margin: $slider-item-margin $slider-item-margin/2;
+  padding: 0 0 40px 0;
+  font-size: 12px;
+
+  overflow-x: scroll; /* has to be scroll, not auto */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+.slider__item {
+  width: 80px;
+  height: $slider-item-height;
+  background: $c-light-2;
+  display: inline-block;
+  margin: 0 ($slider-item-margin / 2);
+  white-space: auto;
+}

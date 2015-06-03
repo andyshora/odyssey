@@ -156,6 +156,10 @@ p {
   border: 0;
   outline: none;
 
+  &.btn--placeholder {
+    border: none;
+  }
+
   &.btn--white {
     background: $c-light-1;
     color: $c-dark-1;

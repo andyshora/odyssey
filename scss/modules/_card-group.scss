@@ -1,0 +1,22 @@
+.card-group {
+  
+  position: relative;
+
+  > .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:nth-child(n+1) {
+      top: 0;
+    }
+    &:nth-child(n+2) {
+      top: 20px;
+      border-top: 1px solid red;
+    }
+    &:nth-child(n+3) {
+      top: 40px;
+      border-top: 1px solid red;
+    }
+  }
+}

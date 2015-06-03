@@ -4,7 +4,7 @@
   <title>Cards on Grid Prototype</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/jquery-2.1.4.min.js"></script> 
+  <script src="js/vendor/jquery-2.1.4.min.js"></script> 
   <script src="js/shake.js"></script>
   <script src="js/vendor/klass.js"></script>
   <script src="js/vendor/q.js"></script>
@@ -94,7 +94,7 @@
           <div class="grid-item__content">
             <h1>---</h1>
             <p>Lorem ips dor sit amet, consectetur adipisicing elit. Esse tempora, laboriosam cum, obcaecati fuga aliquam enim.</p>
-            <button class="btn--placeholder">Button</button>
+            <button class="btn btn--placeholder">Button</button>
           </div>
         </div>
       </div>
@@ -144,22 +144,80 @@
     <div class="grid-container module products-module">
       <div class="grid-item">
         <div class="grid-item__content">
-          <div class="card" id="card--111"></div>
+          <div class="card-group">
+            <div class="card" id="card--111a">
+              <h4>A</h4>
+              <p>-- - --</p>
+            </div>
+            <div class="card" id="card--111b">
+              <h4>Ab</h4>
+              <p>-- - --</p>
+            </div>
+            <div class="card" id="card--111c">
+              <h4>Abo</h4>
+              <p>-- - --</p>
+            </div>
+          </div>
+          
         </div>
       </div>
       <div class="grid-item">
         <div class="grid-item__content">
           <div class="card" id="card--222">
             <button class="btn btn--toggle btn--white btn--square card__expand-trigger"></button>
+
+            <h4>Abo</h4>
+            <p>-- - --</p>
+
+            <div class="card__expanded">
+
+              <h4>Abo</h4>
+              <p>-- - --</p>
+
+              <div class="slider">
+                <div class="slider__inner">
+                  <ul class="slider__items">
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="grid-item">
         <div class="grid-item__content">
-          <div class="product">
-            <div class="product__thumb"></div>
-            <h2>---</h2>
-            <p>Lorem ips dor sit amet, consectetur adipisicing elit.</p>
+          <div class="card" id="card--333">
+            <button class="btn btn--toggle btn--white btn--square card__expand-trigger"></button>
+
+            <h4>Abo</h4>
+            <p>-- - --</p>
+
+            <div class="card__expanded">
+
+              <h4>Abo</h4>
+              <p>-- - --</p>
+
+              <div class="slider">
+                <div class="slider__inner">
+                  <ul class="slider__items">
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                    <li class="slider__item"></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -224,7 +282,6 @@
           </div>
         </div>
       </div>
-
       
   </section>
 
@@ -273,13 +330,31 @@
   <script>
     var data = [
       {
-        id: '111',
+        id: '11a',
+        options: {
+          expandable: false
+        }
+      },
+      {
+        id: '11b',
+        options: {
+          expandable: false
+        }
+      },
+      {
+        id: '11c',
         options: {
           expandable: false
         }
       },
       {
         id: '222',
+        options: {
+          expandable: true
+        }
+      },
+      {
+        id: '333',
         options: {
           expandable: true
         }

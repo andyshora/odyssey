@@ -1,35 +1,20 @@
-var Card = Module.extend(function(id, containerNode, options) {
+var CardGroup = Module.extend(function(id, containerNode, options) {
 
   if (!this.nodes.container) {
     return console.error('node not found', id);
   }
-  this.expanded = false;
 
   // parse options
   for (var key in options) {
     this[key] = options[key];
   }
 
-  if (this.expandable) {
-    console.log('expandable');
-
-    this.addClass('card--expandable');
-
-    var self = this;
-
-    this.nodes.expandTriggers = this.nodes.container.getElementsByClassName('card__expand-trigger');
-    console.log('this.nodes.expandTriggers', this.nodes.expandTriggers);
-
-    for (var i = 0; i < this.nodes.expandTriggers.length; i++) {
-      this.nodes.expandTriggers[i].addEventListener('click', function(e) {
-        self.onCardClicked(self);
-      });
-    }
-  }
+  
+  
 });
 
 // static variables on Class constructor
-Card.statics({
+/*CardGroup.statics({
   enable: function() {
     Card.enabled = true;
     console.log('All cards are now enabled');
@@ -38,10 +23,10 @@ Card.statics({
     Card.enabled = false;
     console.log('All cards are now disabled');
   }
-});
+});*/
 
 // instance methods
-Card.methods({
+/*CardGroup.methods({
   onCardClicked: function(self) {
     
     // todo, need to access scope
@@ -62,6 +47,4 @@ Card.methods({
     this.expanded = false;
     this.removeClass('card--expanded');
   }
-});
-
-
+});*/
