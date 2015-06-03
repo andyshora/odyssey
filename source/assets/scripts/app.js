@@ -3,7 +3,7 @@
 var genericContent = {
   templateUrl: 'assets/scripts/modules/dummy/dummy-template.html'
 };
-var footerContent = {
+var genericFooter = {
   templateUrl: 'assets/scripts/modules/footer/footer-template.html'
 };
 

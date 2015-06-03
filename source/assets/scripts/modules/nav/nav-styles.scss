@@ -3,7 +3,7 @@ $navHeight: 58px;
 $headerHeight: 58px;
 $navItemHeight: 58px;
 
-.nav-2 {
+.nav {
   width: 100%;
   min-width: 320px;
   display: block;
@@ -36,7 +36,7 @@ $navItemHeight: 58px;
     height: auto;
   }
 }
-.nav-2__top {
+.nav__top {
   height: $headerHeight;
   color: white;
   position: relative;
@@ -50,8 +50,8 @@ $navItemHeight: 58px;
     background: black;
   }
 }
-  .nav-2__logo {
-    background: url(/assets/images/logo.jpg) 20px 20px no-repeat;
+  .nav__logo {
+    background: url(/assets/images/logo.svg) 20px 20px no-repeat;
     background-size: 57px 22px;
     width: 80px;
     height: $headerHeight;
@@ -65,7 +65,7 @@ $navItemHeight: 58px;
       opacity: 0;
     }*/
   }
-  .nav-2__trigger {
+  .nav__trigger {
     height: $headerHeight;
     width: 56px;
     border-right: 1px solid #333333;
@@ -85,10 +85,10 @@ $navItemHeight: 58px;
       font-size: 24px;
       line-height: 1;
 
-      &.icon--menu {
+      &.icon--menu, &.dyson-icon-Dyson_Hamburger {
         display: inline-block;
       }
-      &.icon--close {
+      &.icon--close, &.dyson-icon-Dyson_Close {
         display: none;
       }
     }
@@ -113,11 +113,8 @@ $navItemHeight: 58px;
         &.icon--menu, &.dyson-icon-Dyson_Hamburger {
           display: none;
         }
-        &.icon--close {
-          position: absolute;
+        &.icon--close, &.dyson-icon-Dyson_Close {
           display: inline-block;
-          left: 20px;
-          top: 5px;
         }
       }
     }
@@ -141,7 +138,7 @@ $navItemHeight: 58px;
       }
     }*/
   }
-  .nav-2__icons {
+  .nav__icons {
     position: absolute;
     width: 50%;
     height: $headerHeight;
@@ -178,7 +175,7 @@ $navItemHeight: 58px;
         display: none;
       }
 
-      &.nav-2__icons--active {
+      &.nav__icons--active {
         height: $headerHeight + 1px;
         position: relative;
         z-index: 4;
@@ -220,19 +217,19 @@ $navItemHeight: 58px;
   }
 
 /* active icon state */
-.app--nav-retailer .nav-2__icons > li:nth-child(2) {
+.app--nav-retailer .nav__icons > li:nth-child(2) {
   background: $dysonYellow;
 }
-.app--nav-basket .nav-2__icons > li:nth-child(1) {
+.app--nav-basket .nav__icons > li:nth-child(1) {
   background: $dysonYellow;
 }
-.app--nav-basket .nav-2__icons .icon--nav-basket {
+.app--nav-basket .nav__icons .icon--nav-basket {
   background-position: #{-($iconSizeLarge * 4) - 8px} #{-($iconSizeLarge * 9) - 8px};
 }
-.app--nav-retailer .nav-2__icons .icon--nav-find-retailer {
+.app--nav-retailer .nav__icons .icon--nav-find-retailer {
   background-position: #{-($iconSizeLarge * 7) - 7px} #{-($iconSizeLarge * 9) - 8px};
 }
-.nav-2__main {
+.nav__main {
 
   /*@include prefixr(transform, translateX(-100%) translateZ(0));*/
   // @include prefixr(transition, opacity .4s);
@@ -282,7 +279,7 @@ $navItemHeight: 58px;
     }
   }
 }
-.nav-2__item {
+.nav__item {
   display: block;
   height: 30px;
   margin-top: 5px !important;
@@ -290,7 +287,7 @@ $navItemHeight: 58px;
   /*background: black;*/
   position: relative;
 
-  &.nav-2__item--link {
+  &.nav__item--link {
     height: $navItemHeight - 6px;
     padding: 17px 24px;
 
@@ -300,19 +297,19 @@ $navItemHeight: 58px;
       top: 10px;
     }
 
-    .nav-2-item__label {
+    .nav-item__label {
       padding: 0;
     }
   }
 }
-.nav-2__item--plain {
+.nav__item--plain {
   border-bottom: none !important;
 }
-.nav-2__item--top-margin {
+.nav__item--top-margin {
   margin-top: 12px !important;
 }
 
-.nav-2-item__label {
+.nav-item__label {
   height: 30px;
   font-size: 18px;
   line-height: 1;
@@ -321,7 +318,7 @@ $navItemHeight: 58px;
   position: absolute;
 }
 
-.nav-2__item--secondary {
+.nav__item--secondary {
   
   /* hack to appear indented - end of lots of design changes */
   position: relative;
@@ -343,7 +340,7 @@ $navItemHeight: 58px;
     color: #666666;
   }
 
-  > .nav-2-item__label {
+  > .nav-item__label {
     color: #666666;
     font-size: 16px;
     font-family: 'FuturaBT-Book';
@@ -351,7 +348,7 @@ $navItemHeight: 58px;
   }
 }
 
-.nav-2__footer {
+.nav__footer {
   height: 50px;
   /*background: black;*/
   color: white;

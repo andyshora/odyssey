@@ -71,7 +71,7 @@ angular.module('dyson')
             }
           });
         },
-        templateUrl: 'assets/scripts/modules/nav-2/nav-2-template.html'
+        templateUrl: 'assets/scripts/modules/nav/nav-template.html'
       };
 
   });

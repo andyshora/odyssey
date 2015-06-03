@@ -11,13 +11,13 @@ $card-expanded-height: 445px;
   position: relative;
   background: $c-light-1;
   overflow: hidden;
-  @include prefix(box-shadow, 1px 1px $c-shadow-light);
+  @include prefixr(box-shadow, 1px 1px $c-shadow-light);
 
   &.card__expand-trigger {
     display: none;
   }
   &.card--expandable {
-    @include prefix(transition, height .4s ease);
+    @include prefixr(transition, height .4s ease);
   }
   &.card--expanded {
     height: $card-expanded-height;

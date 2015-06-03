@@ -1,14 +1,14 @@
-<nav class="nav-2" ng-class="{'nav--open':open,'nav--no-trans':disableTransition}">
-  <div class="nav-2__top">
-    <a class="nav-2__trigger" ng-click="open=!open;activeHeaderItem=''"><i class="dyson-icon dyson-icon-Dyson_Hamburger"></i><i class="icon icon--close"></i></a>
-    <div class="nav-2__logo"  ng-click="open=false" ui-sref="main.shop"></div>
-    <ul class="nav-2__icons">
-      <li ng-class="{'nav-2__icons--active':(activeHeaderItem=='finder')}" ng-click="onHeaderItemClicked('finder')"><i class="dyson-icon dyson-icon-Dyson_store_Finder"></i></li>
+<nav class="nav" ng-class="{'nav--open':open,'nav--no-trans':disableTransition}">
+  <div class="nav__top">
+    <a class="nav__trigger" ng-click="open=!open;activeHeaderItem=''"><i class="dyson-icon dyson-icon-Dyson_Hamburger"></i><i class="dyson-icon dyson-icon-Dyson_Close"></i></a>
+    <div class="nav__logo"  ng-click="open=false" ui-sref="main.shop"></div>
+    <ul class="nav__icons">
+      <li ng-class="{'nav__icons--active':(activeHeaderItem=='finder')}" ng-click="onHeaderItemClicked('finder')"><i class="dyson-icon dyson-icon-Dyson_store_Finder"></i></li>
       <li ng-click="onHeaderItemClicked('basket')"><i class="dyson-icon dyson-icon-Dyson_Basket"></i></li>
-      <li ng-class="{'nav-2__icons--active':(activeHeaderItem=='search')}" ng-click="onHeaderItemClicked('search')"><i class="dyson-icon dyson-icon-Dyson_Search"></i><i class="dyson-icon dyson-icon-Dyson_Plus"></i></li>
+      <li ng-class="{'nav__icons--active':(activeHeaderItem=='search')}" ng-click="onHeaderItemClicked('search')"><i class="dyson-icon dyson-icon-Dyson_Search"></i><i class="dyson-icon dyson-icon-Dyson_Plus"></i></li>
     </ul>
   </div>
-  <div class="nav-2__main">
+  <div class="nav__main">
     <ul>
       
       <li expandable-item data-icon="Dyson_Chevron" data-label="Products" data-open="expandedItemIndex==0">
@@ -19,12 +19,12 @@
           </li>
         </ul>
       </li>
-      <li class="nav-2__item nav-2__item--link"><label class="nav-2-item__label">Service and Support</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
-      <li class="nav-2__item nav-2__item--link nav-2__item--secondary"><label class="nav-2-item__label">Fix my Dyson</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
-      <li class="nav-2__item nav-2__item--link nav-2__item--secondary"><label class="nav-2-item__label">Spare parts and accessories</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
+      <li class="nav__item nav__item--link"><label class="nav-item__label">Service and Support</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
+      <li class="nav__item nav__item--link nav__item--secondary"><label class="nav-item__label">Fix my Dyson</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
+      <li class="nav__item nav__item--link nav__item--secondary"><label class="nav-item__label">Spare parts and accessories</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
       
-      <li class="nav-2__item nav-2__item--link"><label class="nav-2-item__label">Inside Dyson</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
-      <li class="nav-2__item nav-2__item--link"><label class="nav-2-item__label">My Dyson</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
+      <li class="nav__item nav__item--link"><label class="nav-item__label">Inside Dyson</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
+      <li class="nav__item nav__item--link"><label class="nav-item__label">My Dyson</label><i class="dyson-icon dyson-icon-Dyson_Chevron"></i></li>
 
   </div>
 </nav>
