@@ -99,7 +99,7 @@ $sectionTall: 240px;
   @include at-breakpoint($bp-large) {
     position: absolute;
     left: 0;
-    top: $headerBarHeight - 200px;
+    top: $headerBarHeight - 50px;
     z-index: 1;
     opacity: 0;
     @include prefixr(transition, all .3s $animationEasing);

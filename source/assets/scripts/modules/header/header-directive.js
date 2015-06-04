@@ -13,9 +13,10 @@ angular.module('dyson')
           searchOpen: '='
         },
         link: function(scope) {
-          scope.onPanelTriggerClicked = function(panelName) {
-            console.log('onPanelTriggerClicked', panelName);
-            scope.openPanel = panelName;
+          scope.navOpen = false;
+          
+          scope.onToggleClicked = function() {
+            scope.navOpen = !scope.navOpen;
           }
         },
         templateUrl: 'assets/scripts/modules/header/header-template.html'

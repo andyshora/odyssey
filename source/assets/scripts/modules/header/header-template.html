@@ -1,5 +1,5 @@
 <header class="header">
-  <ul class="nav nav--main">
+  <ul class="nav nav--main" ng-class="{'nav--open':navOpen}">
     <li
       expandable-section
       data-title="Dyson"
@@ -31,7 +31,7 @@
       <p>test content</p>
     </li>
   </ul>
-  <div class="trigger"><button>Toggle</button></div>
+  <div class="trigger"><button ng-click="onToggleClicked()">Toggle</button></div>
   <ul class="nav nav--extra">
     <li class="nav-item"><i class="icon-placeholder"></i></li>
     <li class="nav-item"><i class="icon-placeholder"></i></li>
