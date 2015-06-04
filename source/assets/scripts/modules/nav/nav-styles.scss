@@ -21,13 +21,14 @@
   }
 }
 .nav {
-  display: inline-block;
+  // display: inline-block;
+  display: block;
   white-space: normal;
   background: green;
   margin: 0;
   padding: 0;
   font-size: 0;
-  position: relative;
+  // position: relative;
   vertical-align: top;
 }
 .nav--main {
@@ -38,10 +39,11 @@
 
   @include at-breakpoint($bp-large) {
     position: static;
-    width: 75%;
+    // width: 75%;
+    width: 100%;
   }
 
-  > .nav-item {
+  /* > .nav-item {
 
     background: lightBlue;
     display: block;
@@ -52,7 +54,7 @@
       background: blue;
       width: 20%;
     }
-  }
+  } */
 }
 .nav--extra {
   background: red;
@@ -67,7 +69,12 @@
   }
 
   > .nav-item {
+    font-size: 12px;
     display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+
     width: (100% / 3.0);
     height: $headerBarHeight;
     background: pink;
@@ -78,7 +85,7 @@
     }
   }
 }
-  .nav-item {
+  /* .nav-item {
     font-size: 12px;
     display: inline-block;
     margin: 0;
@@ -106,7 +113,7 @@
       top: $headerBarHeight;
     }
   }
-
+ */
 
 .icon-placeholder {
   display: inline-block;

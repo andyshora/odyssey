@@ -1,5 +1,3 @@
-@include prefixr(transition, max-height .3s $animationEasing);
-@include prefixr(transform, translateZ(0));
 
 $sectionShort: 160px;
 $sectionMedium: 200px;
@@ -9,6 +7,24 @@ $sectionTall: 240px;
   display: block;
   max-height: $barHeight;
   overflow-y: hidden;
+  overflow-x: visible;
+
+  @include prefixr(transition, max-height .3s $animationEasing);
+  
+  @include at-breakpoint($bp-large) {
+    @include prefixr(transition, none);
+  }
+  // @include prefixr(transform, translateZ(0));
+
+  &.expandable-section--short {
+    height: $sectionShort + $barHeight;
+  }
+  &.expandable-section--medium {
+    height: $sectionMedium + $barHeight;
+  }
+  &.expandable-section--tall {
+    height: $sectionTall + $barHeight;
+  }
 
   &.ng-click-active {
     background: rgba(16, 16, 16, 1);
@@ -17,6 +33,9 @@ $sectionTall: 240px;
   // open state
   &.expandable-section--open {
     
+    @include at-breakpoint($bp-large) {
+      max-height: $barHeight !important;
+    }
     &.expandable-section--short {
       max-height: $sectionShort + $barHeight;
     }
@@ -43,7 +62,8 @@ $sectionTall: 240px;
     @include at-breakpoint($bp-large) {
       display: inline-block;
       background: blue;
-      width: 20%;
+      width: auto;
+
     }
   }
 
@@ -74,6 +94,21 @@ $sectionTall: 240px;
   height: $sectionShort;
   background: white;
   padding: 0;
+  width: 100%;
+
+  @include at-breakpoint($bp-large) {
+    position: absolute;
+    left: 0;
+    top: $headerBarHeight - 200px;
+    z-index: 1;
+    opacity: 0;
+    @include prefixr(transition, all .3s $animationEasing);
+
+    .expandable-section--open & {
+      top: $headerBarHeight;
+      opacity: 1;
+    }
+  }
 
   &.expandable-section--short {
     height: $sectionShort;
@@ -83,5 +118,20 @@ $sectionTall: 240px;
   }
   &.expandable-section--tall {
     height: $sectionTall;
+  }
+}
+
+.expandable-section__title {
+  display: block;
+  background: lightBlue;
+  height: $barHeight;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+
+  @include at-breakpoint($bp-large) {
+    border-right: 1px solid black;
+    width: auto;
+    padding: 0 10px;
   }
 }

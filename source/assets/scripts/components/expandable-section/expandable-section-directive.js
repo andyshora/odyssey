@@ -8,14 +8,20 @@ angular.module('dyson')
         transclude: true,
         restrict: 'A',
         scope: {
-          open: '=',
           title: '@',
-          icon: '@',
-          modifier: '@',
-          onHeaderTapped: '&'
-          /*
+          modifier: '@'/*,
+          // icon: '@',
+          onHeaderTapped: '&',
           onContentTapped: '&',
           expandedSectionImage: '@',*/
+        },
+        link: function(scope) {
+
+          scope.open = false;
+
+          scope.onTitleClicked = function() {
+            scope.open = !scope.open;
+          }
         },
         templateUrl: 'assets/scripts/components/expandable-section/expandable-section-template.html'
       };
