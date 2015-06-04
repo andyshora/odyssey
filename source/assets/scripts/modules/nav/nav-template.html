@@ -1,13 +1,5 @@
 <nav class="nav" ng-class="{'nav--open':open,'nav--no-trans':disableTransition}">
-  <div class="nav__top">
-    <a class="nav__trigger" ng-click="open=!open;activeHeaderItem=''"><i class="dyson-icon dyson-icon-Dyson_Hamburger"></i><i class="dyson-icon dyson-icon-Dyson_Close"></i></a>
-    <div class="nav__logo"  ng-click="open=false" ui-sref="main.shop"></div>
-    <ul class="nav__icons">
-      <li ng-class="{'nav__icons--active':(activeHeaderItem=='finder')}" ng-click="onHeaderItemClicked('finder')"><i class="dyson-icon dyson-icon-Dyson_store_Finder"></i></li>
-      <li ng-click="onHeaderItemClicked('basket')"><i class="dyson-icon dyson-icon-Dyson_Basket"></i></li>
-      <li ng-class="{'nav__icons--active':(activeHeaderItem=='search')}" ng-click="onHeaderItemClicked('search')"><i class="dyson-icon dyson-icon-Dyson_Search"></i><i class="dyson-icon dyson-icon-Dyson_Plus"></i></li>
-    </ul>
-  </div>
+
   <div class="nav__main">
     <ul>
       

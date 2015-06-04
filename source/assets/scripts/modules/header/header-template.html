@@ -1,5 +1,32 @@
 <header class="header" sticky data-sticky-modifier="app--header-sticky" data-stick-at="-200" data-hide-at="58">
-  <nav nav-2 data-open="navOpen" data-nav-items="navItems" data-search-open="searchOpen" data-active-header-item="openPanel"></nav>
+  
+  <div class="gutter">
+    <div class="grid-container">
+      <div class="header__nav-trigger">
+        <div class="grid-item__content">
+          <i class="dyson-icon dyson-icon-Dyson_Hamburger"></i>
+        </div>
+      </div>
+      <div class="header__logo">
+        <div class="grid-item__content">
+          <img class="logo" src="assets/images/logo.svg" alt="">
+          <ul class="nav-links">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="header__icons">
+        <li ng-class="{'nav__icons--active':(activeHeaderItem=='finder')}" ng-click="onHeaderItemClicked('finder')"><i class="dyson-icon dyson-icon-Dyson_store_Finder"></i></li>
+        <li ng-click="onHeaderItemClicked('basket')"><i class="dyson-icon dyson-icon-Dyson_Basket"></i></li>
+        <li ng-class="{'nav__icons--active':(activeHeaderItem=='search')}" ng-click="onHeaderItemClicked('search')"><i class="dyson-icon dyson-icon-Dyson_Search"></i></li>
+      </ul>
+    </div>
+  </div>
+<!-- 
+  <nav nav data-open="navOpen" data-nav-items="navItems" data-search-open="searchOpen" data-active-header-item="openPanel"></nav>
   <div class="header__search-panel" ng-tap="onPanelTriggerClicked('search')" ng-class="{'header__search-panel--open':(openPanel=='search')}">
     <div class="search-bar">
       <input type="text" placeholder="Search">
@@ -17,5 +44,5 @@
       </div>
       <i class="dyson-icon dyson-icon dyson-icon-Dyson_Search"></i>
     </div>
-  </div>
+  </div> -->
 </header>

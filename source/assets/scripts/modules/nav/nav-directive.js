@@ -5,7 +5,7 @@
  * expression it binds to evaluates to true
  */
 angular.module('dyson')
-  .directive('nav2', function() {
+  .directive('nav', function() {
     'use strict';
 
     return {

@@ -40,10 +40,6 @@ angular.module('dyson', ['ui.router', 'ngTouch'])
         url: 'category',
         controller: 'MainCtrl',
         views: {
-          'header@': {
-            templateUrl: 'assets/scripts/modules/header/header-template.html',
-            controller: 'HeaderCtrl'
-          },
           'content@': genericContent,
           'footer@': genericFooter
         }
