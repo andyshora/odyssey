@@ -9,8 +9,12 @@ angular.module('dyson')
         restrict: 'A',
         scope: {
           title: '@',
-          modifier: '@'/*,
-          // icon: '@',
+          modifier: '@',
+          open: '=',
+          index: '=',
+          onToggled: '&'
+          /*,
+          icon: '@',
           onHeaderTapped: '&',
           onContentTapped: '&',
           expandedSectionImage: '@',*/
@@ -21,6 +25,7 @@ angular.module('dyson')
 
           scope.onTitleClicked = function() {
             scope.open = !scope.open;
+            scope.onToggled({ index: scope.index, open: scope.open });
           }
         },
         templateUrl: 'assets/scripts/components/expandable-section/expandable-section-template.html'
