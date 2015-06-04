@@ -1,8 +1,6 @@
 <li class="expandable-item expandable-item--{{ modifier }}"
   ng-class="{'expandable-item--open':open}"
   ng-click="onHeaderTapped()">
+  <div class="expandable-item__title">{{ title }}</div>
   <div class="expandable-item__content" ng-transclude></div>
-  <div class="expandable-item__content">
-    <img ng-src="{{ expandedSectionImage }}" ng-click="onContentTapped()" alt="">
-  </div>
 </li>

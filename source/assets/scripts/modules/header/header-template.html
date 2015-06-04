@@ -1,48 +1,30 @@
-<header class="header" sticky data-sticky-modifier="app--header-sticky" data-stick-at="-200" data-hide-at="58">
-  
-  <div class="gutter">
-    <div class="grid-container">
-      <div class="header__nav-trigger">
-        <div class="grid-item__content">
-          <i class="dyson-icon dyson-icon-Dyson_Hamburger"></i>
-        </div>
-      </div>
-      <div class="header__logo">
-        <div class="grid-item__content">
-          <img class="logo" src="assets/images/logo.svg" alt="">
-          <ul class="nav-links">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-      <ul class="header__icons">
-        <li ng-class="{'nav__icons--active':(activeHeaderItem=='finder')}" ng-click="onHeaderItemClicked('finder')"><i class="dyson-icon dyson-icon-Dyson_store_Finder"></i></li>
-        <li ng-click="onHeaderItemClicked('basket')"><i class="dyson-icon dyson-icon-Dyson_Basket"></i></li>
-        <li ng-class="{'nav__icons--active':(activeHeaderItem=='search')}" ng-click="onHeaderItemClicked('search')"><i class="dyson-icon dyson-icon-Dyson_Search"></i></li>
-      </ul>
-    </div>
-  </div>
-<!-- 
-  <nav nav data-open="navOpen" data-nav-items="navItems" data-search-open="searchOpen" data-active-header-item="openPanel"></nav>
-  <div class="header__search-panel" ng-tap="onPanelTriggerClicked('search')" ng-class="{'header__search-panel--open':(openPanel=='search')}">
-    <div class="search-bar">
-      <input type="text" placeholder="Search">
-    </div>
-    <i class="dyson-icon dyson-icon dyson-icon-Dyson_Search"></i>
-  </div>
-  <div class="header__finder-panel" ng-tap="onPanelTriggerClicked('finder')" ng-class="{'header__finder-panel--open':(openPanel=='finder')}">
-    <div>
-      <button class="btn btn--grey">Find a retailer</button>
-      <button class="btn btn--grey">All retailers</button>
-    </div>
-    <div>
-      <div class="search-bar">
-        <input type="text" placeholder="Enter your postcode" spellcheck="false">
-      </div>
-      <i class="dyson-icon dyson-icon dyson-icon-Dyson_Search"></i>
-    </div>
-  </div> -->
+<header class="header">
+  <ul class="nav nav--main">
+    <li class="nav-item">
+      <div class="nav-item__title">Dyson</div>
+      <div class="nav-item__content">content 1</div>
+    </li>
+    <li class="nav-item">
+      <div class="nav-item__title">Products</div>
+      <div class="nav-item__content">content 2</div>
+    </li>
+    <li class="nav-item">
+      <div class="nav-item__title">Service &amp; Support</div>
+      <div class="nav-item__content">content 3</div>
+    </li>
+    <li class="nav-item">
+      <div class="nav-item__title">My Dyson</div>
+      <div class="nav-item__content">content 4</div>
+    </li>
+    <li class="nav-item">
+      <div class="nav-item__title">About Dyson</div>
+      <div class="nav-item__content">content 5</div>
+    </li>
+  </ul>
+  <div class="trigger"><button>Toggle</button></div>
+  <ul class="nav nav--extra">
+    <li class="nav-item"><i class="icon-placeholder"></i></li>
+    <li class="nav-item"><i class="icon-placeholder"></i></li>
+    <li class="nav-item"><i class="icon-placeholder"></i></li>
+  </ul>
 </header>

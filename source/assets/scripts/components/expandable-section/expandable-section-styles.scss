@@ -1,4 +1,6 @@
-$barHeight: 53px;
+@include prefixr(transition, max-height .3s $animationEasing);
+@include prefixr(transform, translateZ(0));
+
 $sectionShort: 160px;
 $sectionMedium: 200px;
 $sectionTall: 240px;
@@ -7,16 +9,12 @@ $sectionTall: 240px;
   display: block;
   max-height: $barHeight;
   overflow-y: hidden;
-  /*background: black;*/
-  position: relative;
-  cursor: default;
-  @include prefixr(transition, max-height .3s $animationEasing);
-  @include prefixr(transform, translateZ(0));
 
   &.ng-click-active {
     background: rgba(16, 16, 16, 1);
   }
 
+  // open state
   &.expandable-section--open {
     
     &.expandable-section--short {
@@ -30,7 +28,47 @@ $sectionTall: 240px;
     }
   }
 
+  // inside main nav
+  .nav--main & {
+    background: lightBlue;
+    display: block;
+    width: 100%;
+
+    font-size: 12px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+
+    @include at-breakpoint($bp-large) {
+      display: inline-block;
+      background: blue;
+      width: 20%;
+    }
+  }
+
+  // inside main nav
+  .nav--extra & {
+    font-size: 12px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+
+    display: inline-block;
+    width: (100% / 3.0);
+    height: $headerBarHeight;
+    background: pink;
+    text-align: center;
+
+    @include at-breakpoint($bp-large) {
+      border-right: 1px solid black;
+    }
+
+  }
+
 }
+
 .expandable-section__content {
   display: block;
   height: $sectionShort;

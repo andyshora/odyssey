@@ -9,11 +9,13 @@ angular.module('dyson')
         restrict: 'A',
         scope: {
           open: '=',
-          label: '@',
-          onHeaderTapped: '&',
+          title: '@',
+          icon: '@',
+          modifier: '@',
+          onHeaderTapped: '&'
+          /*
           onContentTapped: '&',
-          expandedSectionImage: '@',
-          modifier: '@'
+          expandedSectionImage: '@',*/
         },
         templateUrl: 'assets/scripts/components/expandable-section/expandable-section-template.html'
       };
