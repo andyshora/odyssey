@@ -1,21 +1,15 @@
-.header {
-  white-space: nowrap;
-  font-size: 0;
-  background: black;
-  height: $headerBarHeight;
-}
+
 .trigger {
   display: inline-block;
   background: black;
-  width: 100px;
   height: $headerBarHeight;
   vertical-align: top;
   position: relative;
   z-index: 4;
+  padding: 17px;
 
   > button {
     font-size: 12px;
-    padding: 10px;
   }
 
   @include at-breakpoint($bp-large) {
@@ -60,7 +54,7 @@
     @include prefixr(transform, none);
 
     // overlay to sit on top of expanding content, but below the items in the header bar
-    &:after {
+    /* &:after {
       content: '';
       width: 100%;
       background: yellow;
@@ -70,7 +64,7 @@
       left: 0;
       position: absolute;
       z-index: 2;
-    }
+    } */
   }
 
   /* > .nav-item {
@@ -93,9 +87,10 @@
   top: 0;
   width: 50%;
   z-index: 4;
+  min-width: 120px;
 
   // overlay to sit on top of expanding content, but below the items in the header bar
-  &:after {
+  /* &:after {
     content: '';
     width: 100%;
     background: yellow;
@@ -105,7 +100,7 @@
     left: 0;
     position: absolute;
     z-index: 2;
-  }
+  } */
 
   @include at-breakpoint($bp-large) {
     width: 25%;

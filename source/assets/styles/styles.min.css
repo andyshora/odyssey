@@ -11,6 +11,7 @@
 /*==========  BREAKPOINTS  ==========*/
 /*==========  THEME  ==========*/
 /*==========  VARIABLES  ==========*/
+/*==========  TYPOGRAPHY  ==========*/
 /**
 *
 * Normalize
@@ -576,7 +577,12 @@ p {
 
 .header {
   width: 100%;
-  display: block; }
+  min-width: 320px;
+  display: block;
+  white-space: nowrap;
+  font-size: 0;
+  background: black;
+  height: 58px; }
   .header:after {
     content: '';
     width: 100%;
@@ -588,23 +594,16 @@ p {
     position: absolute;
     z-index: 3; }
 
-.header {
-  white-space: nowrap;
-  font-size: 0;
-  background: black;
-  height: 58px; }
-
 .trigger {
   display: inline-block;
   background: black;
-  width: 100px;
   height: 58px;
   vertical-align: top;
   position: relative;
-  z-index: 4; }
+  z-index: 4;
+  padding: 17px; }
   .trigger > button {
-    font-size: 12px;
-    padding: 10px; }
+    font-size: 12px; }
   @media (min-width: 768px) {
     .trigger {
       display: none; } }
@@ -664,17 +663,18 @@ p {
       -webkit-transform: none;
       -moz-transform: none;
       -ms-transform: none;
-      transform: none; }
-      .nav--main:after {
-        content: '';
-        width: 100%;
-        background: yellow;
-        height: 58px;
-        display: block;
-        top: 0;
-        left: 0;
-        position: absolute;
-        z-index: 2; } }
+      transform: none;
+      /* &:after {
+      content: '';
+      width: 100%;
+      background: yellow;
+      height: $headerBarHeight;
+      display: block;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 2;
+    } */ } }
 
 .nav--extra {
   height: 58px;
@@ -682,17 +682,19 @@ p {
   right: 0;
   top: 0;
   width: 50%;
-  z-index: 4; }
-  .nav--extra:after {
+  z-index: 4;
+  min-width: 120px;
+  /* &:after {
     content: '';
     width: 100%;
     background: yellow;
-    height: 58px;
+    height: $headerBarHeight;
     display: block;
     top: 0;
     left: 0;
     position: absolute;
-    z-index: 2; }
+    z-index: 2;
+  } */ }
   @media (min-width: 768px) {
     .nav--extra {
       width: 25%;
@@ -1200,7 +1202,6 @@ p {
   .expandable-section.expandable-section--open.expandable-section--tall {
     max-height: 298px; }
   .nav--main .expandable-section {
-    background: lightBlue;
     display: block;
     width: 100%;
     font-size: 12px;
@@ -1222,7 +1223,6 @@ p {
     display: inline-block;
     width: 33.33333%;
     height: 58px;
-    background: pink;
     text-align: center; }
     @media (min-width: 768px) {
       .nav--extra .expandable-section {
@@ -1232,7 +1232,8 @@ p {
   display: block;
   height: 160px;
   padding: 0;
-  width: 100%; }
+  width: 100%;
+  background: white; }
   .nav--extra .expandable-section__content {
     position: fixed;
     left: 0;
@@ -1287,16 +1288,17 @@ p {
 
 .expandable-section__title {
   display: block;
-  background: lightBlue;
   height: 58px;
   cursor: pointer;
   position: relative;
-  z-index: 4; }
+  z-index: 4;
+  padding: 17px;
+  font-size: 16px; }
   @media (min-width: 768px) {
     .expandable-section__title {
       border-right: 1px solid black;
       width: auto;
-      padding: 0 10px; } }
+      padding: 17px 12px; } }
 
 .nice-image {
   opacity: 0;

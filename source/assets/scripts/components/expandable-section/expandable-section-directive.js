@@ -10,6 +10,7 @@ angular.module('dyson')
         scope: {
           title: '@',
           modifier: '@',
+          icon: '@',
           open: '=',
           index: '=',
           onToggled: '&'

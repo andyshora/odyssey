@@ -27,6 +27,7 @@ angular.module('dyson')
                 scope.expandableSectionOpen[i] = false;
               }
             }
+
           }
 
           scope.onSectionToggled = function(index, open) {
@@ -45,6 +46,8 @@ angular.module('dyson')
         controller: function($rootScope, $scope) {
           $rootScope.$on('app:resize', function() {
             $scope.closeAllSectionsExcept(-1);
+            $scope.navOpen = false;
+            $scope.$apply();
           });
         },
         templateUrl: 'assets/scripts/modules/header/header-template.html'

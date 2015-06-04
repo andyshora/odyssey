@@ -1,6 +1,11 @@
 .header {
   width: 100%;
+  min-width: 320px;
   display: block;
+  white-space: nowrap;
+  font-size: 0;
+  background: black;
+  height: $headerBarHeight;
 
   // overlay to sit on top of expanding content, but below the items in the header bar
   &:after {
