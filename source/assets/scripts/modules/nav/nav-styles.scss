@@ -10,6 +10,8 @@
   width: 100px;
   height: $headerBarHeight;
   vertical-align: top;
+  position: relative;
+  z-index: 4;
 
   > button {
     font-size: 12px;
@@ -24,7 +26,7 @@
   // display: inline-block;
   display: block;
   white-space: normal;
-  background: green;
+  background: white;
   margin: 0;
   padding: 0;
   font-size: 0;
@@ -40,7 +42,7 @@
   z-index: -1;
   opacity: 0;
   @include prefixr(transition, all .3s $animationEasing);
-  @include prefixr(transform, translateY(-100px));
+  @include prefixr(transform, translateY(-$navTransitionDistance));
 
   &.nav--open {
     @include prefixr(transform, translateY(0));
@@ -56,6 +58,19 @@
     opacity: 1;
     @include prefixr(transition, none);
     @include prefixr(transform, none);
+
+    // overlay to sit on top of expanding content, but below the items in the header bar
+    &:after {
+      content: '';
+      width: 100%;
+      background: yellow;
+      height: $headerBarHeight;
+      display: block;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 2;
+    }
   }
 
   /* > .nav-item {
@@ -72,15 +87,29 @@
   } */
 }
 .nav--extra {
-  background: red;
   height: $headerBarHeight;
   position: absolute;
   right: 0;
   top: 0;
   width: 50%;
+  z-index: 4;
+
+  // overlay to sit on top of expanding content, but below the items in the header bar
+  &:after {
+    content: '';
+    width: 100%;
+    background: yellow;
+    height: $headerBarHeight;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+  }
 
   @include at-breakpoint($bp-large) {
     width: 25%;
+    z-index: 4;
   }
 
   > .nav-item {
@@ -99,12 +128,4 @@
       border-right: 1px solid black;
     }
   }
-}
-
-.icon-placeholder {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  margin: 0 auto;
-  background: white;
 }

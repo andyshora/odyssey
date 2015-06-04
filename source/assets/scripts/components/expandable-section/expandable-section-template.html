@@ -1,5 +1,8 @@
-<li class="expandable-section expandable-section--{{ modifier }}"
+<li class="expandable-section expandable-section--{{ modifier }} theme--dark"
   ng-class="{'expandable-section--open':open}">
-  <div class="expandable-section__title" ng-click="onTitleClicked()">{{ title }}</div>
-  <div class="expandable-section__content" ng-transclude></div>
+  <div class="expandable-section__title" ng-click="onTitleClicked()">
+    <span ng-if="title">{{ title }}</span>
+    <i ng-if="icon" class="dyson-icon dyson-icon-{{ icon }}"></i>
+  </div>
+  <div class="expandable-section__content theme--dark" ng-transclude></div>
 </li>

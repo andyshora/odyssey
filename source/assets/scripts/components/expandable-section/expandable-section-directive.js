@@ -13,16 +13,12 @@ angular.module('dyson')
           open: '=',
           index: '=',
           onToggled: '&'
-          /*,
-          icon: '@',
-          onHeaderTapped: '&',
-          onContentTapped: '&',
-          expandedSectionImage: '@',*/
         },
         link: function(scope) {
 
           scope.open = false;
 
+          // let the parent scope know that the section has been toggled
           scope.onTitleClicked = function() {
             scope.open = !scope.open;
             scope.onToggled({ index: scope.index, open: scope.open });

@@ -14,13 +14,14 @@ angular.module('dyson')
         },
         link: function(scope) {
           scope.navOpen = false;
-          scope.expandableSectionOpen = [false, false, false, false, false];
+          scope.expandableSectionOpen = [false, false, false, false, false, false, false, false];
 
           scope.onToggleClicked = function() {
             scope.navOpen = !scope.navOpen;
           }
 
           scope.closeAllSectionsExcept = function(excludeIndex) {
+            console.log('closeAllSectionsExcept');
             for (var i = 0; i < scope.expandableSectionOpen.length; i++) {
               if (i !== excludeIndex) {
                 scope.expandableSectionOpen[i] = false;
@@ -40,6 +41,11 @@ angular.module('dyson')
             console.log(val);
           }, true);*/
 
+        },
+        controller: function($rootScope, $scope) {
+          $rootScope.$on('app:resize', function() {
+            $scope.closeAllSectionsExcept(-1);
+          });
         },
         templateUrl: 'assets/scripts/modules/header/header-template.html'
       };

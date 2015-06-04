@@ -39,6 +39,11 @@ angular.module('dyson')
     //   $rootScope.$apply();
     // }, 2000);
 
+    
+    angular.element($window).bind('resize', _.debounce(function() {
+      $rootScope.$broadcast('app:resize');
+    }, 500));
+
     $rootScope.$watch('preloading', function(val) {
       if (val) {
         return;

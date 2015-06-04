@@ -3,4 +3,16 @@
   color: white;
   font-size: 24px;
   @include prefixr(user-select, none);
+
+  .theme--light & {
+    color: black;
+  }
+}
+
+.dyson-icon-placeholder {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  margin: 0 auto;
+  background: white;
 }

@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header theme--dark">
   <ul class="nav nav--main" ng-class="{'nav--open':navOpen}">
     <li
       expandable-section
@@ -7,7 +7,7 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title="Dyson"
       data-modifier="short">
-      <p>test content</p>
+      <p>test content 0</p>
     </li>
     <li
       expandable-section
@@ -16,7 +16,7 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title="Products"
       data-modifier="short">
-      <p>test content</p>
+      <p>test content 1</p>
     </li>
     <li
       expandable-section
@@ -25,7 +25,7 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title="Service &amp; Support"
       data-modifier="short">
-      <p>test content</p>
+      <p>test content 2</p>
     </li>
     <li
       expandable-section
@@ -34,7 +34,7 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title="My Dyson"
       data-modifier="short">
-      <p>test content</p>
+      <p>test content 3</p>
     </li>
     <li
       expandable-section
@@ -43,13 +43,40 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title="About Dyson"
       data-modifier="short">
-      <p>test content</p>
+      <p>test content 4</p>
     </li>
   </ul>
   <div class="trigger"><button ng-click="onToggleClicked()">Toggle</button></div>
   <ul class="nav nav--extra">
-    <li class="nav-item"><i class="icon-placeholder"></i></li>
-    <li class="nav-item"><i class="icon-placeholder"></i></li>
-    <li class="nav-item"><i class="icon-placeholder"></i></li>
+    <li
+      expandable-section
+      data-open="expandableSectionOpen[5]"
+      data-index="5"
+      data-on-toggled="onSectionToggled(index, open)"
+      data-title=""
+      data-icon="placeholder"
+      data-modifier="short">
+      <p>test content 5</p>
+    </li>
+    <li
+      expandable-section
+      data-open="expandableSectionOpen[6]"
+      data-index="6"
+      data-on-toggled="onSectionToggled(index, open)"
+      data-title=""
+      data-icon="placeholder"
+      data-modifier="short">
+      <p>test content 6</p>
+    </li>
+    <li
+      expandable-section
+      data-open="expandableSectionOpen[7]"
+      data-index="7"
+      data-on-toggled="onSectionToggled(index, open)"
+      data-title=""
+      data-icon="placeholder"
+      data-modifier="short">
+      <p>test content 7</p>
+    </li>
   </ul>
 </header>
