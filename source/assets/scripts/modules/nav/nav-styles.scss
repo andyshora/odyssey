@@ -19,10 +19,10 @@
   top: $headerBarHeight;
   border-top: 1px solid #333333;
   height: $headerBarHeight;
-
+  background: black;
   z-index: -1;
   opacity: 0;
-  @include prefixr(transition, all .3s $animationEasing);
+  @include prefixr(transition, all .4s $animationEasing);
   @include prefixr(transform, translateY(-$navTransitionDistanceLarge));
 
   &.nav--open {

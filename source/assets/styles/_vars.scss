@@ -27,8 +27,8 @@ $c-shadow-light: rgb(234, 234, 234);
 
 $barHeight: 53px;
 $headerBarHeight: 58px;
-$navTransitionDistance: 10px;
-$navTransitionDistanceLarge: 50px;
+$navTransitionDistance: 100px;
+$navTransitionDistanceLarge: 500px;
 
 // Defining animation easings
 $animationEasing: cubic-bezier(.455, .030, .515, .955);

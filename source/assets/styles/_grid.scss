@@ -14,6 +14,12 @@ body {
   overflow: auto;
 }
 
+.wide-overlay {
+  position: relative;
+  z-index: 1;
+  background: red !important;
+}
+
 hr {
   &.clear {
     margin: 100px 0 100px 0;

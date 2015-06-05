@@ -13,11 +13,14 @@ angular.module('dyson')
           icon: '@',
           open: '=',
           index: '=',
-          onToggled: '&'
+          onToggled: '&',
+          alwaysOpenOnMobile: '@'
         },
         link: function(scope, elm, attrs) {
 
-          scope.open = !!attrs.startOpen;
+          scope.open = false;
+
+          scope.lockedOpen = !!attrs.alwaysOpenOnMobile;
 
           // let the parent scope know that the section has been toggled
           scope.onTitleClicked = function() {

@@ -47,6 +47,23 @@ $sectionTall: 240px;
     }
   }
 
+  &.expandable-section--locked-open {
+    @include up-to-width($bp-large) {
+      @include at-breakpoint($bp-large) {
+        max-height: $barHeight !important;
+      }
+      &.expandable-section--short {
+        max-height: $sectionShort + $barHeight;
+      }
+      &.expandable-section--medium {
+        max-height: $sectionMedium + $barHeight;
+      }
+      &.expandable-section--tall {
+        max-height: $sectionTall + $barHeight;
+      }
+    }
+  }
+
   // inside main nav
   .nav--main & {
     // background: lightBlue;
@@ -94,6 +111,7 @@ $sectionTall: 240px;
   padding: 0;
   width: 100%;
   background: white;
+  overflow-y: hidden;
 
   .nav--extra & {
     position: fixed;
@@ -106,7 +124,11 @@ $sectionTall: 240px;
     // @include prefixr(transform, translateY($headerBarHeight - $navTransitionDistance));
     @include prefixr(transform, translateY($headerBarHeight));
     @include prefixr(transition, opacity .4s $animationEasing);
-    pointer-events: none;
+
+    @include at-breakpoint($bp-large) {
+      opacity: 1;
+      pointer-events: all;
+    }
   }
   
   .expandable-section--open & {
@@ -117,6 +139,15 @@ $sectionTall: 240px;
       pointer-events: auto;
     }
   }
+  &.expandable-section--locked-open {
+    .nav--extra & {
+      @include up-to-width($bp-large) {
+        opacity: 1;
+        z-index: 2;
+        pointer-events: auto;
+      }
+    }
+  }
   
 
   @include at-breakpoint($bp-large) {
@@ -124,13 +155,21 @@ $sectionTall: 240px;
     left: 0;
     top: 0;
     z-index: 1;
-    opacity: 0;
-    @include prefixr(transition, opacity .4s $animationEasing);
+    opacity: 1;
+    display: none;
+    pointer-events: auto;
+    @include prefixr(transition, none);
     @include prefixr(transform, translateY($headerBarHeight));
 
-    .expandable-section--open & {
-      // @include prefixr(transform, translateY($headerBarHeight));
+    .expandable-section--open &, :hover >& {
+      display: block;
       opacity: 1;
+    }
+    .expandable-section--locked-open & {
+      @include up-to-width($bp-large) {
+        display: block;
+        opacity: 1;
+      }
     }
   }
 
