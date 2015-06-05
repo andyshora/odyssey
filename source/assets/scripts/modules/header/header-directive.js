@@ -18,6 +18,9 @@ angular.module('dyson')
 
           scope.onToggleClicked = function() {
             scope.navOpen = !scope.navOpen;
+            if (scope.navOpen) {
+              scope.closeAllSectionsExcept(-1);
+            }
           }
 
           scope.closeAllSectionsExcept = function(excludeIndex) {
@@ -31,23 +34,25 @@ angular.module('dyson')
           }
 
           scope.onSectionToggled = function(index, open) {
-            
             if (open) {
               scope.closeAllSectionsExcept(index);
-            }
 
+              if (index > 4) {
+                scope.navOpen = false;
+              }
+            }
           }
 
-          /*scope.$watch('expandableSectionOpen', function(val) {
-            console.log(val);
-          }, true);*/
 
         },
-        controller: function($rootScope, $scope) {
+        controller: function($rootScope, $scope, $window) {
           $rootScope.$on('app:resize', function() {
-            $scope.closeAllSectionsExcept(-1);
-            $scope.navOpen = false;
-            $scope.$apply();
+            if ($window.innerWidth > 700) {
+              $scope.closeAllSectionsExcept(-1);
+              $scope.navOpen = false;
+              $scope.$apply();
+            }
+            
           });
         },
         templateUrl: 'assets/scripts/modules/header/header-template.html'

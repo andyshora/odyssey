@@ -1,16 +1,16 @@
 /*global angular */
 angular.module('dyson')
-  .directive('sectionItemDirective', function() {
+  .directive('sectionItem', function() {
     'use strict';
 
     return {
         replace: true,
-        transclude: true,
         restrict: 'A',
         scope: {
           closedIcon: '@',
           openIcon: '@',
-          open: '='
+          open: '=',
+          title: '@'
         },
         templateUrl: 'assets/scripts/components/section-item/section-item-template.html'
       };

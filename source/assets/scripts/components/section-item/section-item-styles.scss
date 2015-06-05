@@ -1,12 +1,16 @@
 .section-item {
   
   height: $barHeight;
-  padding: $barPadding;
+  background: red;
+  font-size: $fontSizeBase;
+  position: relative;
+  z-index: 4;
+
+  @include at-breakpoint($bp-large) {
+    display: inline-block;
+  }
 
   > i {
     display: inline-block;
   }
-}
-.section-item__title {
-  display: inline-block;
 }

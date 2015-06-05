@@ -1286,7 +1286,7 @@ p {
   .expandable-section__content.expandable-section--tall {
     height: 240px; }
 
-.expandable-section__title {
+.section-title {
   display: block;
   height: 58px;
   cursor: pointer;
@@ -1295,7 +1295,7 @@ p {
   padding: 17px;
   font-size: 16px; }
   @media (min-width: 768px) {
-    .expandable-section__title {
+    .section-title {
       border-right: 1px solid black;
       width: auto;
       padding: 17px 12px; } }
@@ -1312,12 +1312,15 @@ p {
 
 .section-item {
   height: 58px;
-  padding: 2px 5px; }
+  background: red;
+  font-size: 15px;
+  position: relative;
+  z-index: 4; }
+  @media (min-width: 768px) {
+    .section-item {
+      display: inline-block; } }
   .section-item > i {
     display: inline-block; }
-
-.section-item__title {
-  display: inline-block; }
 
 .dyson-icon {
   color: white;
