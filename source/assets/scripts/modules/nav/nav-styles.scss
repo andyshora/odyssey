@@ -1,21 +1,5 @@
 
-.trigger {
-  display: inline-block;
-  background: black;
-  height: $headerBarHeight;
-  vertical-align: top;
-  position: relative;
-  z-index: 4;
-  padding: 17px;
 
-  > button {
-    font-size: 12px;
-  }
-
-  @include at-breakpoint($bp-large) {
-    display: none;
-  }
-}
 .nav {
   // display: inline-block;
   display: block;
@@ -33,6 +17,7 @@
   width: 100%;
   top: $headerBarHeight;
 
+
   z-index: -1;
   opacity: 0;
   @include prefixr(transition, all .3s $animationEasing);
@@ -46,12 +31,13 @@
 
   @include at-breakpoint($bp-large) {
     position: static;
-    // width: 75%;
+    width: 75%;
     width: 100%;
     z-index: 1;
     opacity: 1;
     @include prefixr(transition, none);
     @include prefixr(transform, none);
+    padding-left: 100px; // to make room for dyson logo
 
     // overlay to sit on top of expanding content, but below the items in the header bar
     /* &:after {

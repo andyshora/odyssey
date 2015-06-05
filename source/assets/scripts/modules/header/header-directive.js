@@ -25,7 +25,8 @@ angular.module('dyson')
 
           scope.closeAllSectionsExcept = function(excludeIndex) {
             console.log('closeAllSectionsExcept');
-            for (var i = 0; i < scope.expandableSectionOpen.length; i++) {
+            // never close 0
+            for (var i = 1; i < scope.expandableSectionOpen.length; i++) {
               if (i !== excludeIndex) {
                 scope.expandableSectionOpen[i] = false;
               }

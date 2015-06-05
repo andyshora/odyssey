@@ -15,9 +15,9 @@ angular.module('dyson')
           index: '=',
           onToggled: '&'
         },
-        link: function(scope) {
+        link: function(scope, elm, attrs) {
 
-          scope.open = false;
+          scope.open = !!attrs.startOpen;
 
           // let the parent scope know that the section has been toggled
           scope.onTitleClicked = function() {

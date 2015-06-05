@@ -142,19 +142,3 @@ $sectionTall: 240px;
   }
 }
 
-.section-title {
-  display: block;
-  // background: lightBlue;
-  height: $barHeight;
-  cursor: pointer;
-  position: relative;
-  z-index: 4;
-  padding: 17px;
-  font-size: $fontSizeRegular;
-
-  @include at-breakpoint($bp-large) {
-    border-right: 1px solid black;
-    width: auto;
-    padding: 17px 12px;
-  }
-}

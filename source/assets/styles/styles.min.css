@@ -594,6 +594,26 @@ p {
     position: absolute;
     z-index: 3; }
 
+.header__logo {
+  display: inline-block !important;
+  height: 58px;
+  padding-left: 0 !important; }
+  @media (min-width: 768px) {
+    .header__logo {
+      position: absolute !important;
+      left: 0;
+      top: 0;
+      padding-left: 24px !important; } }
+
+.dyson-logo {
+  width: 55px;
+  position: relative;
+  z-index: 4;
+  margin-top: 2px; }
+  @media (min-width: 768px) {
+    .dyson-logo {
+      margin-top: -1px; } }
+
 .trigger {
   display: inline-block;
   background: black;
@@ -601,7 +621,8 @@ p {
   vertical-align: top;
   position: relative;
   z-index: 4;
-  padding: 17px; }
+  padding: 17px;
+  cursor: pointer; }
   .trigger > button {
     font-size: 12px; }
   @media (min-width: 768px) {
@@ -653,6 +674,7 @@ p {
   @media (min-width: 768px) {
     .nav--main {
       position: static;
+      width: 75%;
       width: 100%;
       z-index: 1;
       opacity: 1;
@@ -664,6 +686,7 @@ p {
       -moz-transform: none;
       -ms-transform: none;
       transform: none;
+      padding-left: 100px;
       /* &:after {
       content: '';
       width: 100%;
@@ -1286,20 +1309,6 @@ p {
   .expandable-section__content.expandable-section--tall {
     height: 240px; }
 
-.section-title {
-  display: block;
-  height: 58px;
-  cursor: pointer;
-  position: relative;
-  z-index: 4;
-  padding: 17px;
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    .section-title {
-      border-right: 1px solid black;
-      width: auto;
-      padding: 17px 12px; } }
-
 .nice-image {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
@@ -1321,6 +1330,20 @@ p {
       display: inline-block; } }
   .section-item > i {
     display: inline-block; }
+
+.section-title {
+  display: block;
+  height: 58px;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+  padding: 17px;
+  font-size: 16px; }
+  @media (min-width: 768px) {
+    .section-title {
+      border-right: 1px solid #333333;
+      width: auto;
+      padding: 21px 24px; } }
 
 .dyson-icon {
   color: white;
