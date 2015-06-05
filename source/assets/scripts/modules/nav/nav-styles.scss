@@ -22,7 +22,7 @@
   background: black;
   z-index: -1;
   opacity: 0;
-  @include prefixr(transition, all .4s $animationEasing);
+  // @include prefixr(transition, all .4s $animationEasing);
   @include prefixr(transform, translateY(-$navTransitionDistanceLarge));
 
   &.nav--open {
@@ -94,6 +94,7 @@
   @include at-breakpoint($bp-large) {
     width: 25%;
     z-index: 4;
+    min-width: 450px;
   }
 
   .section-title {

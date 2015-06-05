@@ -9,7 +9,12 @@ $sectionTall: 240px;
   overflow-y: hidden;
   overflow-x: visible;
 
-  @include prefixr(transition, max-height .3s $animationEasing);
+  > .section-title {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  // @include prefixr(transition, max-height .3s $animationEasing);
   
   @include at-breakpoint($bp-large) {
     @include prefixr(transition, none);
@@ -123,28 +128,44 @@ $sectionTall: 240px;
     pointer-events: none;
     // @include prefixr(transform, translateY($headerBarHeight - $navTransitionDistance));
     @include prefixr(transform, translateY($headerBarHeight));
-    @include prefixr(transition, opacity .2s $animationEasing);
+    // @include prefixr(transition, opacity .2s $animationEasing);
 
     @include at-breakpoint($bp-large) {
       opacity: 1;
       pointer-events: all;
+
+
+    }
+  }
+
+  .search-bar & {
+    @include at-breakpoint($bp-large) {
+      height: $headerBarHeight;
+      width: 220px;
+      background: black;
+      display: inline-block;
+      z-index: 4;
+      transform: none;
+      position: relative;
+      padding: 15px 24px;
+      overflow: hidden;
     }
   }
   
-  .expandable-section--open & {
-    .nav--extra & {
-      // @include prefixr(transform, translateY($headerBarHeight));
-      opacity: 1;
-      z-index: 2;
-      pointer-events: auto;
-    }
-  }
-  &.expandable-section--locked-open {
-    .nav--extra & {
-      @include up-to-width($bp-large) {
+  @include up-to-width($bp-large) {
+    .expandable-section--open & {
+      .nav--extra & {
+        // @include prefixr(transform, translateY($headerBarHeight));
         opacity: 1;
         z-index: 2;
         pointer-events: auto;
+      }
+    }
+    &.expandable-section--locked-open {
+      .nav--extra & {
+          opacity: 1;
+          z-index: 2;
+          pointer-events: auto;
       }
     }
   }
@@ -161,15 +182,21 @@ $sectionTall: 240px;
     @include prefixr(transition, none);
     @include prefixr(transform, translateY($headerBarHeight));
 
-    .expandable-section--open &, :hover >& {
+    :hover >& {
       display: block;
       opacity: 1;
     }
+    
+  }
+
+  @include up-to-width($bp-large) {
     .expandable-section--locked-open & {
-      @include up-to-width($bp-large) {
-        display: block;
-        opacity: 1;
-      }
+      display: block;
+      opacity: 1;
+    }
+    .expandable-section--open & {
+      display: block;
+      opacity: 1;
     }
   }
 
@@ -184,3 +211,10 @@ $sectionTall: 240px;
   }
 }
 
+.expandable-section__title {
+  .search-bar & {
+    @include at-breakpoint($bp-large) {
+      display: none;
+    }
+  }
+}

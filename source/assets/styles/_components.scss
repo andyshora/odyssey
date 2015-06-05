@@ -19,3 +19,16 @@
     padding: 21px 24px;
   }
 }
+
+#search {
+  width: 100%;
+  background: black;
+  color: grey;
+  height: 30px;
+  border: none;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid white;
+  @include prefixr(border-radius, none);
+  @include prefixr(outline, none);
+}

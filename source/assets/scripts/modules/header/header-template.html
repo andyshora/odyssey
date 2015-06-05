@@ -8,11 +8,16 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title="Products"
       data-modifier="short">
-      <span class="theme--light">test content 0</span>
+      <span class="theme--light">Products navigation</span>
     </li>
     <li
-      section-item
-      data-title="Service &amp; Support">
+      expandable-section
+      data-open="expandableSectionOpen[1]"
+      data-index="1"
+      data-on-toggled="onSectionToggled(index, open)"
+      data-title="Service &amp; Support"
+      data-modifier="short">
+      <span class="theme--light">Service &amp; Support navigation</span>
     </li>
     <li
       section-item
@@ -35,13 +40,19 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title=""
       data-icon="placeholder"
-      data-modifier="short">
-      <span class="theme--light">search</span>
+      data-modifier="short search-bar">
+      <input id="search" type="search" placeholder="Search"><i class="dyson-icon dyson-icon-placeholder"></i>
     </li>
-    <!-- <li
-      section-item
+    <li
+      expandable-section
+      data-open="expandableSectionOpen[6]"
+      data-index="6"
+      data-on-toggled="onSectionToggled(index, open)"
       data-title=""
-      data-icon="placeholder"></li> -->
+      data-icon="placeholder"
+      data-modifier="short location-bar">
+      <span class="theme--light">locator</span>
+    </li>
     <li
       expandable-section
       data-open="expandableSectionOpen[7]"
