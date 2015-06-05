@@ -4,7 +4,7 @@ $barPadding: 2px 5px; // todo
 /*==========  BREAKPOINTS  ==========*/
 $bp-small: 320px;
 $bp-medium: 700px;
-$bp-large: 768px;
+$bp-large: 1000px;
 $bp-wide: 2000px;
 
 /*==========  THEME  ==========*/
@@ -28,6 +28,7 @@ $c-shadow-light: rgb(234, 234, 234);
 $barHeight: 53px;
 $headerBarHeight: 58px;
 $navTransitionDistance: 10px;
+$navTransitionDistanceLarge: 50px;
 
 // Defining animation easings
 $animationEasing: cubic-bezier(.455, .030, .515, .955);

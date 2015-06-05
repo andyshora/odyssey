@@ -61,7 +61,6 @@ $sectionTall: 240px;
 
     @include at-breakpoint($bp-large) {
       display: inline-block;
-      background: blue;
       width: auto;
     }
   }
@@ -73,9 +72,11 @@ $sectionTall: 240px;
     margin: 0;
     padding: 0;
     vertical-align: top;
+    white-space: nowrap;
+    float: right;
 
     display: inline-block;
-    width: (100% / 3.0);
+    // width: (100% / 3.0);
     height: $headerBarHeight;
     text-align: center;
 
@@ -101,14 +102,16 @@ $sectionTall: 240px;
     z-index: 1;
     opacity: 0;
     width: 100%;
-    @include prefixr(transform, translateY($headerBarHeight - $navTransitionDistance));
-    @include prefixr(transition, all .4s $animationEasing);
+    pointer-events: none;
+    // @include prefixr(transform, translateY($headerBarHeight - $navTransitionDistance));
+    @include prefixr(transform, translateY($headerBarHeight));
+    @include prefixr(transition, opacity .4s $animationEasing);
     pointer-events: none;
   }
   
   .expandable-section--open & {
     .nav--extra & {
-      @include prefixr(transform, translateY($headerBarHeight));
+      // @include prefixr(transform, translateY($headerBarHeight));
       opacity: 1;
       z-index: 2;
       pointer-events: auto;
@@ -117,16 +120,16 @@ $sectionTall: 240px;
   
 
   @include at-breakpoint($bp-large) {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 1;
     opacity: 0;
-    @include prefixr(transition, all .4s $animationEasing);
-    @include prefixr(transform, translateY($headerBarHeight - $navTransitionDistance));
+    @include prefixr(transition, opacity .4s $animationEasing);
+    @include prefixr(transform, translateY($headerBarHeight));
 
     .expandable-section--open & {
-      @include prefixr(transform, translateY($headerBarHeight));
+      // @include prefixr(transform, translateY($headerBarHeight));
       opacity: 1;
     }
   }

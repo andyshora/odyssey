@@ -13,15 +13,17 @@
 }
 .nav--main {
 
-  position: absolute;
+  position: fixed;
+  left: 0;
   width: 100%;
   top: $headerBarHeight;
-
+  border-top: 1px solid #333333;
+  height: $headerBarHeight;
 
   z-index: -1;
   opacity: 0;
   @include prefixr(transition, all .3s $animationEasing);
-  @include prefixr(transform, translateY(-$navTransitionDistance));
+  @include prefixr(transform, translateY(-$navTransitionDistanceLarge));
 
   &.nav--open {
     @include prefixr(transform, translateY(0));
@@ -38,7 +40,7 @@
     @include prefixr(transition, none);
     @include prefixr(transform, none);
     padding-left: 100px; // to make room for dyson logo
-
+    border-top: none;
     // overlay to sit on top of expanding content, but below the items in the header bar
     /* &:after {
       content: '';
@@ -71,9 +73,10 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 50%;
+  width: auto;
   z-index: 4;
-  min-width: 120px;
+  min-width: 150px;
+  white-space: nowrap;
 
   // overlay to sit on top of expanding content, but below the items in the header bar
   /* &:after {
@@ -91,6 +94,14 @@
   @include at-breakpoint($bp-large) {
     width: 25%;
     z-index: 4;
+  }
+
+  .section-title {
+    border-right: 1px solid #333333;
+
+    @include at-breakpoint($bp-large) {
+      padding: 17px 24px;
+    }
   }
 
   > .nav-item {

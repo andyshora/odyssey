@@ -6,6 +6,7 @@
   font-size: 0;
   background: black;
   height: $headerBarHeight;
+  position: relative;
 
   // overlay to sit on top of expanding content, but below the items in the header bar
   &:after {
@@ -49,7 +50,7 @@
   vertical-align: top;
   position: relative;
   z-index: 4;
-  padding: 17px;
+  padding: 17px 17px 17px 0;
   cursor: pointer;
 
   > button {

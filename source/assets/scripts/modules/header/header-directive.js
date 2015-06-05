@@ -23,17 +23,6 @@ angular.module('dyson')
             }
           }
 
-          scope.closeAllSectionsExcept = function(excludeIndex) {
-            console.log('closeAllSectionsExcept');
-            // never close 0
-            for (var i = 1; i < scope.expandableSectionOpen.length; i++) {
-              if (i !== excludeIndex) {
-                scope.expandableSectionOpen[i] = false;
-              }
-            }
-
-          }
-
           scope.onSectionToggled = function(index, open) {
             if (open) {
               scope.closeAllSectionsExcept(index);
@@ -55,6 +44,20 @@ angular.module('dyson')
             }
             
           });
+
+          $scope.closeAllSectionsExcept = function(excludeIndex) {
+            console.log('closeAllSectionsExcept');
+
+            // never close 0 on mobile
+            var startIndex = ($window.innerWidth < 1000) ? 1 : 0;
+            
+            for (var i = startIndex; i < $scope.expandableSectionOpen.length; i++) {
+              if (i !== excludeIndex) {
+                $scope.expandableSectionOpen[i] = false;
+              }
+            }
+
+          }
         },
         templateUrl: 'assets/scripts/modules/header/header-template.html'
       };
