@@ -123,7 +123,7 @@ $sectionTall: 240px;
     pointer-events: none;
     // @include prefixr(transform, translateY($headerBarHeight - $navTransitionDistance));
     @include prefixr(transform, translateY($headerBarHeight));
-    @include prefixr(transition, opacity .4s $animationEasing);
+    @include prefixr(transition, opacity .2s $animationEasing);
 
     @include at-breakpoint($bp-large) {
       opacity: 1;

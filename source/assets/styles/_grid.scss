@@ -17,7 +17,19 @@ body {
 .wide-overlay {
   position: relative;
   z-index: 1;
-  background: red !important;
+  background: black !important;
+
+  &:after {
+    content: '';
+    width: 100%;
+    background: black;
+    height: $headerBarHeight;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+  }
 }
 
 hr {

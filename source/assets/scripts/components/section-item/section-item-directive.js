@@ -7,9 +7,7 @@ angular.module('dyson')
         replace: true,
         restrict: 'A',
         scope: {
-          closedIcon: '@',
-          openIcon: '@',
-          open: '=',
+          icon: '@',
           title: '@'
         },
         templateUrl: 'assets/scripts/components/section-item/section-item-template.html'
