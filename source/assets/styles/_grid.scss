@@ -18,6 +18,9 @@ body {
   position: relative;
   z-index: 1;
   background: black !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   &:after {
     content: '';

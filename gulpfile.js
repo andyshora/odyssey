@@ -17,6 +17,10 @@ var config = {
 
 gulp.task('iconfont', function(){
   gulp.src([ config.source + '/assets/icons/*.svg' ])
+    .pipe(rename(function (path) {
+      // lets clean up these naming conventions
+      path.basename = path.basename.replace('Dyson_', '').replace(/_/g, '-').toLowerCase();
+    }))
     .pipe(iconfont({ fontName: 'dyson-icons' }))
     .on('codepoints', function(codepoints, options) {
       gulp.src(config.source + '/assets/styles/template/_icon-font-template.scss')

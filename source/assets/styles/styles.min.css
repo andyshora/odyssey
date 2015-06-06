@@ -611,10 +611,11 @@ p {
   width: 55px;
   position: relative;
   z-index: 4;
-  margin-top: 2px; }
+  margin-top: 3px; }
   @media (min-width: 1000px) {
     .dyson-logo {
-      margin-top: -1px; } }
+      width: 64px;
+      margin-top: -4px; } }
 
 .trigger {
   display: inline-block;
@@ -1301,7 +1302,7 @@ p {
       z-index: 4;
       transform: none;
       position: relative;
-      padding: 15px 24px;
+      padding: 15px 32px 15px 24px;
       overflow: hidden; } }
   @media (max-width: 1000px) {
     .nav--extra .expandable-section--open .expandable-section__content {
@@ -1396,9 +1397,14 @@ p {
   color: grey;
   height: 30px;
   border: none;
-  padding: 10px;
+  padding: 10px 0;
   border: none;
   border-bottom: 1px solid white;
+  font-family: 'FuturaBT-Book';
+  font-size: 16px;
+  position: relative;
+  top: -4px;
+  margin: 0 9px 0 0;
   -webkit-border-radius: none;
   -moz-border-radius: none;
   -ms-border-radius: none;
@@ -1517,34 +1523,34 @@ p {
   width: 1.28571em;
   text-align: center; }
 
-.dyson-icon-Dyson_Basket:before {
+.dyson-icon-basket:before {
   content: "\E001"; }
 
-.dyson-icon-Dyson_Chevron:before {
+.dyson-icon-chevron:before {
   content: "\E002"; }
 
-.dyson-icon-Dyson_Chevron_Down:before {
+.dyson-icon-chevron-down:before {
   content: "\E003"; }
 
-.dyson-icon-Dyson_Chevron_Up:before {
+.dyson-icon-chevron-up:before {
   content: "\E004"; }
 
-.dyson-icon-Dyson_Close:before {
+.dyson-icon-close:before {
   content: "\E005"; }
 
-.dyson-icon-Dyson_Hamburger:before {
+.dyson-icon-hamburger:before {
   content: "\E006"; }
 
-.dyson-icon-Dyson_Minus:before {
+.dyson-icon-minus:before {
   content: "\E007"; }
 
-.dyson-icon-Dyson_Plus:before {
+.dyson-icon-plus:before {
   content: "\E008"; }
 
-.dyson-icon-Dyson_Search:before {
+.dyson-icon-search:before {
   content: "\E009"; }
 
-.dyson-icon-Dyson_store_Finder:before {
+.dyson-icon-store-finder:before {
   content: "\E00A"; }
 
 .theme--dark {
@@ -1573,7 +1579,10 @@ body {
 .wide-overlay {
   position: relative;
   z-index: 1;
-  background: black !important; }
+  background: black !important;
+  position: fixed;
+  top: 0;
+  width: 100%; }
   .wide-overlay:after {
     content: '';
     width: 100%;

@@ -3,8 +3,15 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
-<polygon fill="#020304" points="32,13 19,13 19,0 13,0 13,13 0,13 0,19 13,19 13,32 19,32 19,19 32,19 "/>
 <g>
 	<rect x="1072.216" y="718.393" fill="#020304" width="32" height="6"/>
+</g>
+<g>
+	<g>
+		<rect x="14" width="4" height="32"/>
+	</g>
+	<g>
+		<rect y="14" width="32" height="4"/>
+	</g>
 </g>
 </svg>
