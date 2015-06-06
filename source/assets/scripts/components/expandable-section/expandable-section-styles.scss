@@ -141,7 +141,7 @@ $sectionTall: 240px;
   .search-bar & {
     @include at-breakpoint($bp-large) {
       height: $headerBarHeight;
-      width: 220px;
+      width: 90px;
       background: black;
       display: inline-block;
       z-index: 4;
@@ -149,6 +149,27 @@ $sectionTall: 240px;
       position: relative;
       padding: 15px 32px 15px 24px;
       overflow: hidden;
+    }
+    @include at-breakpoint($bp-large + 50px) {
+      width: 110px;
+    }
+    @include at-breakpoint($bp-large + 100px) {
+      width: 140px;
+    }
+    @include at-breakpoint($bp-large + 170px) {
+      width: 180px;
+    }
+    @include at-breakpoint($bp-large + 200px) {
+      width: 220px;
+    }
+    @include at-breakpoint($bp-large + 280px) {
+      width: 300px;
+    }
+    @include at-breakpoint($bp-large + 400px) {
+      width: 420px;
+    }
+    @include at-breakpoint($bp-large + 600px) {
+      min-width: 620px;
     }
   }
   

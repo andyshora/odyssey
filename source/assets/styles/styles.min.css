@@ -727,7 +727,28 @@ p {
     .nav--extra {
       width: 25%;
       z-index: 4;
+      min-width: 240px; } }
+  @media (min-width: 1050px) {
+    .nav--extra {
+      min-width: 280px; } }
+  @media (min-width: 1100px) {
+    .nav--extra {
+      min-width: 300px; } }
+  @media (min-width: 1170px) {
+    .nav--extra {
+      min-width: 370px; } }
+  @media (min-width: 1200px) {
+    .nav--extra {
+      min-width: 410px; } }
+  @media (min-width: 1250px) {
+    .nav--extra {
       min-width: 450px; } }
+  @media (min-width: 1400px) {
+    .nav--extra {
+      min-width: 570px; } }
+  @media (min-width: 1600px) {
+    .nav--extra {
+      min-width: 800px; } }
   .nav--extra .section-title {
     border-right: 1px solid #333333; }
     @media (min-width: 1000px) {
@@ -1296,7 +1317,7 @@ p {
   @media (min-width: 1000px) {
     .search-bar .expandable-section__content {
       height: 58px;
-      width: 220px;
+      width: 90px;
       background: black;
       display: inline-block;
       z-index: 4;
@@ -1304,6 +1325,27 @@ p {
       position: relative;
       padding: 15px 32px 15px 24px;
       overflow: hidden; } }
+  @media (min-width: 1050px) {
+    .search-bar .expandable-section__content {
+      width: 110px; } }
+  @media (min-width: 1100px) {
+    .search-bar .expandable-section__content {
+      width: 140px; } }
+  @media (min-width: 1170px) {
+    .search-bar .expandable-section__content {
+      width: 180px; } }
+  @media (min-width: 1200px) {
+    .search-bar .expandable-section__content {
+      width: 220px; } }
+  @media (min-width: 1280px) {
+    .search-bar .expandable-section__content {
+      width: 300px; } }
+  @media (min-width: 1400px) {
+    .search-bar .expandable-section__content {
+      width: 420px; } }
+  @media (min-width: 1600px) {
+    .search-bar .expandable-section__content {
+      min-width: 620px; } }
   @media (max-width: 1000px) {
     .nav--extra .expandable-section--open .expandable-section__content {
       opacity: 1;
@@ -1653,16 +1695,18 @@ hr.module-divide {
 .gutter {
   width: 89.6%;
   margin: 0 auto;
-  clear: both;
-  /* @include at-breakpoint($bp-medium) {
-    width: 100% - ($gg-medium * 2);
-  } */
-  /* @include at-breakpoint($bp-wide) {
-    width: 100% - ($gg-wide * 2);
-  } */ }
+  clear: both; }
   @media (min-width: 1000px) {
     .gutter {
       width: 90%; } }
+
+.gutter-upto-large {
+  width: 89.6%;
+  margin: 0 auto;
+  clear: both; }
+  @media (min-width: 1000px) {
+    .gutter-upto-large {
+      width: 100%; } }
 
 .module--debug-grid .grid-item {
   width: 8.33333%;

@@ -94,7 +94,28 @@
   @include at-breakpoint($bp-large) {
     width: 25%;
     z-index: 4;
+    min-width: 240px;
+  }
+  @include at-breakpoint($bp-large + 50px) {
+    min-width: 280px;
+  }
+  @include at-breakpoint($bp-large + 100px) {
+    min-width: 300px;
+  }
+  @include at-breakpoint($bp-large + 170px) {
+    min-width: 370px;
+  }
+  @include at-breakpoint($bp-large + 200px) {
+    min-width: 410px;
+  }
+  @include at-breakpoint($bp-large + 250px) {
     min-width: 450px;
+  }
+  @include at-breakpoint($bp-large + 400px) {
+    min-width: 570px;
+  }
+  @include at-breakpoint($bp-large + 600px) {
+    min-width: 800px;
   }
 
   .section-title {

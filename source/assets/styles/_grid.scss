@@ -121,19 +121,22 @@ hr {
   width: 100% - ($gg-small * 2);
   margin: 0 auto;
   clear: both;
-  // overflow: auto; // todo
-  
-  /* @include at-breakpoint($bp-medium) {
-    width: 100% - ($gg-medium * 2);
-  } */
 
   @include at-breakpoint($bp-large) {
     width: 100% - ($gg-large * 2);
   }
 
-  /* @include at-breakpoint($bp-wide) {
-    width: 100% - ($gg-wide * 2);
-  } */
+}
+
+.gutter-upto-large {
+  width: 100% - ($gg-small * 2);
+  margin: 0 auto;
+  clear: both;
+
+  @include at-breakpoint($bp-large) {
+    width: 100%;
+  }
+
 }
 
 .grid-container {
