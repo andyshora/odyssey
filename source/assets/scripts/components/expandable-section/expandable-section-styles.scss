@@ -150,23 +150,38 @@ $sectionTall: 240px;
       padding: 15px 32px 15px 24px;
       overflow: hidden;
     }
-    @include at-breakpoint($bp-large + 50px) {
+    @include at-breakpoint($bp-large + 20px) {
       width: 110px;
     }
-    @include at-breakpoint($bp-large + 100px) {
+    @include at-breakpoint($bp-large + 65px) {
       width: 140px;
     }
+    @include at-breakpoint($bp-large + 80px) {
+      width: 155px;
+    }
+    @include at-breakpoint($bp-large + 100px) {
+      width: 170px;
+    }
+    @include at-breakpoint($bp-large + 130px) {
+      width: 200px;
+    }
     @include at-breakpoint($bp-large + 170px) {
-      width: 180px;
+      width: 230px;
     }
     @include at-breakpoint($bp-large + 200px) {
-      width: 220px;
+      width: 250px;
     }
-    @include at-breakpoint($bp-large + 280px) {
-      width: 300px;
+    @include at-breakpoint($bp-large + 250px) {
+      width: 310px;
+    }
+    @include at-breakpoint($bp-large + 300px) {
+      width: 360px;
     }
     @include at-breakpoint($bp-large + 400px) {
       width: 420px;
+    }
+    @include at-breakpoint($bp-large + 500px) {
+      min-width: 510px;
     }
     @include at-breakpoint($bp-large + 600px) {
       min-width: 620px;
