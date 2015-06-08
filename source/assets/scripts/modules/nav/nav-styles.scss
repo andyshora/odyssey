@@ -79,6 +79,10 @@
   white-space: nowrap;
   border-left: 1px solid #333333;
 
+  @include at-breakpoint($bp-large + 600px) {
+    border-left: none;
+  }
+
   // overlay to sit on top of expanding content, but below the items in the header bar
   /* &:after {
     content: '';
@@ -143,15 +147,44 @@
   @include at-breakpoint($bp-large + 270px) {
     width: 42.5%;
   }
-  
   @include at-breakpoint($bp-large + 300px) {
     width: 44%;
   }
   @include at-breakpoint($bp-large + 320px) {
     width: 45%;
   }
+  @include at-breakpoint($bp-large + 340px) {
+    width: 46%;
+  }
+  @include at-breakpoint($bp-large + 360px) {
+    width: 46.5%;
+  }
+  @include at-breakpoint($bp-large + 380px) {
+    width: 47%;
+  }
   @include at-breakpoint($bp-large + 400px) {
+    width: 48%;
+  }
+  @include at-breakpoint($bp-large + 420px) {
+    width: 48.5%;
+  }
+  @include at-breakpoint($bp-large + 430px) {
     width: 49%;
+  }
+  @include at-breakpoint($bp-large + 450px) {
+    width: 50%;
+  }
+  @include at-breakpoint($bp-large + 470px) {
+    width: 51%;
+  }
+  @include at-breakpoint($bp-large + 490px) {
+    width: 52%;
+  }
+  @include at-breakpoint($bp-large + 510px) {
+    width: 53%;
+  }
+  @include at-breakpoint($bp-large + 550px) {
+    width: 53.5%;
   }
   @include at-breakpoint($bp-large + 600px) {
     width: 54%;
