@@ -145,17 +145,31 @@ $sectionTall: 240px;
     }
   }
 
-  .search-bar & {
+  .search-bar &, .location-bar & {
+
+    height: auto;
+    overflow: hidden;
+    background: black;
+    padding: 17px 0;
+
+    @include up-to-width($bp-large) {
+      border-top: 1px solid #333333;
+
+      .dyson-icon {
+        position: absolute;
+        right: 0;
+      }
+    }
+
     @include at-breakpoint($bp-large) {
       height: $headerBarHeight;
       width: 90px - 20px;
-      background: black;
       display: inline-block;
       z-index: 4;
       transform: none;
       position: relative;
       padding: 15px 32px 15px 24px;
-      overflow: hidden;
+
     }
     @include at-breakpoint($bp-large + 20px) {
       width: 110px - 20px;
