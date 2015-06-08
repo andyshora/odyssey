@@ -12,6 +12,13 @@ $sectionTall: 240px;
   > .section-title {
     display: inline-block;
     vertical-align: top;
+
+    @include at-breakpoint($bp-large) {
+      &:hover {
+        background: white;
+        color: black;
+      }
+    }
   }
 
   // @include prefixr(transition, max-height .3s $animationEasing);

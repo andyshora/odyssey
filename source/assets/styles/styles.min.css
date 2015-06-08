@@ -691,7 +691,7 @@ p {
       -moz-transform: none;
       -ms-transform: none;
       transform: none;
-      padding-left: 110px;
+      padding-left: 114px;
       border-top: none;
       /* &:after {
       content: '';
@@ -1299,6 +1299,11 @@ p {
   .expandable-section > .section-title {
     display: inline-block;
     vertical-align: top; }
+    @media (min-width: 1000px) {
+      .expandable-section > .section-title:hover {
+        background: white;
+        color: black; }
+ }
   @media (min-width: 1000px) {
     .expandable-section {
       -webkit-transition: none;

@@ -38,7 +38,7 @@
     opacity: 1;
     @include prefixr(transition, none);
     @include prefixr(transform, none);
-    padding-left: 110px; // to make room for dyson logo
+    padding-left: 114px; // to make room for dyson logo
     border-top: none;
     // overlay to sit on top of expanding content, but below the items in the header bar
     /* &:after {
