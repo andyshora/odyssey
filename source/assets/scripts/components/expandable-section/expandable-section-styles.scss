@@ -249,8 +249,12 @@ $sectionTall: 240px;
 
 .expandable-section__title {
   .search-bar & {
+
+    border-right: none;
+
     @include at-breakpoint($bp-large) {
       display: none;
+      border-right: 1px solid #333333;
     }
   }
 }
