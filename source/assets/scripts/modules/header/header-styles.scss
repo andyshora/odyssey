@@ -24,13 +24,13 @@
 .header__logo {
   display: inline-block !important;
   height: $headerBarHeight;
-  padding-left: 0 !important;
+  padding-left: 24px;
+  border-left: 1px solid #333333;
 
   @include at-breakpoint($bp-large) {
     position: absolute !important;
     left: 0;
     top: 0;
-    padding-left: 24px !important;
   }
 }
 .dyson-logo {
@@ -51,7 +51,7 @@
   vertical-align: top;
   position: relative;
   z-index: 4;
-  padding: 17px 17px 17px 0;
+  padding: 17px;
   cursor: pointer;
 
   > button {

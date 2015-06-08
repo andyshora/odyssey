@@ -8,7 +8,8 @@ angular.module('dyson')
         restrict: 'A',
         scope: {
           icon: '@',
-          title: '@'
+          title: '@',
+          theme: '@'
         },
         templateUrl: 'assets/scripts/components/section-item/section-item-template.html'
       };

@@ -11,6 +11,7 @@ angular.module('dyson')
           title: '@',
           modifier: '@',
           icon: '@',
+          theme: '@',
           open: '=',
           index: '=',
           onToggled: '&',

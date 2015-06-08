@@ -123,11 +123,20 @@ hr {
   margin: 0 auto;
   clear: both;
   max-width: 1440px;
+  
+  @include at-breakpoint($bp-large) {
+    width: 100% - ($gg-large * 2);
+  }
+}
+
+.gutter-from-large {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
 
   @include at-breakpoint($bp-large) {
     width: 100% - ($gg-large * 2);
   }
-
 }
 
 .gutter-upto-large {

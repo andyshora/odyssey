@@ -4,7 +4,6 @@
   // display: inline-block;
   display: block;
   white-space: normal;
-  background: white;
   margin: 0;
   padding: 0;
   font-size: 0;
@@ -39,7 +38,7 @@
     opacity: 1;
     @include prefixr(transition, none);
     @include prefixr(transform, none);
-    padding-left: 100px; // to make room for dyson logo
+    padding-left: 110px; // to make room for dyson logo
     border-top: none;
     // overlay to sit on top of expanding content, but below the items in the header bar
     /* &:after {
@@ -79,10 +78,6 @@
   white-space: nowrap;
   border-left: 1px solid #333333;
 
-  @include at-breakpoint($bp-large + 600px) {
-    border-left: none;
-  }
-
   // overlay to sit on top of expanding content, but below the items in the header bar
   /* &:after {
     content: '';
@@ -98,96 +93,99 @@
 
   @include at-breakpoint($bp-large) {
     z-index: 4;
-    width: 27%;
+    width: 1% + 27%;
+    border-right: 1px solid #333333;
+    padding-right: 24px;
+    border-left: none;
   }
   @include at-breakpoint($bp-large + 20px) {
     z-index: 4;
-    width: 29%;
+    width: 1% + 29%;
   }
   @include at-breakpoint($bp-large + 50px) {
-    width: 30%;
+    width: 1% + 30%;
   }
   @include at-breakpoint($bp-large + 70px) {
-    width: 31%;
+    width: 1% + 31%;
   }
   @include at-breakpoint($bp-large + 80px) {
-    width: 32%;
+    width: 1% + 32%;
   }
   
   @include at-breakpoint($bp-large + 100px) {
-    width: 33%;
+    width: 1% + 33%;
   }
   @include at-breakpoint($bp-large + 110px) {
-    width: 34%;
+    width: 1% + 34%;
   }
   @include at-breakpoint($bp-large + 120px) {
-    width: 35%;
+    width: 1% + 35%;
   }
   @include at-breakpoint($bp-large + 140px) {
-    width: 36%;
+    width: 1% + 36%;
   }
   @include at-breakpoint($bp-large + 155px) {
-    width: 37%;
+    width: 1% + 37%;
   }
   @include at-breakpoint($bp-large + 180px) {
-    width: 38%;
+    width: 1% + 38%;
   }
   @include at-breakpoint($bp-large + 200px) {
-    width: 39%;
+    width: 1% + 39%;
   }
   @include at-breakpoint($bp-large + 220px) {
-    width: 40%;
+    width: 1% + 40%;
   }
   @include at-breakpoint($bp-large + 230px) {
-    width: 41%;
+    width: 1% + 40.5%;
   }
   @include at-breakpoint($bp-large + 250px) {
-    width: 42%;
+    width: 1% + 42%;
   }
   @include at-breakpoint($bp-large + 270px) {
-    width: 42.5%;
+    width: 1% + 42.5%;
   }
   @include at-breakpoint($bp-large + 300px) {
-    width: 44%;
+    width: 1% + 44%;
   }
   @include at-breakpoint($bp-large + 320px) {
-    width: 45%;
+    width: 1% + 45%;
   }
   @include at-breakpoint($bp-large + 340px) {
-    width: 46%;
+    width: 1% + 45.5%;
   }
   @include at-breakpoint($bp-large + 360px) {
-    width: 46.5%;
+    width: 1% + 46.5%;
   }
   @include at-breakpoint($bp-large + 380px) {
-    width: 47%;
+    width: 1% + 47%;
   }
   @include at-breakpoint($bp-large + 400px) {
-    width: 48%;
+    width: 1% + 48%;
   }
   @include at-breakpoint($bp-large + 420px) {
-    width: 48.5%;
+    width: 1% + 48.5%;
   }
   @include at-breakpoint($bp-large + 430px) {
-    width: 49%;
+    width: 1% + 49%;
   }
   @include at-breakpoint($bp-large + 450px) {
-    width: 50%;
+    width: 1% + 49%;
   }
   @include at-breakpoint($bp-large + 470px) {
-    width: 51%;
+    width: 1% + 50%;
   }
   @include at-breakpoint($bp-large + 490px) {
-    width: 52%;
+    width: 1% + 51%;
   }
   @include at-breakpoint($bp-large + 510px) {
-    width: 53%;
+    width: 1% + 51.5%;
   }
   @include at-breakpoint($bp-large + 550px) {
-    width: 53.5%;
+    width: 1% + 53%;
   }
   @include at-breakpoint($bp-large + 600px) {
-    width: 54%;
+    width: 1% + 54%;
   }
 
   .section-title {

@@ -141,7 +141,7 @@ $sectionTall: 240px;
   .search-bar & {
     @include at-breakpoint($bp-large) {
       height: $headerBarHeight;
-      width: 90px;
+      width: 90px - 20px;
       background: black;
       display: inline-block;
       z-index: 4;
@@ -151,40 +151,40 @@ $sectionTall: 240px;
       overflow: hidden;
     }
     @include at-breakpoint($bp-large + 20px) {
-      width: 110px;
+      width: 110px - 20px;
     }
     @include at-breakpoint($bp-large + 65px) {
-      width: 140px;
+      width: 140px - 20px;
     }
     @include at-breakpoint($bp-large + 80px) {
-      width: 155px;
+      width: 155px - 20px;
     }
     @include at-breakpoint($bp-large + 100px) {
-      width: 170px;
+      width: 170px - 20px;
     }
     @include at-breakpoint($bp-large + 130px) {
-      width: 200px;
+      width: 200px - 20px;
     }
     @include at-breakpoint($bp-large + 170px) {
-      width: 230px;
+      width: 230px - 20px;
     }
     @include at-breakpoint($bp-large + 200px) {
-      width: 250px;
+      width: 250px - 20px;
     }
     @include at-breakpoint($bp-large + 250px) {
-      width: 310px;
+      width: 310px - 20px;
     }
     @include at-breakpoint($bp-large + 300px) {
-      width: 358px;
+      width: 358px - 20px;
     }
     @include at-breakpoint($bp-large + 400px) {
-      width: 420px;
+      width: 420px - 20px;
     }
     @include at-breakpoint($bp-large + 500px) {
-      min-width: 510px;
+      min-width: 510px - 20px;
     }
     @include at-breakpoint($bp-large + 600px) {
-      min-width: 620px;
+      min-width: 620px - 20px;
     }
   }
   
