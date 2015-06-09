@@ -11,8 +11,10 @@ angular.module('dyson')
           title: '@',
           modifier: '@',
           icon: '@',
+          iconOpen: '@',
           theme: '@',
           open: '=',
+          openOnHover: '=',
           index: '=',
           onToggled: '&',
           alwaysOpenOnMobile: '@'

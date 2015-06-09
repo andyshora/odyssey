@@ -14,7 +14,7 @@ $sectionTall: 240px;
     vertical-align: top;
 
     @include at-breakpoint($bp-large) {
-      &:hover {
+      &.expandable-section--hover-open:hover {
         background: white;
         color: black;
       }
@@ -145,20 +145,28 @@ $sectionTall: 240px;
     }
   }
 
-  .search-bar &, .location-bar & {
+  .dyson-icon-search {
+    float: right;
+  }
+
+  .location-bar & {
+    
+  }
+
+  .search-bar & {
 
     height: auto;
     overflow: hidden;
     background: black;
-    padding: 17px 0;
+    padding: 17px 5.2%;
 
     @include up-to-width($bp-large) {
       border-top: 1px solid #333333;
 
-      .dyson-icon {
+      /* .dyson-icon {
         position: absolute;
         right: 0;
-      }
+      } */
     }
 
     @include at-breakpoint($bp-large) {
@@ -239,7 +247,7 @@ $sectionTall: 240px;
     @include prefixr(transition, none);
     @include prefixr(transform, translateY($headerBarHeight));
 
-    :hover >& {
+    .expandable-section--hover-open:hover >& {
       display: block;
       opacity: 1;
     }
@@ -272,6 +280,10 @@ $sectionTall: 240px;
   .search-bar & {
 
     border-right: none;
+
+    @include up-to-width($bp-large) {
+      padding-right: 0;
+    }
 
     @include at-breakpoint($bp-large) {
       display: none;

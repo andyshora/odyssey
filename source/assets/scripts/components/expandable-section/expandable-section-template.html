@@ -1,8 +1,9 @@
 <li class="expandable-section expandable-section--{{ modifier }} theme--{{ theme }}"
-  ng-class="{'expandable-section--open':open,'expandable-section--locked-open':lockedOpen}">
+  ng-class="{'expandable-section--open':open,'expandable-section--locked-open':lockedOpen,'expandable-section--hover-open':openOnHover}">
   <div class="section-title expandable-section__title" ng-click="onTitleClicked()">
     <span ng-if="title">{{ title }}</span>
-    <i ng-if="icon" class="dyson-icon dyson-icon-{{ icon }}"></i>
+    <i ng-if="icon" ng-hide="iconOpen && open" class="dyson-icon dyson-icon-{{ icon }}"></i>
+    <i ng-if="iconOpen" ng-show="open" class="dyson-icon dyson-icon-{{ iconOpen }}"></i>
   </div>
   <div class="expandable-section__content" ng-transclude></div>
 </li>
