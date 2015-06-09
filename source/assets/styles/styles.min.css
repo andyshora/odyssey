@@ -1310,6 +1310,9 @@ p {
   .expandable-section > .section-title {
     display: inline-block;
     vertical-align: top; }
+    @media (max-width: 1000px) {
+      .expandable-section > .section-title {
+        border-top: 1px solid #333333; } }
     @media (min-width: 1000px) {
       .expandable-section > .section-title.expandable-section--hover-open:hover {
         background: white;
@@ -1329,15 +1332,17 @@ p {
     height: 298px; }
   .expandable-section.ng-click-active {
     background: #101010; }
-  @media (min-width: 1000px) {
-    .expandable-section.expandable-section--open {
-      max-height: 58px !important; } }
-  .expandable-section.expandable-section--open.expandable-section--short {
-    max-height: 218px; }
-  .expandable-section.expandable-section--open.expandable-section--medium {
-    max-height: 258px; }
-  .expandable-section.expandable-section--open.expandable-section--tall {
-    max-height: 298px; }
+  .expandable-section.expandable-section--open {
+    overflow-y: visible; }
+    @media (min-width: 1000px) {
+      .expandable-section.expandable-section--open {
+        max-height: 58px !important; } }
+    .expandable-section.expandable-section--open.expandable-section--short {
+      max-height: 218px; }
+    .expandable-section.expandable-section--open.expandable-section--medium {
+      max-height: 258px; }
+    .expandable-section.expandable-section--open.expandable-section--tall {
+      max-height: 298px; }
   @media (max-width: 1000px) {
     @media (min-width: 1000px) {
       .expandable-section.expandable-section--locked-open {
@@ -1406,6 +1411,8 @@ p {
     .expandable-section__content .dyson-icon-search {
       float: right; }
  }
+  .basket-bar .expandable-section__content {
+    display: none !important; }
   .store-finder .expandable-section__content {
     background: black;
     border-top: 1px solid #333333;
@@ -1519,6 +1526,13 @@ p {
   .expandable-section__content.expandable-section--tall {
     height: 240px; }
 
+@media (max-width: 1000px) {
+  .nav--extra .expandable-section.store-finder .expandable-section__title {
+    z-index: 3;
+    pointer-events: auto;
+    background: black;
+    height: 59px; }
+ }
 .search-bar .expandable-section__title {
   border-right: none; }
   @media (max-width: 1000px) {
@@ -1571,20 +1585,6 @@ p {
       width: auto;
       padding: 21px 24px; } }
 
-.items {
-  margin: 0 0 0 20px;
-  padding: 0;
-  font-size: 0;
-  white-space: nowrap; }
-  .items > li {
-    display: inline-block;
-    margin: 20px 20px 20px 0;
-    padding: 0;
-    font-size: 15px;
-    width: 75px;
-    height: 75px;
-    background: grey; }
-
 .search {
   width: 91.66667%;
   float: left;
@@ -1612,6 +1612,36 @@ p {
   -moz-outline: none;
   -ms-outline: none;
   outline: none; }
+
+.items {
+  margin: 0 0 0 20px;
+  padding: 0;
+  font-size: 0;
+  white-space: nowrap; }
+  .items > li {
+    display: inline-block;
+    margin: 10px 20px 0 0;
+    padding: 0;
+    font-size: 15px;
+    width: 120px;
+    height: 150px;
+    background: lightGrey; }
+
+.sprite-image {
+  background-repeat: none;
+  background-size: 100% 100%;
+  background: red;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  display: block; }
+
+.sprite-caption {
+  font-size: 15px;
+  color: #666666;
+  text-align: center;
+  display: block;
+  margin: 0 auto; }
 
 .dyson-icon {
   color: white;

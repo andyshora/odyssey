@@ -13,6 +13,10 @@ $sectionTall: 240px;
     display: inline-block;
     vertical-align: top;
 
+    @include up-to-width($bp-large) {
+      border-top: 1px solid #333333;
+    }
+
     @include at-breakpoint($bp-large) {
       &.expandable-section--hover-open:hover {
         background: white;
@@ -44,6 +48,8 @@ $sectionTall: 240px;
 
   // open state
   &.expandable-section--open {
+
+    overflow-y: visible;
     
     @include at-breakpoint($bp-large) {
       max-height: $barHeight !important;
@@ -151,6 +157,10 @@ $sectionTall: 240px;
     }
   }
 
+  .basket-bar & {
+    display: none !important;
+  }
+
   .store-finder & {
     background: black;
     border-top: 1px solid #333333;
@@ -237,6 +247,7 @@ $sectionTall: 240px;
         opacity: 1;
         z-index: 2;
         pointer-events: auto;
+        
       }
     }
     &.expandable-section--locked-open {
@@ -290,6 +301,19 @@ $sectionTall: 240px;
 }
 
 .expandable-section__title {
+
+  @include up-to-width($bp-large) {
+    .expandable-section.store-finder & {
+      .nav--extra & {
+        // @include prefixr(transform, translateY($headerBarHeight));
+        z-index: 3;
+        pointer-events: auto;
+        background: black;
+        height: $headerBarHeight + 1px;
+        
+      }
+    }
+  }
   .search-bar & {
 
     border-right: none;
