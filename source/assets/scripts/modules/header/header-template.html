@@ -75,7 +75,7 @@
       data-icon-open="close"
       data-modifier="short search-bar">
         
-        <input id="search" type="search" placeholder="Search"><i class="dyson-icon dyson-icon-search"></i>
+        <input class="search" type="search" placeholder="Search"><i class="dyson-icon dyson-icon-search"></i>
       
     </li>
     <li
@@ -85,8 +85,15 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title=""
       data-icon="store-finder"
-      data-modifier="short float-left">
-      <span class="theme--light">test content 6</span>
+      data-modifier="short store-finder float-left">
+      
+      <div class="gutter">
+        <button class="btn btn--half-width btn--grey btn--square">Find nearest retailer</button><button class="btn btn--half-width btn--grey btn--square">Show all retailers</button>
+      </div>
+      <div class="gutter">
+        <input class="search" type="search" placeholder="Search by postcode"><i class="dyson-icon dyson-icon-search"></i>
+      </div>
+
     </li>
     <li
       expandable-section

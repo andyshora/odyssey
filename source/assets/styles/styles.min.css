@@ -222,14 +222,25 @@ body {
   cursor: pointer;
   border: 0; }
   .btn.btn--grey {
-    background: #f3f3f3;
-    color: black;
+    background: #333333;
+    color: white;
     height: 36px;
     padding: 12px 33px;
     -webkit-border-radius: 18px;
     -moz-border-radius: 18px;
     -ms-border-radius: 18px;
     border-radius: 18px; }
+  .btn.btn--square {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0; }
+  .btn.btn--half-width {
+    width: 49%;
+    padding-left: 0;
+    padding-right: 0; }
+    .btn.btn--half-width:first-child {
+      margin: 0 2% 0 0; }
 
 .curpointer {
   cursor: pointer; }
@@ -1391,8 +1402,19 @@ p {
       .nav--extra .expandable-section__content {
         opacity: 1;
         pointer-events: all; } }
-  .expandable-section__content .dyson-icon-search {
-    float: right; }
+  @media (max-width: 1000px) {
+    .expandable-section__content .dyson-icon-search {
+      float: right; }
+ }
+  .store-finder .expandable-section__content {
+    background: black;
+    border-top: 1px solid #333333;
+    height: auto;
+    padding-bottom: 20px; }
+    .store-finder .expandable-section__content > div {
+      padding: 22px 0; }
+      .store-finder .expandable-section__content > div:first-child {
+        border-bottom: 1px solid #333333; }
   .search-bar .expandable-section__content {
     height: auto;
     overflow: hidden;
@@ -1563,7 +1585,7 @@ p {
     height: 75px;
     background: grey; }
 
-#search {
+.search {
   width: 91.66667%;
   float: left;
   

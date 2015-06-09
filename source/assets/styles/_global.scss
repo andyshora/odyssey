@@ -134,12 +134,23 @@ body {
   border: 0;
 
   &.btn--grey {
-    background: #f3f3f3;
-    color: black;
+    background: #333333;
+    color: white;
     height: 36px;
     padding: 12px 33px;
     @include prefixr(border-radius, 18px);
+  }
+  &.btn--square {
+    @include prefixr(border-radius, 0);
+  }
+  &.btn--half-width {
+    width: 49%;
+    padding-left: 0;
+    padding-right: 0;
 
+    &:first-child {
+      margin: 0 2% 0 0;
+    }
   }
 }
 
