@@ -1620,17 +1620,51 @@ p {
   white-space: nowrap; }
   .items > li {
     display: inline-block;
-    margin: 10px 20px 0 0;
+    margin: 10px 12px 0 0;
     padding: 0;
     font-size: 15px;
-    width: 120px;
+    width: 100px;
     height: 150px;
-    background: lightGrey; }
+    background: white; }
+
+.items--products > li > .sprite-image {
+  background-image: url(../images/Dyson_Nav_Mobile_Products.png);
+  background-size: 600px 154px; }
+
+.items--products > li:nth-child(1) > .sprite-image {
+  background-position: -25.5px -16.5px; }
+
+.items--products > li:nth-child(2) > .sprite-image {
+  background-position: -137px -16.5px; }
+
+.items--products > li:nth-child(3) > .sprite-image {
+  background-position: -248.5px -16.5px; }
+
+.items--products > li:nth-child(4) > .sprite-image {
+  background-position: -360px -16.5px; }
+
+.items--products > li:nth-child(5) > .sprite-image {
+  background-position: -471.5px -16.5px; }
+
+.items--products > li:nth-child(6) > .sprite-image {
+  background-position: -583px -16.5px; }
+
+.items--products > li:nth-child(7) > .sprite-image {
+  background-position: -694.5px -16.5px; }
+
+.items--products > li:nth-child(8) > .sprite-image {
+  background-position: -806px -16.5px; }
+
+.items--products > li:nth-child(9) > .sprite-image {
+  background-position: -917.5px -16.5px; }
+
+.items--products > li:nth-child(10) > .sprite-image {
+  background-position: -1029px -16.5px; }
 
 .sprite-image {
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
-  background: red;
+  background-color: white;
   width: 100%;
   height: 0;
   padding-top: 100%;
@@ -1641,7 +1675,8 @@ p {
   color: #666666;
   text-align: center;
   display: block;
-  margin: 0 auto; }
+  margin: 13px auto 0;
+  background: white; }
 
 .dyson-icon {
   color: white;
