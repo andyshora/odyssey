@@ -1,0 +1,55 @@
+.sticky-nav-section {
+  width: 100%;
+  height: $headerBarHeight;
+  background: #f3f3f3;
+  border-bottom: 1px solid #e0e0e0;
+  color: black;
+  font-size: 20px;
+  overflow: hidden;
+
+  .scrollable-section {
+    background: white;
+  }
+
+  .dyson-icon-minus {
+    display: none;
+  }
+  .dyson-icon-plus {
+    display: inline-block;
+  }
+
+  &.sticky-nav-section--open {
+    height: auto;
+
+    .dyson-icon-minus {
+      display: inline-block;
+    }
+
+    .dyson-icon-plus {
+      display: none;
+    }
+  }
+
+  .gutter {
+    padding-top: ($headerBarHeight - 20px) / 2;
+    padding-bottom: ($headerBarHeight - 20px) / 2;
+    
+    @include at-breakpoint($bp-large) {
+      border-left: 1px solid #e0e0e0;
+      border-right: 1px solid #e0e0e0;
+    }
+  }
+
+  .app--sticky-nav-1 & {
+    position: fixed;
+    top: $headerBarHeight;
+    z-index: 5;
+  }
+
+  .dyson-icon {
+    float: right;
+    color: black;
+    position: relative;
+    top: -3px;
+  }
+}

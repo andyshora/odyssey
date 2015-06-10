@@ -183,6 +183,8 @@
 }
 .gallery-module {
 
+  margin: 50px auto;
+
   .grid-container {
     @include span(12 no-gutter);
     clear: none;
@@ -223,6 +225,10 @@
     .grid-item {
       @include span(12 no-gutter);
 
+      .grid-item__content {
+        margin-bottom: 12px;
+      }
+
       @include large {
         .grid-item__content {
           height: 0;
@@ -237,6 +243,9 @@
     height: 0;
     padding-bottom: 100%;
     background: $c-module-bg;
+
+    margin-bottom: 12px;
+    
   }
   
 

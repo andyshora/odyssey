@@ -1,5 +1,6 @@
 
-$sectionShort: 160px;
+$mobile-section-short: 155px;
+$desktop-section-short: 227px;
 $sectionMedium: 200px;
 $sectionTall: 240px;
 
@@ -33,7 +34,11 @@ $sectionTall: 240px;
   // @include prefixr(transform, translateZ(0));
 
   &.expandable-section--short {
-    height: $sectionShort + $barHeight;
+    height: $mobile-section-short + $barHeight;
+
+    @include at-breakpoint($bp-large) {
+      height: $desktop-section-short + $barHeight;
+    }
   }
   &.expandable-section--medium {
     height: $sectionMedium + $barHeight;
@@ -55,7 +60,7 @@ $sectionTall: 240px;
       max-height: $barHeight !important;
     }
     &.expandable-section--short {
-      max-height: $sectionShort + $barHeight;
+      max-height: $mobile-section-short + $barHeight;
     }
     &.expandable-section--medium {
       max-height: $sectionMedium + $barHeight;
@@ -71,7 +76,7 @@ $sectionTall: 240px;
         max-height: $barHeight !important;
       }
       &.expandable-section--short {
-        max-height: $sectionShort + $barHeight;
+        max-height: $mobile-section-short + $barHeight;
       }
       &.expandable-section--medium {
         max-height: $sectionMedium + $barHeight;
@@ -125,11 +130,15 @@ $sectionTall: 240px;
 
 .expandable-section__content {
   display: block;
-  height: $sectionShort;
+  height: $mobile-section-short;
   padding: 0;
   width: 100%;
   background: white;
   overflow-y: hidden;
+
+  @include at-breakpoint($bp-large) {
+    height: $desktop-section-short;
+  }
 
   .nav--extra & {
     position: fixed;
@@ -290,7 +299,7 @@ $sectionTall: 240px;
   }
 
   &.expandable-section--short {
-    height: $sectionShort;
+    height: $mobile-section-short;
   }
   &.expandable-section--medium {
     height: $sectionMedium;

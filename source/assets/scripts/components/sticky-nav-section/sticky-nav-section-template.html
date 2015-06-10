@@ -1,0 +1,42 @@
+<div class="sticky-nav-section"
+  ng-click="open=!open"
+  ng-class="{'sticky-nav-section--open':open}"
+  sticky
+  data-stick-at="700"
+  data-sticky-modifier="app--sticky-nav-1"
+  data-state="main.category"
+  >
+  <div ng-transclude></div>
+  <div class="sticky-nav-section__content">
+    <div
+      scrollable-section
+      >
+
+      <ul class="items items--category">
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Cordless &amp; handheld</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Robot</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Cylinders</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Uprights</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Accessories</div>
+        </li>
+      </ul>
+
+      </div>
+    <!-- <div class="gutter"></div> -->
+  </div>
+</div>
+

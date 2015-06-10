@@ -1,5 +1,6 @@
 @import "../scripts/components/expandable-section/expandable-section-styles";
 @import "../scripts/components/scrollable-section/scrollable-section-styles";
+@import "../scripts/components/sticky-nav-section/sticky-nav-section-styles";
 @import "../scripts/components/nice-image/nice-image-styles";
 @import "../scripts/components/section-item/section-item-styles";
 
@@ -46,45 +47,65 @@ $mobile-sprite-item-width: 99.5px;
 $mobile-sprite-item-height: 99.5px;
 $mobile-sprite-item-margin: 12px;
 
-$desktop-sprite-gutter-left: 10px;
-$desktop-sprite-item-gutter-top: 10px;
-$desktop-sprite-item-width: 10px;
-$desktop-sprite-item-height: 10px;
-$desktop-sprite-item-margin: 24px;
+$desktop-sprite-gutter-left: 109px;
+$desktop-sprite-item-gutter-top: 24px;
+$desktop-sprite-item-width: 140px;
+$desktop-sprite-item-height: 140px;
+$desktop-sprite-item-margin: 87px;
 
 .items {
-  margin: 0 0 0 20px;
-  padding: 0;
+  padding: 0 0 0 20px;
+  margin: 0;
   font-size: 0;
   white-space: nowrap;
+  background: white;
+  position: relative;
 
   > li {
     display: inline-block;
-    margin: 10px 12px 0 0;
+    margin: 10px 3.2% 0 0;
     padding: 0;
     font-size: $fontSizeBase;
     width: 100px;
     height: 150px;
     background: white;
 
-    > .sprite-image {
-      
-    }
-
     @include at-breakpoint($bp-large) {
-      
+      width: 140px;
+      height: 227px;
+      margin-left: 6%;
     }
   }
 }
 
 .items--products > li > .sprite-image {
   background-image: url(../images/Dyson_Nav_Mobile_Products.png);
-  background-size: 600px 154px;
+  background-size: 599px 153px;
+
+  @include at-breakpoint($bp-large) {
+    background-size: 1440px 227px;
+    background-image: url(../images/Dyson_Nav_Large_Products.png);
+  }
+}
+
+.items--category > li > .sprite-image {
+  background-image: url(../images/Dyson_Nav_Mobile_Category.png);
+  background-size: 599px 153px;
+
+  @include at-breakpoint($bp-large) {
+    background-size: 1440px 227px;
+    background-image: url(../images/Dyson_Nav_Large_Category.png);
+  }
 }
 
 @for $i from 1 through 10 {
-  .items--products > li:nth-child(#{$i}) > .sprite-image {
+  .items--products > li:nth-child(#{$i}) > .sprite-image,
+  .items--category > li:nth-child(#{$i}) > .sprite-image {
     background-position: -#{$mobile-sprite-gutter-left + (($i - 1) * ($mobile-sprite-item-width) + ($i * $mobile-sprite-item-margin)))} #{ } -#{$mobile-sprite-item-gutter-top};
+
+    @include at-breakpoint($bp-large) {
+      background-position: -#{$desktop-sprite-gutter-left + (($i - 1) * ($desktop-sprite-item-width) + ($i * $desktop-sprite-item-margin)))} #{ } -#{$desktop-sprite-item-gutter-top};
+    }
   }
 }
   
@@ -105,4 +126,5 @@ $desktop-sprite-item-margin: 24px;
   display: block;
   margin: 13px auto 0;
   background: white;
+  white-space: normal;
 }
