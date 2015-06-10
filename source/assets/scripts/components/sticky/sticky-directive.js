@@ -18,6 +18,8 @@ angular.module('dyson')
           var offsetWhenSectionExpanded = attrs.offsetWhenSectionExpanded === 'true';
           var offset = 0;
 
+          console.log('stickAt', stickAt);
+
           if (offsetWhenSectionExpanded) {
             $rootScope.$on('section:expanded', function() {
               offset = 741;
@@ -55,6 +57,16 @@ angular.module('dyson')
               angular.element(body).addClass(stickyClass);
             }
           });
+
+          // trigger scroll immediately
+          var scrollY = $window.scrollY - offset;
+          // console.log(scrollY);
+          if (scrollY <= stickAt || scrollY > hideAt) {
+            angular.element(body).removeClass(stickyClass);
+          } else if (scrollY >= stickAt) {
+            angular.element(body).addClass(stickyClass);
+          }
+
         }
       };
   });

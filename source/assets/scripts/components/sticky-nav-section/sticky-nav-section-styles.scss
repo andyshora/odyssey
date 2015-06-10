@@ -1,3 +1,12 @@
+.sticky-nav-spacer {
+  width: 100%;
+  height: 0;
+
+  .app--sticky-nav-1 & {
+    height: $headerBarHeight;
+  }
+}
+
 .sticky-nav-section {
   width: 100%;
   height: $headerBarHeight;

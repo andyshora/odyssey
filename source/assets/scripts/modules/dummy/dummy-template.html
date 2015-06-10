@@ -4,6 +4,8 @@
   </div> 
 </div>
 
+<div class="sticky-nav-spacer"></div>
+
 <section class="global-gutter debug-grid-overlay">
   <div class="grid-container module--debug-grid">
     <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
@@ -41,7 +43,7 @@
     <div class="gutter">
       <div class="grid-item">
         <div class="grid-item__content">
-          <h1>---</h1>
+          <h1 class="futura">{{ dummyLink.heading }}</h1>
           <p>Lorem ips dor sit amet, consectetur adipisicing elit. Esse tempora, laboriosam cum, obcaecati fuga aliquam enim.</p>
           <button class="btn btn--placeholder">Button</button>
         </div>
@@ -62,14 +64,30 @@
   </div>
 </section>
 
-<div sticky-nav-section>
+<!-- sticky navigation -->
+
+<div sticky-nav-section ng-if="currentState=='main.home'" data-stick-at="700">
   <div class="gutter">
     <div class="grid-item__content">
       <span>Vacuums</span><i class="dyson-icon dyson-icon-minus"></i><i class="dyson-icon dyson-icon-plus"></i>
     </div>
   </div>
+</div>
 
-  
+<div sticky-nav-section ng-if="currentState=='main.category'" data-stick-at="-100">
+  <div class="gutter">
+    <div class="grid-item__content">
+      <span>Vacuums</span><i class="dyson-icon dyson-icon-minus"></i><i class="dyson-icon dyson-icon-plus"></i>
+    </div>
+  </div>
+</div>
+
+<div sticky-nav-section ng-if="currentState=='main.sub-category'" data-stick-at="-100">
+  <div class="gutter">
+    <div class="grid-item__content">
+      <span>Cordless &amp; handheld</span><i class="dyson-icon dyson-icon-minus"></i><i class="dyson-icon dyson-icon-plus"></i>
+    </div>
+  </div>
 </div>
 
 <!-- Gallery Module -->
@@ -78,7 +96,8 @@
 
     <div class="grid-container--large">
       <div class="grid-item">
-        <div class="grid-item__content"></div>
+        <div class="grid-item__content link-placeholder" ui-sref="{{ dummyLink.targetState }}" data-text="{{ dummyLink.text }}">
+        </div>
       </div>
     </div>
     <div class="grid-container">

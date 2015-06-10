@@ -13,7 +13,7 @@
 .nav--main {
 
   position: fixed;
-  left: 0;
+  left: -3000px;
   width: 100%;
   top: $headerBarHeight;
   border-top: 1px solid #333333;
@@ -28,6 +28,7 @@
     @include prefixr(transform, translateY(0));
     opacity: 1;
     z-index: 1;
+    left: 0;
   }
 
   @include at-breakpoint($bp-large) {

@@ -36,11 +36,69 @@ angular.module('dyson', ['ui.router', 'ngTouch'])
           }
         }
       })
-      .state('main.category', {
-        url: 'category',
+      .state('main.home', {
+        url: 'home',
         controller: 'MainCtrl',
         views: {
-          'content@': genericContent,
+          'content@': {
+            templateUrl: 'assets/scripts/modules/dummy/dummy-template.html',
+            controller: 'DemoCtrl'
+          },
+          'footer@': genericFooter
+        }
+      })
+      .state('main.category', {
+        url: 'vacuums',
+        controller: 'MainCtrl',
+        views: {
+          'content@': {
+            templateUrl: 'assets/scripts/modules/dummy/dummy-template.html',
+            controller: 'DemoCtrl'
+          },
+          'footer@': genericFooter
+        }
+      })
+      .state('main.sub-category', {
+        url: 'cordless-and-handheld',
+        controller: 'MainCtrl',
+        views: {
+          'content@': {
+            templateUrl: 'assets/scripts/modules/dummy/dummy-template.html',
+            controller: 'DemoCtrl'
+          },
+          'footer@': genericFooter
+        }
+      })
+      .state('main.pdp', {
+        url: 'dyson-v6-absolute',
+        controller: 'MainCtrl',
+        views: {
+          'content@': {
+            templateUrl: 'assets/scripts/modules/dummy/dummy-template.html',
+            controller: 'DemoCtrl'
+          },
+          'footer@': genericFooter
+        }
+      })
+      .state('main.basket', {
+        url: 'basket',
+        controller: 'MainCtrl',
+        views: {
+          'content@': {
+            templateUrl: 'assets/scripts/modules/dummy/dummy-template.html',
+            controller: 'DemoCtrl'
+          },
+          'footer@': genericFooter
+        }
+      })
+      .state('main.checkout', {
+        url: 'checkout',
+        controller: 'MainCtrl',
+        views: {
+          'content@': {
+            templateUrl: 'assets/scripts/modules/dummy/dummy-template.html',
+            controller: 'DemoCtrl'
+          },
           'footer@': genericFooter
         }
       })

@@ -37,7 +37,17 @@ angular.module('dyson')
             if (scope.icon !== 'basket') {
               return;
             }
-            scope.itemsInBasketCount++;
+            // scope.itemsInBasketCount++;
+          }
+        },
+        controller: function($state, $scope, $timeout) {
+          if ($state.is('main.basket') && ($scope.icon === 'basket')) {
+
+            $timeout(function() {
+              $scope.itemsInBasketCount = 1;
+              console.log('$scope.itemsInBasketCount', $scope.itemsInBasketCount);
+            }, 500);
+            
           }
         },
         templateUrl: 'assets/scripts/components/expandable-section/expandable-section-template.html'
