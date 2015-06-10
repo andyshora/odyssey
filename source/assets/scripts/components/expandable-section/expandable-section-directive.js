@@ -29,6 +29,15 @@ angular.module('dyson')
           scope.onTitleClicked = function() {
             scope.open = !scope.open;
             scope.onToggled({ index: scope.index, open: scope.open });
+          };
+
+          scope.itemsInBasketCount = 0;
+
+          scope.onIconClicked = function() {
+            if (scope.icon !== 'basket') {
+              return;
+            }
+            scope.itemsInBasketCount++;
           }
         },
         templateUrl: 'assets/scripts/components/expandable-section/expandable-section-template.html'

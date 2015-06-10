@@ -311,6 +311,21 @@ $sectionTall: 240px;
 
 .expandable-section__title {
 
+  .items-in-basket {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    @include prefixr(border-radius, 50%);
+    height: 16px;
+    width: 16px;
+    background: #ffcc00;
+    color: black;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5em;
+  }
+
   @include up-to-width($bp-large) {
     .expandable-section.store-finder & {
       .nav--extra & {
