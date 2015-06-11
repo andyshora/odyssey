@@ -6,6 +6,16 @@
   position: relative;
   z-index: 4;
 
+  &.section-item--sub {
+    font-family: 'FuturaBT-Book';
+    color: #666666;
+    font-size: 16px;
+
+    @include at-breakpoint($bp-large) {
+      display: none;
+    }
+  }
+
   .nav--main & {
     border-bottom: 1px solid #333333;
   }

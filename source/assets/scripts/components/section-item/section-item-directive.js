@@ -9,7 +9,8 @@ angular.module('dyson')
         scope: {
           icon: '@',
           title: '@',
-          theme: '@'
+          theme: '@',
+          modifier: '@'
         },
         templateUrl: 'assets/scripts/components/section-item/section-item-template.html'
       };

@@ -9,7 +9,12 @@ Why can't the navigation slide down on desktop?
 Why aren't the bottom borders removed on the top menu items when the menu is open?
 
 
+Learnings
+===
 
+Complex navigation whereby the structure completely changes, will be best implemented as seperate mobile and desktop navigation, where each simply shows/hides at alternate breakpoints.
+
+Example: [Vice.com](http://motherboard.vice.com/read/how-mt-gox-imploded)
 
 
 
@@ -21,7 +26,7 @@ Things we need to go over
 - Scroll events
 - Iconography and svg scaling
 
-Why would JS not work?
+Why would JS fail?
 ===
 
 There are many scenarios where the extra layers can fail to load or are deliberately filtered, which can be due to:
