@@ -25,12 +25,6 @@ angular.module('dyson')
 
           scope.lockedOpen = !!attrs.alwaysOpenOnMobile;
 
-          // let the parent scope know that the section has been toggled
-          scope.onTitleClicked = function() {
-            scope.open = !scope.open;
-            scope.onToggled({ index: scope.index, open: scope.open });
-          };
-
           scope.itemsInBasketCount = 0;
 
           scope.onIconClicked = function() {
@@ -46,9 +40,19 @@ angular.module('dyson')
             $timeout(function() {
               $scope.itemsInBasketCount = 1;
               console.log('$scope.itemsInBasketCount', $scope.itemsInBasketCount);
-            }, 500);
+            }, 100);
             
           }
+
+          // let the parent scope know that the section has been toggled
+          $scope.onTitleClicked = function() {
+            $scope.open = !$scope.open;
+            $scope.onToggled({ index: $scope.index, open: $scope.open });
+
+            if ($scope.icon === 'basket') {
+              $state.go('main.basket');
+            }
+          };
         },
         templateUrl: 'assets/scripts/components/expandable-section/expandable-section-template.html'
       };
