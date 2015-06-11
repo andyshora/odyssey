@@ -6,6 +6,10 @@
   position: relative;
   z-index: 4;
 
+  .nav--main & {
+    border-bottom: 1px solid #333333;
+  }
+
   @include at-breakpoint($bp-large) {
     display: inline-block;
   }

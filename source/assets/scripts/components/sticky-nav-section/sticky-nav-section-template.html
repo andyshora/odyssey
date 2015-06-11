@@ -11,22 +11,53 @@
       scrollable-section
       >
 
-      <ul class="items items--category">
-        <li>
+      <ul ng-show="stateName=='main.category'||stateName=='main.home'" class="items items--category">
+        <li ui-sref="main.sub-category">
           <div class="sprite-image"></div>
           <div class="sprite-caption">Cordless &amp; handheld</div>
         </li>
-        <li>
+        <li ui-sref="main.sub-category">
           <div class="sprite-image"></div>
           <div class="sprite-caption">Robot</div>
         </li>
-        <li>
+        <li ui-sref="main.sub-category">
           <div class="sprite-image"></div>
           <div class="sprite-caption">Cylinders</div>
         </li>
-        <li>
+        <li ui-sref="main.sub-category">
           <div class="sprite-image"></div>
           <div class="sprite-caption">Uprights</div>
+        </li>
+        <li ui-sref="main.sub-category">
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Accessories</div>
+        </li>
+      </ul>
+
+      <ul ng-show="stateName=='main.sub-category'" class="items items--sub-category">
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Absolute</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Total Clean</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Fluffy</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">Animal</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">V6</div>
+        </li>
+        <li>
+          <div class="sprite-image"></div>
+          <div class="sprite-caption">DC58</div>
         </li>
         <li>
           <div class="sprite-image"></div>

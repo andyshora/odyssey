@@ -8,7 +8,7 @@
 .section-title {
   display: block;
   // background: lightBlue;
-  height: $barHeight;
+  height: $barHeight - 1px;
   cursor: pointer;
   position: relative;
   z-index: 4;
@@ -38,7 +38,16 @@
   top: -4px;
   margin: 0;
   @include prefixr(border-radius, none);
+  @include prefixr(box-shadow, none);
   @include prefixr(outline, none);
+  -webkit-appearance: none;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
 }
 
 $mobile-sprite-gutter-left: 13.5px;
@@ -58,7 +67,6 @@ $desktop-sprite-item-margin: 87px;
   margin: 0;
   font-size: 0;
   white-space: nowrap;
-  background: white;
   position: relative;
 
   > li {
@@ -95,6 +103,17 @@ $desktop-sprite-item-margin: 87px;
   @include at-breakpoint($bp-large) {
     background-size: 1440px 227px;
     background-image: url(../images/Dyson_Nav_Large_Category.png);
+  }
+}
+
+.items--sub-category > li > .sprite-image {
+  background-image: url(../images/Dyson_Nav_Mobile_Sub_Category.png);
+  background-size: 850px 171px;
+  padding-top: 140%;
+
+  @include at-breakpoint($bp-large) {
+    background-size: 1440px 252px;
+    background-image: url(../images/Dyson_Nav_Large_Sub_Category.png);
   }
 }
 

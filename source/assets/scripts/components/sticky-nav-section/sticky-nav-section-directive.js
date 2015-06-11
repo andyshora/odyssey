@@ -18,6 +18,10 @@ angular.module('dyson')
           };
           // scope.stickNavAt = 700;
         },
+        controller: function($scope, $state) {
+          $scope.stateName = $state.current.name;
+          console.log('$scope.stateName', $scope.stateName);
+        },
         templateUrl: 'assets/scripts/components/sticky-nav-section/sticky-nav-section-template.html'
       };
   });
