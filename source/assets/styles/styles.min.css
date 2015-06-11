@@ -1724,6 +1724,8 @@ p {
   -webkit-appearance: none; }
   .search::-webkit-search-decoration, .search::-webkit-search-cancel-button, .search::-webkit-search-results-button, .search::-webkit-search-results-decoration {
     display: none; }
+  .search:active, .search:focus {
+    color: white; }
 
 .items {
   padding: 0 20px;
@@ -1829,6 +1831,10 @@ p {
   @media (min-width: 1000px) {
     .items--products > li:nth-child(10) > .sprite-image, .items--category > li:nth-child(10) > .sprite-image {
       background-position: -2239px -24px; } }
+
+@media (min-width: 1000px) {
+  .items--category > li:nth-child(4) > .sprite-image {
+    background-position: -863px -24px !important; } }
 
 .sprite-image {
   background-repeat: no-repeat;
