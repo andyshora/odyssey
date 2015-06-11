@@ -62,3 +62,21 @@
     top: -3px;
   }
 }
+
+.add-to-basket__left {
+  display: inline-block;
+}
+.add-to-basket__right {
+  display: inline-block;
+  background: #79b928;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 27%;
+  max-width: 436px;
+  text-align: center;
+  font-size: 12px;
+  padding: 24px 0;
+}

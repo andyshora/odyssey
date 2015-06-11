@@ -323,7 +323,7 @@ $sectionTall: 240px;
     display: inline-block;
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 7px;
     @include prefixr(border-radius, 50%);
     height: 16px;
     width: 16px;
@@ -332,6 +332,10 @@ $sectionTall: 240px;
     text-align: center;
     font-size: 11px;
     line-height: 1.5em;
+
+    @include at-breakpoint($bp-large) {
+      right: 10px;
+    }
   }
 
   @include up-to-width($bp-large) {

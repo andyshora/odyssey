@@ -13,14 +13,10 @@ angular.module('dyson')
         },
         link: function(scope, elm, attrs) {
           scope.open = false;
-          scope.onTitleClicked = function() {
-            alert('click');
-          };
-          // scope.stickNavAt = 700;
         },
         controller: function($scope, $state) {
           $scope.stateName = $state.current.name;
-          console.log('$scope.stateName', $scope.stateName);
+          // console.log('$scope.stateName', $scope.stateName);
         },
         templateUrl: 'assets/scripts/components/sticky-nav-section/sticky-nav-section-template.html'
       };
