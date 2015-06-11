@@ -1685,6 +1685,17 @@ p {
     font-family: 'FuturaBT-Book';
     color: #666666;
     font-size: 16px; }
+    .section-item.section-item--sub > .section-title {
+      padding: 20px 17px; }
+    .section-item.section-item--sub:before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 17px;
+      height: 1px;
+      background: black;
+      display: inline-block; }
     @media (min-width: 1000px) {
       .section-item.section-item--sub {
         display: none; } }

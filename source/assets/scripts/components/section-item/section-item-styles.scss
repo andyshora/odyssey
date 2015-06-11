@@ -11,6 +11,21 @@
     color: #666666;
     font-size: 16px;
 
+    > .section-title {
+      padding: 20px 17px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 17px;
+      height: 1px;
+      background: black;
+      display: inline-block;
+    }
+
     @include at-breakpoint($bp-large) {
       display: none;
     }
