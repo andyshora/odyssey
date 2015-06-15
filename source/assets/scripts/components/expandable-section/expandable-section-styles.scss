@@ -227,7 +227,7 @@ $sectionTall: 240px;
 
     @include at-breakpoint($bp-large) {
       height: $headerBarHeight;
-      width: 90px - 20px;
+      width: 90px - 10px;
       display: inline-block;
       z-index: 4;
       transform: none;
@@ -236,40 +236,40 @@ $sectionTall: 240px;
 
     }
     @include at-breakpoint($bp-large + 20px) {
-      width: 110px - 20px;
+      width: 110px - 10px;
     }
     @include at-breakpoint($bp-large + 65px) {
-      width: 140px - 20px;
+      width: 140px - 10px;
     }
     @include at-breakpoint($bp-large + 80px) {
-      width: 155px - 20px;
+      width: 155px - 10px;
     }
     @include at-breakpoint($bp-large + 100px) {
-      width: 170px - 20px;
+      width: 170px - 10px;
     }
     @include at-breakpoint($bp-large + 130px) {
-      width: 200px - 20px;
+      width: 200px - 10px;
     }
     @include at-breakpoint($bp-large + 170px) {
-      width: 230px - 20px;
+      width: 230px - 10px;
     }
     @include at-breakpoint($bp-large + 200px) {
-      width: 250px - 20px;
+      width: 250px - 10px;
     }
     @include at-breakpoint($bp-large + 250px) {
-      width: 310px - 20px;
+      width: 310px - 10px;
     }
     @include at-breakpoint($bp-large + 300px) {
-      width: 358px - 20px;
+      width: 358px - 10px;
     }
     @include at-breakpoint($bp-large + 400px) {
-      width: 420px - 20px;
+      width: 420px - 10px;
     }
     @include at-breakpoint($bp-large + 500px) {
-      min-width: 510px - 20px;
+      min-width: 510px - 10px;
     }
     @include at-breakpoint($bp-large + 600px) {
-      min-width: 620px - 20px;
+      min-width: 620px - 10px;
     }
   }
   
@@ -340,11 +340,12 @@ $sectionTall: 240px;
     .nav--main & {
       width: 100%;
       position: relative;
+      padding: 21px 17px;
 
       .dyson-icon {
         float: right;
         position: relative;
-        top: -4px;
+        top: -8px;
       }
     }
   }
