@@ -1449,6 +1449,7 @@ p {
   .basket-bar .expandable-section__content {
     display: none !important; }
   .store-finder .expandable-section__content {
+    display: none !important;
     background: black;
     border-top: 1px solid #333333;
     height: auto;
@@ -1561,41 +1562,47 @@ p {
   .expandable-section__content.expandable-section--tall {
     height: 240px; }
 
-.expandable-section__title .items-in-basket {
-  display: inline-block;
-  position: absolute;
-  top: 10px;
-  right: 7px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  height: 16px;
-  width: 16px;
-  background: #ffcc00;
-  color: black;
-  text-align: center;
-  font-size: 11px;
-  line-height: 1.5em; }
-  @media (min-width: 1000px) {
-    .expandable-section__title .items-in-basket {
-      right: 10px; } }
-@media (max-width: 1000px) {
-  .nav--extra .expandable-section.store-finder .expandable-section__title {
-    z-index: 3;
-    pointer-events: auto;
-    background: black;
-    height: 59px; }
- }
-.search-bar .expandable-section__title {
-  border-right: none; }
-  @media (max-width: 1000px) {
-    .search-bar .expandable-section__title {
-      padding-right: 0; } }
-  @media (min-width: 1000px) {
-    .search-bar .expandable-section__title {
-      display: none;
-      border-right: 1px solid #333333; } }
+.expandable-section__title {
+  /* @include up-to-width($bp-large) {
+    .expandable-section.store-finder & {
+      .nav--extra & {
+        // @include prefixr(transform, translateY($headerBarHeight));
+        z-index: 3;
+        pointer-events: auto;
+        background: black;
+        height: $headerBarHeight + 1px;
+        
+      }
+    }
+  } */ }
+  .expandable-section__title .items-in-basket {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    background: #ffcc00;
+    color: black;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5em; }
+    @media (min-width: 1000px) {
+      .expandable-section__title .items-in-basket {
+        right: 10px; } }
+  .search-bar .expandable-section__title {
+    border-right: none; }
+    @media (max-width: 1000px) {
+      .search-bar .expandable-section__title {
+        padding-right: 0; } }
+    @media (min-width: 1000px) {
+      .search-bar .expandable-section__title {
+        display: none;
+        border-right: 1px solid #333333; } }
 
 .scrollable-section {
   width: 100%;

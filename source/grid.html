@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid Prototype</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <style type="text/css">
+  /**
+  *
+  * Settings
+  *
+  **/
+  .theme--dark {
+    background: black;
+    color: white; }
+
+  .theme--light {
+    background: white;
+    color: black; }
+
+  .theme--bg {
+    background: #dddddd; }
+
+  * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Futura-Md-BT', Futura, Trebuchet MS, Arial, sans-serif;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    background: #f3f3f3;
+    min-width: 320px;
+    text-align: center; }
+
+  @font-face {
+    font-family: 'BLOKKNeue-Regular';
+    src: url("/assets/styles/fonts/BLOKKNeue-Regular.eot");
+    src: url("/assets/styles/fonts/BLOKKNeue-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/styles/fonts/BLOKKNeue-Regular.woff") format("woff"), url("/assets/styles/fonts/BLOKKNeue-Regular.svg#BLOKKNeue-Regular") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+  @font-face {
+    font-family: 'BLOKKRegular';
+    src: url("/assets/styles/fonts/BLOKKRegular.eot");
+    src: url("/assets/styles/fonts/BLOKKRegular.eot?#iefix") format("embedded-opentype"), url("/assets/styles/fonts/BLOKKRegular.woff") format("woff"), url("/assets/styles/fonts/BLOKKRegular.svg#BLOKKRegular") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+  @font-face {
+    font-family: 'FuturaBT-Book';
+    src: url("/assets/styles/fonts/futura_book.eot");
+    src: url("/assets/styles/fonts/futura_book.eot?#iefix") format("embedded-opentype"), url("/assets/styles/fonts/futura_book.svg#FuturaBT-Book") format("svg"), url("/assets/styles/fonts/futura_book.woff") format("woff"), url("/assets/styles/fonts/futura_book.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+  @font-face {
+    font-family: 'Futura-Lt-BT';
+    src: url("/assets/styles/fonts/FuturaBTW01Light.eot");
+    src: url("/assets/styles/fonts/FuturaBTW01Light.eot?#iefix") format("embedded-opentype"), url("/assets/styles/fonts/FuturaBTW01Light.svg#FuturaBT-Book-Light") format("svg"), url("/assets/styles/fonts/FuturaBTW01Light.woff") format("woff"), url("/assets/styles/fonts/FuturaBTW01Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+  @font-face {
+    font-family: 'FuturaBT-Book-Heavy';
+    src: url("/assets/styles/fonts/FuturaBTW01Heavy.eot");
+    src: url("/assets/styles/fonts/FuturaBTW01Heavy.eot?#iefix") format("embedded-opentype"), url("/assets/styles/fonts/FuturaBTW01Heavy.svg#FuturaBT-Book-Heavy") format("svg"), url("/assets/styles/fonts/FuturaBTW01Heavy.woff") format("woff"), url("/assets/styles/fonts/FuturaBTW01Heavy.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+  @font-face {
+    font-family: 'Futura-Md-BT';
+    src: url("/assets/styles/fonts/FuturaBTW01Medium.eot");
+    src: url("/assets/styles/fonts/FuturaBTW01Medium.eot?#iefix") format("embedded-opentype"), url("/assets/styles/fonts/FuturaBTW01Medium.svg#FuturaBT-Book-Medium") format("svg"), url("/assets/styles/fonts/FuturaBTW01Medium.woff") format("woff"), url("/assets/styles/fonts/FuturaBTW01Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+    font-weight: normal; }
+
+  h1 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: normal;
+    margin: 0 0 15px; }
+
+  h2 {
+    font-size: 18px;
+    font-family: 'FuturaBT-Book';
+    letter-spacing: 0;
+    line-height: 20px; }
+
+  h3 {
+    font-size: 18px;
+    font-family: 'FuturaBT-Book';
+    letter-spacing: 0;
+    line-height: 20px; }
+
+  h4 {
+    font-size: 18px; }
+
+  p {
+    line-height: 1.3em;
+    font-family: 'FuturaBT-Book'; }
+
+  .body-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    background: white; }
+
+  #map-canvas {
+    height: 400px;
+    margin: 20px 0;
+    padding: 0px;
+    opacity: .1; }
+
+  .location--requesting {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    color: black;
+    border-bottom: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    width: 100%; }
+
+  .location--error {
+    color: red;
+    display: none; }
+
+  .btn {
+    height: 30px;
+    color: white;
+    background: black;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 1;
+    text-decoration: none;
+    display: inline-block;
+    padding: 9px 33px;
+    cursor: pointer;
+    border: 0;
+    outline: none; }
+    .btn.btn--placeholder {
+      border: none; }
+    .btn.btn--white {
+      background: white;
+      color: black; }
+    .btn.btn--square {
+      width: 30px;
+      padding: 9px; }
+    .btn.btn--toggle {
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      border-radius: 0; }
+    .btn.btn--full-width {
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      border-radius: 0;
+      width: 100%;
+      margin: 10px 0;
+      padding: 22px 33px;
+      height: auto; }
+
+  .content--store-nearby {
+    display: none;
+    background: darkGreen;
+    height: 120px;
+    padding: 40px;
+    color: white; }
+
+  #result {
+    padding: 50px 0 0; }
+
+  .img--full {
+    width: 100%; }
+
+  .card {
+    width: 100%;
+    height: 200px;
+    background: lightBlue;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    -webkit-box-shadow: 1px 1px #eaeaea;
+    -moz-box-shadow: 1px 1px #eaeaea;
+    -ms-box-shadow: 1px 1px #eaeaea;
+    box-shadow: 1px 1px #eaeaea; }
+    .card.card__expand-trigger {
+      display: none; }
+    .card.card--expandable {
+      -webkit-transition: height 0.4s ease;
+      -moz-transition: height 0.4s ease;
+      -ms-transition: height 0.4s ease;
+      transition: height 0.4s ease; }
+    .card.card--expanded {
+      height: 445px; }
+
+  .card__expand-trigger {
+    position: absolute;
+    right: 0;
+    top: 0; }
+    .card--expandable .card__expand-trigger {
+      display: inline-block; }
+    .card__expand-trigger:before {
+      content: '+'; }
+      .card--expanded .card__expand-trigger:before {
+        content: '-'; }
+
+  .card__expanded {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    background: grey;
+    height: 245px; }
+
+  .card-group {
+    position: relative; }
+    .card-group > .card {
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .card-group > .card:nth-child(n+1) {
+        top: 0; }
+      .card-group > .card:nth-child(n+2) {
+        top: 20px;
+        border-top: 1px solid red; }
+      .card-group > .card:nth-child(n+3) {
+        top: 40px;
+        border-top: 1px solid red; }
+
+  .slider {
+    font-size: 0; }
+
+  /* to hide scrollbar */
+  .slider__inner {
+    height: 130px;
+    overflow-y: hidden; }
+
+  .slider__items {
+    margin: 6px 3px;
+    padding: 0 0 40px 0;
+    font-size: 12px;
+    overflow-x: scroll;
+    /* has to be scroll, not auto */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap; }
+
+  .slider__item {
+    width: 80px;
+    height: 130px;
+    background: #e9e9e9;
+    display: inline-block;
+    margin: 0 3px;
+    white-space: auto; }
+
+  .module {
+    overflow-y: auto;
+    overflow-x: hidden; }
+    .module h1, .module h2, .module h3, .module h4 {
+      font-family: 'BLOKKRegular';
+      letter-spacing: 0;
+      line-height: 1em;
+      color: #6e6e6e; }
+    .module p, .module .btn--placeholder {
+      font-family: 'BLOKKNeue-Regular';
+      letter-spacing: -1px;
+      line-height: 1em;
+      color: #6e6e6e;
+      line-height: 1.5em; }
+    .module .btn--placeholder {
+      color: #6e6e6e;
+      background: #6e6e6e; }
+    .module.module--padd {
+      padding: 100px 0; }
+    .module.module--padd-dbl {
+      padding: 100px 0; }
+      @media (min-width: 768px) {
+        .module.module--padd-dbl {
+          padding: 200px 0; } }
+    .module.module--padd-btm {
+      padding: 0 0 50px 0; }
+    .module.module--padd-top {
+      padding: 50px 0 0 0; }
+
+  .header-module {
+    padding: 6px 0;
+    text-align: left;
+    height: 50px;
+    overflow: hidden;
+    /* @include at-breakpoint($bp-large) {
+      height: 100px;
+      padding: 14px 0;
+    } */ }
+    .header-module .grid-item--nav-trigger {
+      width: 8.33333%;
+      float: left; }
+      @media (min-width: 768px) {
+        .header-module .grid-item--nav-trigger {
+          display: none; } }
+    .header-module .grid-item--logo {
+      width: 66.66667%;
+      float: left; }
+      @media (min-width: 768px) {
+        .header-module .grid-item--logo {
+          width: 75%;
+          float: left; } }
+    .header-module .grid-item--search {
+      width: 25%;
+      float: left;
+      display: none;
+      position: relative;
+      top: -2px; }
+      @media (min-width: 768px) {
+        .header-module .grid-item--search {
+          display: inline-block; } }
+    .header-module .logo {
+      height: 24px;
+      fill: white;
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      vertical-align: top; }
+    .header-module .nav-links {
+      margin: 11px 0 0 16px;
+      padding: 0;
+      display: none;
+      vertical-align: top;
+      width: 340px; }
+      @media (min-width: 768px) {
+        .header-module .nav-links {
+          display: inline-block; } }
+      .header-module .nav-links > li {
+        display: inline-block;
+        width: 52px;
+        margin: 0 16px 0 0;
+        padding: 0;
+        height: 4px;
+        background: white;
+        vertical-align: top; }
+    .header-module .nav-trigger {
+      height: 8px;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      margin: 0 0 0 0;
+      padding: 0;
+      width: 100%;
+      max-width: 16px;
+      display: inline-block;
+      position: relative;
+      top: 7px; }
+      .header-module .nav-trigger:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        display: block;
+        background: white;
+        height: 2px;
+        top: -8px; }
+    .header-module .search-bar {
+      width: 100%;
+      background: #dddddd;
+      height: 30px;
+      border-radius: 15px; }
+
+  .cta-banner-module {
+    text-align: center;
+    background: #dddddd; }
+    .cta-banner-module .grid-item {
+      width: 83.33333%;
+      float: left;
+      margin-left: 8.33333%; }
+      @media (min-width: 768px) {
+        .cta-banner-module .grid-item {
+          width: 50%;
+          float: left;
+          margin-left: 25%; } }
+
+  .text-banner-module {
+    text-align: center; }
+    .text-banner-module .grid-item {
+      width: 83.33333%;
+      float: left;
+      margin-left: 8.33333%; }
+      @media (min-width: 768px) {
+        .text-banner-module .grid-item {
+          width: 50%;
+          float: left;
+          margin-left: 25%; } }
+
+  .gallery-module .grid-container {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; }
+    @media (min-width: 768px) {
+      .gallery-module .grid-container {
+        width: 50%;
+        float: left; } }
+    .gallery-module .grid-container .grid-item {
+      width: 50%;
+      float: left; }
+      @media (min-width: 768px) {
+        .gallery-module .grid-container .grid-item .grid-item__content {
+          height: 0;
+          padding-bottom: 92%;
+          background: #dddddd;
+          margin-bottom: 24px; } }
+      @media (min-width: 1024px) {
+        .gallery-module .grid-container .grid-item .grid-item__content {
+          padding-bottom: 95.4%; } }
+  .gallery-module .grid-container--large {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; }
+    @media (min-width: 768px) {
+      .gallery-module .grid-container--large {
+        width: 50%;
+        float: left; } }
+    .gallery-module .grid-container--large .grid-item {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; }
+      @media (min-width: 768px) {
+        .gallery-module .grid-container--large .grid-item .grid-item__content {
+          height: 0;
+          padding-bottom: 100%;
+          background: #dddddd; } }
+  .gallery-module .grid-item__content {
+    height: 0;
+    padding-bottom: 100%;
+    background: #dddddd; }
+  .gallery-module .grid-item--large {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+    @media (min-width: 768px) {
+      .gallery-module .grid-item--large {
+        width: 50%;
+        float: left; } }
+    .gallery-module .grid-item--large > .grid-item__content {
+      height: 0;
+      padding-bottom: 100%;
+      background: #dddddd; }
+
+  .products-module .grid-item {
+    width: 66.66667%;
+    float: left;
+    margin-left: 16.66667%;
+    padding-bottom: 50px; }
+    @media (min-width: 768px) {
+      .products-module .grid-item {
+        width: 33.33333%;
+        float: left;
+        margin-left: 0;
+        padding-bottom: 0; } }
+    .products-module .grid-item:last-child {
+      padding-bottom: 0; }
+
+  .product__thumb {
+    background: #dddddd;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    height: 0;
+    padding-bottom: 72%;
+    width: 72%; }
+
+  .graphics-module {
+    text-align: left; }
+    .graphics-module .grid-item__left {
+      width: 25%;
+      float: left;
+      margin-bottom: 50px; }
+      @media (min-width: 768px) {
+        .graphics-module .grid-item__left {
+          margin-bottom: 0; } }
+    .graphics-module .grid-item__right {
+      width: 66.66667%;
+      float: left; }
+      @media (min-width: 768px) {
+        .graphics-module .grid-item__right {
+          width: 75%;
+          float: left; } }
+
+  .graphic {
+    clear: both; }
+    @media (min-width: 768px) {
+      .graphic {
+        width: 33.33333%;
+        float: left;
+        clear: none; } }
+
+  .graphic__thumb > div {
+    height: 0;
+    padding-bottom: 100%;
+    background: #dddddd;
+    border-radius: 50%; }
+
+  .links-module {
+    background: #dddddd;
+    text-align: left; }
+    .links-module .grid-item {
+      width: 41.66667%;
+      float: left;
+      padding-bottom: 50px; }
+      .links-module .grid-item:nth-child(even) {
+        margin-left: 8.33333%; }
+      @media (min-width: 768px) {
+        .links-module .grid-item {
+          width: 25%;
+          float: left;
+          padding-bottom: 0; }
+          .links-module .grid-item:nth-child(even) {
+            margin-left: 0%; } }
+
+  .footer-module {
+    height: 50px;
+    /*  @include at-breakpoint($bp-large) {
+       height: 100px;
+     } */ }
+    .footer-module h1 {
+      color: black; }
+    .footer-module .grid-item {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; }
+      @media (min-width: 768px) {
+        .footer-module .grid-item {
+          width: 100%;
+          float: left;
+          margin-left: 0;
+          margin-right: 0; } }
+
+  .grid-content--title:after {
+    content: 'Small';
+    /* @include at-breakpoint($bp-medium) {
+      content: 'Medium (>= 768px)';
+    } */
+    /* @include at-breakpoint($bp-wide) {
+      content: 'Wide (>= 1440px)';
+    } */ }
+    @media (min-width: 768px) {
+      .grid-content--title:after {
+        content: 'Large'; } }
+
+  .grid-content--devices:after {
+    content: 'Mobile';
+    /* @include at-breakpoint($bp-medium) {
+      content: 'Tablet Portrait';
+    } */
+    /* @include at-breakpoint($bp-wide) {
+      content: 'Desktop';
+    } */ }
+    @media (min-width: 768px) {
+      .grid-content--devices:after {
+        content: 'Tablet Landscape, Small Desktop'; } }
+
+  * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-width: 320px; }
+
+  .full-width {
+    clear: both;
+    overflow: auto; }
+
+  hr.clear {
+    margin: 100px 0 100px 0;
+    padding: 0;
+    height: 0;
+    border: none;
+    clear: both;
+    /* @include at-breakpoint($bp-medium) {
+      margin: 0 0 $module-spacing-medium 0;
+    } */
+    /* @include at-breakpoint($bp-wide) {
+      margin: 0 0 $module-spacing-wide 0;
+    } */ }
+    @media (min-width: 768px) {
+      hr.clear {
+        margin: 0 0 100px 0; } }
+  hr.module-divide {
+    margin: 50px 0 50px 0;
+    padding: 0;
+    height: 1px;
+    background: #dddddd;
+    border: none;
+    clear: both; }
+
+  .header {
+    padding: 50px 0; }
+
+  .debug-grid-overlay {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    min-width: 336px;
+    left: 5.2%;
+    /* @include at-breakpoint($bp-medium) {
+      left: $gg-medium;
+    } */
+    /* @include at-breakpoint($bp-wide) {
+      left: $gg-wide;
+    } */ }
+    .app--hide-grid .debug-grid-overlay {
+      display: none; }
+    @media (min-width: 768px) {
+      .debug-grid-overlay {
+        left: 5%; } }
+
+  .global-gutter {
+    width: 89.6%;
+    margin: 0 auto;
+    /* @include at-breakpoint($bp-medium) {
+      width: 100% - ($gg-medium * 2);
+    } */
+    /* @include at-breakpoint($bp-wide) {
+      width: 100% - ($gg-wide * 2);
+    } */ }
+    @media (min-width: 768px) {
+      .global-gutter {
+        width: 90%; } }
+
+  .gutter {
+    width: 89.6%;
+    margin: 0 auto;
+    clear: both;
+    overflow: auto;
+    /* @include at-breakpoint($bp-medium) {
+      width: 100% - ($gg-medium * 2);
+    } */
+    /* @include at-breakpoint($bp-wide) {
+      width: 100% - ($gg-wide * 2);
+    } */ }
+    @media (min-width: 768px) {
+      .gutter {
+        width: 90%; } }
+
+  .module--debug-grid .grid-item {
+    width: 8.33333%;
+    float: left; }
+    .module--debug-grid .grid-item > .grid-item__content {
+      background: rgba(0, 236, 255, 0.49);
+      height: 10000px;
+      margin-top: 0; }
+  .grid-item.grid-item--single {
+    width: 8.33333%;
+    float: left; }
+
+  .grid-item__content {
+    margin: 6px 6px;
+    /* @include at-breakpoint($bp-medium) {
+      margin: $g-small $g-medium;
+    } */
+    /* @include at-breakpoint($bp-wide) {
+      margin: $g-small $g-wide;
+    } */ }
+    .module .grid-item__content {
+      border: 1px solid rgba(40, 204, 204, 0.35); }
+      .app--hide-grid .module .grid-item__content {
+        border: none; }
+    @media (min-width: 768px) {
+      .grid-item__content {
+        margin: 6px 16px; } }
+
+  .dot {
+    width: 16px;
+    height: 16px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background: white; }
+    @media (min-width: 768px) {
+      .dot {
+        width: 32px;
+        height: 32px; } }
+
+  /*# sourceMappingURL=main.css.map */
+
+</style>
+  <script src="assets/scripts/vendor/jquery-2.1.4.min.js"></script> 
+  <script src="assets/scripts/vendor/shake.js"></script>
+  <script>
+    var shakeEvent = new Shake({
+      threshold: 10, // optional shake strength threshold
+      timeout: 1000 // optional, determines the frequency of event generation
+    });
+    shakeEvent.start();
+
+    function onShake() {
+      $('body').toggleClass('app--hide-grid');
+    }
+
+    window.addEventListener('shake', onShake, false);
+
+    $(document).ready(function() {
+      if (!('ontouchstart' in window)) {
+
+        $('body').dblclick(function() {
+          $('body').toggleClass('app--hide-grid');
+        });
+      }
+    });
+    
+  </script>
+</head>
+<body class="app--hide-grid">
+
+  <section class="global-gutter debug-grid-overlay">
+    <div class="grid-container module--debug-grid">
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+      <div class="grid-item grid-item--demo"><div class="grid-item__content"></div></div>
+    </div>
+  </section>
+
+  <!-- Header module -->
+  <section class="full-width">
+    <header class="header-module theme--dark">
+      <div class="gutter">
+        <div class="grid-container">
+          <div class="grid-item grid-item--nav-trigger">
+            <div class="grid-item__content">
+              <a class="nav-trigger"></a>
+            </div>
+          </div>
+          <div class="grid-item grid-item--logo">
+            <div class="grid-item__content">
+              <img class="logo" src="assets/images/logo.svg" alt="">
+              <ul class="nav-links">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid-item grid-item--search">
+            <div class="grid-item__content">
+              <div class="search-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+
+  <!-- CTA Banner Module -->
+  <section class="full-width theme--bg">
+    <div class="grid-container module module--padd-dbl cta-banner-module">
+      <div class="gutter">
+        <div class="grid-item">
+          <div class="grid-item__content">
+            <h1>---</h1>
+            <p>Lorem ips dor sit amet, consectetur adipisicing elit. Esse tempora, laboriosam cum, obcaecati fuga aliquam enim.</p>
+            <button class="btn btn--placeholder">Button</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Text Banner Module -->
+  <section class="gutter">
+    <div class="grid-container module module--padd text-banner-module">
+      <div class="grid-item">
+        <div class="grid-item__content">
+          <h1>---</h1>
+          <p>Lorem ips dor sit amet, consectetur adipisicing elit. Esse tempora, laboriosam cum, obcaecati fuga aliquam enim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Module -->
+  <section class="gutter">
+    <div class="module gallery-module">
+
+      <div class="grid-container--large">
+        <div class="grid-item">
+          <div class="grid-item__content"></div>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="grid-item__content"></div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item__content"></div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item__content"></div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item__content"></div>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
+
+  <hr class="module-divide">
+
+  <!-- Products Module -->
+  <section class="gutter">
+    <div class="grid-container module products-module">
+      <div class="grid-item">
+        <div class="grid-item__content">
+          <div class="product">
+            <div class="product__thumb"></div>
+            <h2>---</h2>
+            <p>Lorem ips dor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-item__content">
+          <div class="product">
+            <div class="product__thumb"></div>
+            <h2>---</h2>
+            <p>Lorem ips dor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-item__content">
+          <div class="product">
+            <div class="product__thumb"></div>
+            <h2>---</h2>
+            <p>Lorem ips dor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="module-divide">
+
+  <!-- Graphics Module -->
+  <section class="gutter">
+    <div class="module module--padd-btm graphics-module">
+
+      <div class="grid-container graphic">
+        <div class="grid-item grid-item__left">
+          <div class="grid-item__content">
+            <div class="graphic__thumb">
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item grid-item__right">
+          <div class="grid-item__content">
+            <div class="graphic__text">
+              <h2>---</h2>
+              <p>Lorem ips dor sit amet, consectetur adipisicing elit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container graphic">
+        <div class="grid-item grid-item__left">
+          <div class="grid-item__content">
+            <div class="graphic__thumb">
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item grid-item__right">
+          <div class="grid-item__content">
+            <div class="graphic__text">
+              <h2>---</h2>
+              <p>Lorem ips dor sit amet, consectetur adipisicing elit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container graphic">
+        <div class="grid-item grid-item__left">
+          <div class="grid-item__content">
+            <div class="graphic__thumb">
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item grid-item__right">
+          <div class="grid-item__content">
+            <div class="graphic__text">
+              <h2>---</h2>
+              <p>Lorem ips dor sit amet, consectetur adipisicing elit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+  </section>
+
+  <!-- Links Module -->
+  <section class="full-width theme--bg">
+    <div class="grid-container module module--padd links-module">
+      <div class="gutter">
+        <div class="grid-item">
+          <div class="grid-item__content">
+            <h1>---</h1>
+            <p>Lorem ips dor sit amet, consecte</p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item__content">
+            <h1>---</h1>
+            <p>Lorem ips dor sit amet, consecte</p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item__content">
+            <h1>---</h1>
+            <p>Lorem ips dor sit amet, consecte</p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item__content">
+            <h1>---</h1>
+            <p>Lorem ips dor sit amet, consecte</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer Module -->
+  <footer class="full-width theme--dark">
+    <div class="grid-container module footer-module">
+      <div class="gutter">
+        <div class="grid-item">
+          <div class="grid-item__content">
+            <h1>-</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

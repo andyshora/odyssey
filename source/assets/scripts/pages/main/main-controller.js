@@ -60,7 +60,7 @@ angular.module('dyson')
 
     // load new customer 1 journey by default
     if (!$state.current.name) {
-      $state.transitionTo('main.home');
+      $state.transitionTo('main');
     }
 
     $scope.searchOpen = false;

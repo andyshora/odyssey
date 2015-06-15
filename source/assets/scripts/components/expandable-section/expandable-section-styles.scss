@@ -179,6 +179,9 @@ $sectionTall: 240px;
   }
 
   .store-finder & {
+
+    display: none !important;
+    
     background: black;
     border-top: 1px solid #333333;
     height: auto;
@@ -338,7 +341,7 @@ $sectionTall: 240px;
     }
   }
 
-  @include up-to-width($bp-large) {
+  /* @include up-to-width($bp-large) {
     .expandable-section.store-finder & {
       .nav--extra & {
         // @include prefixr(transform, translateY($headerBarHeight));
@@ -349,7 +352,7 @@ $sectionTall: 240px;
         
       }
     }
-  }
+  } */
   .search-bar & {
 
     border-right: none;
