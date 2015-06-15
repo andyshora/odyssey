@@ -64,7 +64,7 @@ button, input, select, textarea {
   font: inherit;
   margin: 0; }
 
-textarea, input[type="text"], input[type="button"], input[type="submit"] {
+textarea, input[type="text"], input[type="button"], input[type="search"], input[type="submit"] {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   border-radius: 0; }
