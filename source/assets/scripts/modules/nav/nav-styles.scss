@@ -98,10 +98,13 @@
 
   @include at-breakpoint($bp-large) {
     z-index: 4;
-    width: 1% + 27%;
+    width: 1% + 31%;
     border-right: 1px solid #333333;
     padding-right: 24px;
     border-left: none;
+  }
+  @include at-breakpoint($bp-large + 1px) {
+    width: 1% + 27%;
   }
   @include at-breakpoint($bp-large + 20px) {
     z-index: 4;

@@ -767,10 +767,13 @@ p {
   @media (min-width: 1024px) {
     .nav--extra {
       z-index: 4;
-      width: 28%;
+      width: 32%;
       border-right: 1px solid #333333;
       padding-right: 24px;
       border-left: none; } }
+  @media (min-width: 1025px) {
+    .nav--extra {
+      width: 28%; } }
   @media (min-width: 1044px) {
     .nav--extra {
       z-index: 4;
@@ -1379,10 +1382,6 @@ p {
     .expandable-section.expandable-section--open.expandable-section--tall {
       max-height: 298px; }
   @media (max-width: 1024px) {
-    @media (min-width: 1024px) {
-      .expandable-section.expandable-section--locked-open {
-        max-height: 58px !important; } }
-
     .expandable-section.expandable-section--locked-open.expandable-section--short {
       max-height: 213px; }
 
@@ -1392,6 +1391,9 @@ p {
     .expandable-section.expandable-section--locked-open.expandable-section--tall {
       max-height: 298px; }
  }
+  @media (min-width: 1024px) {
+    .expandable-section.expandable-section--locked-open {
+      max-height: 58px !important; } }
   .nav--main .expandable-section {
     display: block;
     width: 100%;
@@ -1490,15 +1492,21 @@ p {
     @media (min-width: 868px) {
       .search-bar .expandable-section__content {
         width: 240px; } }
+    @media (min-width: 918px) {
+      .search-bar .expandable-section__content {
+        width: 260px; } }
     @media (min-width: 1024px) {
       .search-bar .expandable-section__content {
         height: 58px;
-        width: 80px;
+        width: 116px;
         display: inline-block;
         z-index: 4;
         transform: none;
         position: relative;
         padding: 15px 32px 15px 24px; } }
+    @media (min-width: 1025px) {
+      .search-bar .expandable-section__content {
+        width: 80px; } }
     @media (min-width: 1044px) {
       .search-bar .expandable-section__content {
         width: 100px; } }
@@ -1566,7 +1574,7 @@ p {
       .expandable-section--hover-open:hover > .expandable-section__content {
         display: block;
         opacity: 1; } }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     .expandable-section--locked-open .expandable-section__content {
       display: block;
       opacity: 1; }
@@ -1747,7 +1755,7 @@ p {
         display: none; } }
   .nav--main .section-item {
     border-bottom: 1px solid #333333; }
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
       .nav--main .section-item {
         width: 100%;
         position: relative; }
@@ -1790,7 +1798,7 @@ p {
   color: grey;
   height: 30px;
   border: none;
-  padding: 10px 0;
+  padding: 13px 0 7px;
   border: none;
   border-bottom: 1px solid white;
   font-family: 'FuturaBT-Book';
