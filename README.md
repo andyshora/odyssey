@@ -1,6 +1,11 @@
 # odyssey
 Prototypes
 
+## To serve demo:
+
+- `node server.js` to serve at http://localhost:3000/, or `cd source` and `python -m SimpleHTTPServer 8001` to serve at http://localhost:8001.
+
+- Responsive nav is available at the root, and the grid demo is available at /grid.html.
 
 ## Geolocation Accuracy
 
