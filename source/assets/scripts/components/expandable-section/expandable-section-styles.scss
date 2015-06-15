@@ -160,7 +160,7 @@ $sectionTall: 240px;
     @include prefixr(transform, translateY($headerBarHeight));
     // @include prefixr(transition, opacity .2s $animationEasing);
 
-    @include at-breakpoint($bp-large) {
+    @include at-breakpoint($bp-medium) {
       opacity: 1;
       pointer-events: all;
 
@@ -168,11 +168,11 @@ $sectionTall: 240px;
     }
   }
   
-  @include up-to-width($bp-large) {
+  /* @include up-to-width($bp-large) {
     .dyson-icon-search {
       float: right;
     }
-  }
+  } */
 
   .basket-bar & {
     display: none !important;
@@ -205,11 +205,24 @@ $sectionTall: 240px;
 
     @include up-to-width($bp-large) {
       border-top: 1px solid #333333;
+    }
 
-      /* .dyson-icon {
-        position: absolute;
-        right: 0;
-      } */
+    @include at-breakpoint($bp-medium) {
+      height: $headerBarHeight;
+      width: 205px;
+      display: inline-block;
+      z-index: 4;
+      transform: none;
+      position: relative;
+      padding: 15px 32px 15px 24px;
+    }
+
+    @include at-breakpoint($bp-medium + 50px) {
+      width: 220px;
+    }
+
+    @include at-breakpoint($bp-medium + 100px) {
+      width: 240px;
     }
 
     @include at-breakpoint($bp-large) {
@@ -379,11 +392,11 @@ $sectionTall: 240px;
 
     border-right: none;
 
-    @include up-to-width($bp-large) {
+    @include up-to-width($bp-medium) {
       padding-right: 0;
     }
 
-    @include at-breakpoint($bp-large) {
+    @include at-breakpoint($bp-medium) {
       display: none;
       border-right: 1px solid #333333;
     }

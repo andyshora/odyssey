@@ -756,6 +756,9 @@ p {
     position: absolute;
     z-index: 2;
   } */ }
+  @media (min-width: 768px) {
+    .nav--extra {
+      width: 48%; } }
   @media (min-width: 1000px) {
     .nav--extra {
       z-index: 4;
@@ -1417,7 +1420,12 @@ p {
   padding: 0;
   width: 100%;
   background: white;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  /* @include up-to-width($bp-large) {
+    .dyson-icon-search {
+      float: right;
+    }
+  } */ }
   @media (min-width: 1000px) {
     .expandable-section__content {
       height: 227px; } }
@@ -1438,14 +1446,10 @@ p {
     -moz-transform: translateY(58px);
     -ms-transform: translateY(58px);
     transform: translateY(58px); }
-    @media (min-width: 1000px) {
+    @media (min-width: 768px) {
       .nav--extra .expandable-section__content {
         opacity: 1;
         pointer-events: all; } }
-  @media (max-width: 1000px) {
-    .expandable-section__content .dyson-icon-search {
-      float: right; }
- }
   .basket-bar .expandable-section__content {
     display: none !important; }
   .store-finder .expandable-section__content {
@@ -1465,11 +1469,22 @@ p {
     padding: 17px 5.2%; }
     @media (max-width: 1000px) {
       .search-bar .expandable-section__content {
-        border-top: 1px solid #333333;
-        /* .dyson-icon {
-        position: absolute;
-        right: 0;
-      } */ } }
+        border-top: 1px solid #333333; } }
+    @media (min-width: 768px) {
+      .search-bar .expandable-section__content {
+        height: 58px;
+        width: 205px;
+        display: inline-block;
+        z-index: 4;
+        transform: none;
+        position: relative;
+        padding: 15px 32px 15px 24px; } }
+    @media (min-width: 818px) {
+      .search-bar .expandable-section__content {
+        width: 220px; } }
+    @media (min-width: 868px) {
+      .search-bar .expandable-section__content {
+        width: 240px; } }
     @media (min-width: 1000px) {
       .search-bar .expandable-section__content {
         height: 58px;
@@ -1609,10 +1624,10 @@ p {
         right: 10px; } }
   .search-bar .expandable-section__title {
     border-right: none; }
-    @media (max-width: 1000px) {
+    @media (max-width: 768px) {
       .search-bar .expandable-section__title {
         padding-right: 0; } }
-    @media (min-width: 1000px) {
+    @media (min-width: 768px) {
       .search-bar .expandable-section__title {
         display: none;
         border-right: 1px solid #333333; } }

@@ -92,6 +92,10 @@
     z-index: 2;
   } */
 
+  @include at-breakpoint($bp-medium) {
+    width: 48%;
+  }
+
   @include at-breakpoint($bp-large) {
     z-index: 4;
     width: 1% + 27%;
