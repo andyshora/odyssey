@@ -11,6 +11,14 @@
     color: #666666;
     font-size: 16px;
 
+    .dyson-icon {
+      color: #666666;
+
+      @include at-breakpoint($bp-large) {
+        display: none;
+      }
+    }
+
     > .section-title {
       padding: 20px 17px;
     }
@@ -33,6 +41,25 @@
 
   .nav--main & {
     border-bottom: 1px solid #333333;
+
+    @include up-to-width($bp-large) {
+      width: 100%;
+      position: relative;
+
+      .dyson-icon {
+        float: right;
+        position: relative;
+        top: -4px;
+      }
+    }
+
+    @include at-breakpoint($bp-large) {
+      .dyson-icon {
+        display: none;
+      }
+    }
+
+
   }
 
   @include at-breakpoint($bp-large) {

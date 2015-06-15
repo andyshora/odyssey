@@ -9,6 +9,7 @@
       data-on-toggled="onSectionToggled(index, open)"
       data-title="Products"
       data-theme="dark"
+      data-icon="chevron"
       data-modifier="short">
       
       <div 
@@ -46,6 +47,7 @@
       data-index="1"
       data-on-toggled="onSectionToggled(index, open)"
       data-title="Service &amp; Support"
+      data-icon="chevron"
       data-theme="dark"
       data-modifier="short">
       
@@ -81,26 +83,30 @@
       section-item
       data-modifier="sub"
       data-theme="dark"
+      data-icon="chevron"
       data-title="Fix My Dyson">
     </li>
     <li
       section-item
       data-modifier="sub"
       data-theme="dark"
+      data-icon="chevron"
       data-title="Spare Parts">
     </li>
     <li
       section-item
       data-theme="dark"
+      data-icon="chevron"
       data-title="My Dyson">
     </li>
     <li
       section-item
       data-theme="dark"
+      data-icon="chevron"
       data-title="About Dyson">
     </li>
   </ul>
-  <div class="trigger"><i class="dyson-icon dyson-icon-hamburger" ng-click="onToggleClicked()"></i></div>
+  <div class="trigger"><i class="dyson-icon dyson-icon-hamburger" ng-show="!navOpen" ng-click="onToggleClicked()"></i><i class="dyson-icon dyson-icon-close" ng-show="navOpen" ng-click="onToggleClicked()"></i></div>
   <div class="header__logo section-title">
     <img src="/assets/images/logo.svg" alt="dyson" class="dyson-logo">
   </div>

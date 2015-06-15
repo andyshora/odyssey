@@ -1575,6 +1575,19 @@ p {
       }
     }
   } */ }
+  @media (max-width: 1000px) {
+    .nav--main .expandable-section__title {
+      width: 100%;
+      position: relative; }
+      .nav--main .expandable-section__title .dyson-icon {
+        float: right;
+        position: relative;
+        top: -4px; }
+ }
+  @media (min-width: 1000px) {
+    .nav--main .expandable-section__title .dyson-icon {
+      display: none; }
+ }
   .expandable-section__title .items-in-basket {
     display: inline-block;
     position: absolute;
@@ -1692,6 +1705,11 @@ p {
     font-family: 'FuturaBT-Book';
     color: #666666;
     font-size: 16px; }
+    .section-item.section-item--sub .dyson-icon {
+      color: #666666; }
+      @media (min-width: 1000px) {
+        .section-item.section-item--sub .dyson-icon {
+          display: none; } }
     .section-item.section-item--sub > .section-title {
       padding: 20px 17px; }
     .section-item.section-item--sub:before {
@@ -1708,6 +1726,18 @@ p {
         display: none; } }
   .nav--main .section-item {
     border-bottom: 1px solid #333333; }
+    @media (max-width: 1000px) {
+      .nav--main .section-item {
+        width: 100%;
+        position: relative; }
+        .nav--main .section-item .dyson-icon {
+          float: right;
+          position: relative;
+          top: -4px; } }
+    @media (min-width: 1000px) {
+      .nav--main .section-item .dyson-icon {
+        display: none; }
+ }
   @media (min-width: 1000px) {
     .section-item {
       display: inline-block; } }

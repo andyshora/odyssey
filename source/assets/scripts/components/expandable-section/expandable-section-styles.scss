@@ -322,6 +322,28 @@ $sectionTall: 240px;
 
 .expandable-section__title {
 
+  @include up-to-width($bp-large) {
+
+    .nav--main & {
+      width: 100%;
+      position: relative;
+
+      .dyson-icon {
+        float: right;
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+
+  @include at-breakpoint($bp-large) {
+    .nav--main & {
+      .dyson-icon {
+        display: none;
+      }
+    }
+  }
+
   .items-in-basket {
     display: inline-block;
     position: absolute;
